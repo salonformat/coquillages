@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#083554">
+  <meta name="description" content="Wie wächst eine Schale? Eine gezeichnete Unterwasser-Erfahrung von Isabella Kohout / SALONFORMAT. Deutsch, français, English.">
+  <title>Unter der Schale — SALONFORMAT</title>
+  <link rel="preload" href="assets/della-respira.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/josefin-sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/ocean-entry.jpg" as="image">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div id="ocean" aria-hidden="true"><div class="ocean-painting"></div><div class="water-light"></div><canvas id="water"></canvas></div>
+  <header class="header">
+    <a class="wordmark" href="https://salonformat.com">SALONFORMAT<span>ISABELLA KOHOUT</span></a>
+    <nav class="tools" aria-label="Einstellungen">
+      <div class="languages" role="group" aria-label="Sprache"><button data-lang="de" lang="de">DE</button><button data-lang="fr" lang="fr">FR</button><button data-lang="en" lang="en">EN</button></div>
+      <button id="sound" class="icon-button" aria-label="Ton einschalten" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path class="sound-waves" d="M15 8c3 2 3 6 0 8m3-11c5 4 5 10 0 14"/><path class="sound-muted" d="m16 9 5 6m0-6-5 6"/></svg></button>
+      <button id="motion" class="icon-button" aria-label="Bewegung ausschalten" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="pause-icon" d="M8 5v14M16 5v14"/><path class="play-icon" d="m8 5 10 7-10 7V5Z"/></svg></button>
+      <button id="fullscreen" class="icon-button" aria-label="Vollbild"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3H3v6m12-6h6v6M3 15v6h6m12-6v6h-6"/></svg></button>
+    </nav>
+  </header>
+  <main id="experience">
+    <section id="scene" aria-labelledby="scene-title"></section>
+    <section id="about" class="about" hidden aria-labelledby="about-title"></section>
+  </main>
+  <footer class="footer">
+    <div class="back-controls"><button id="back" class="text-button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H4m6-6-6 6 6 6"/></svg><span>Zurück</span></button><button id="advance" class="text-button">Weiter</button><button id="home" class="text-button">Zum Anfang</button></div>
+    <nav id="progress" aria-label="Dein Weg"></nav>
+    <a class="portfolio-link" href="https://salonformat.com">SALONFORMAT<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
+  </footer>
+  <div id="scene-time" aria-hidden="true"></div>
+  <div id="status" class="sr-only" role="status" aria-live="polite"></div>
+  <noscript><div class="no-script">Bitte aktiviere JavaScript. / Active JavaScript pour commencer. / Enable JavaScript to begin. <a href="https://salonformat.com">SALONFORMAT</a></div></noscript>
+</body>
+</html>

@@ -1,23 +1,15 @@
-# Coquillages
+# Coquillages — Unter der Schale
 
-Eine handgezeichnete Lernerfahrung über das Wachstum von Meeresschnecken- und Muschelschalen. Ein Projekt von Isabella Kohout / SALONFORMAT.
+Eine gezeichnete Unterwasserreise von Isabella Kohout / SALONFORMAT. Deutsch, français, English. Della Respira und Josefin Sans.
 
-**Aktueller Stand:** vollständiges Konzept, Ablaufprüfung und Texte in Deutsch, Französisch und Englisch. Noch keine fertige interaktive Anwendung. Die erste Ozeanillustration ist ein Gestaltungsvorschlag; sie zeigt keine inventarisierten Museumsobjekte.
+Ein Klick auf Eintauchen startet den vollständigen Ablauf: Meeresboden → Schalenöffnung → Wachstum → Muschel → andere Schalenform → Bildkarte. Die Szenen wechseln von selbst, mit Pause, Zurück und Weiter. Jede Station hat eine eigene gezeichnete Welt. Das Meer reicht bis an die Bildschirmränder; Navigation liegt frei darüber.
 
-- [Konzept und vollständiger Ablauf](docs/KONZEPT.md)
-- [Deutsch: alle Besuchertekste](locales/de.md)
-- [Français : tous les textes](locales/fr.md)
-- [English: all visitor-facing copy](locales/en.md)
-- [Durchspielen, Lernziele und Abnahmekriterien](docs/DURCHSPIELEN.md)
-- [Fachliche Quellen, Sammlungen und Inspiration](docs/QUELLEN.md)
-- [Bildsprache und Umsetzung](docs/GESTALTUNG.md)
+Das Lernziel: Das Tier bildet seine Schale selbst. Neues Material kommt am Rand hinzu, während früheres Material erhalten bleibt. Wachstum ist vereinfacht und beschleunigt dargestellt.
 
-## Projektstruktur
+## Lokal
 
-`docs/` enthält Konzept und Umsetzungsvorgaben. `locales/` enthält die vollständigen Texte mit gleichen Szenen- und Textkennungen. `assets/` enthält die erste Illustration sowie Della Respira und Josefin Sans aus dem vorhandenen lokalen SALONFORMAT-Projekt. Schriftlizenzen müssen vor einer externen Veröffentlichung zusammen mit den Originalfontdateien geprüft und beigelegt werden.
+`npm run dev` öffnet den Server unter http://127.0.0.1:4173.
 
-Der gleiche Lernablauf funktioniert für La Rochelle, Nantes und Bordeaux. Museumsspezifische Sammlungsobjekte, Inventarnummern und Partnerschaften werden erst nach Abstimmung mit dem jeweiligen Haus eingesetzt.
+`npm run check` prüft Syntax. `npm test` prüft Inhalte und Routen. `node tests/browser.mjs` prüft den automatischen Ablauf, Pause, Browser-Zurück, Sprachen, Bildexport und mobile Darstellung mit Playwright.
 
-Die GitHub-Ablage ist privat. Dieses Konzept ist keine bereits beauftragte Ausstellung eines der genannten Museen.
-
-GitHub: [salonformat/coquillages — Projektordner coquillages](https://github.com/salonformat/coquillages/tree/main/coquillages).
+Weitere Informationen in `docs/`. Die technische Prüfung ersetzt keine Erprobung der Lernwirkung mit Besuchern.

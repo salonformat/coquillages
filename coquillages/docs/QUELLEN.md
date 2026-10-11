@@ -37,3 +37,7 @@ Die folgenden Projekte inspirieren die räumliche Kontinuität und das Lernen du
 ## Noch mit den Museen abzustimmen
 
 Konkrete Arten, Inventarnummern, tatsächliche Objektverfügbarkeit, Bild- und Reproduktionsrechte, Orte in den jeweiligen Häusern, fachliche Freigabe der Illustrationen sowie die spätere Besucherprüfung. Diese Punkte sind offen und werden nicht durch erfundene Angaben ersetzt.
+
+## Zusätzliche Referenz für den neuen Einstieg
+
+[The Boat, Communication Arts](https://www.commarts.com/project/23899/the-boat) — ausgezeichnete interaktive Graphic Novel von SBS mit Zeichnungen von Matt Huynh. Anregung für Coquillages: handgezeichnete Bildwelt, räumliche Bewegung, Sound und Bild reagieren gemeinsam. Übernommen wird dieses Prinzip, nicht der politische Inhalt, die Schwarz-Weiß-Palette oder Originalillustrationen. Die Nutzerin hat die Referenz angesehen und für ihr Projekt eine blaue, weiße und meerfarbene Umsetzung bestätigt.

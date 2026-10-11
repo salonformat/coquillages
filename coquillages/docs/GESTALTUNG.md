@@ -1,35 +1,13 @@
-# Bildsprache und Umsetzung
+# Gestaltung
 
-## Verbindliche Referenz
+Die verbindliche Referenz ist SALONFORMATs Elio: sichtbare Stiftstriche, blaues Wasser, weiße Schalen, eine Welt im ganzen Bildschirm. Della Respira für Überschriften, Josefin Sans für Text und Bedienung. Die Navigation liegt frei auf der Zeichnung, ohne obere oder untere blaue Leiste.
 
-Die beiden Elio-Screenshots des Nutzers: sichtbarer Pastell- und Buntstiftauftrag, geschichtete Farbe, grobe Papierstruktur, Licht im Wasser, große gezeichnete Naturräume, zurückhaltende Bedienelemente. Die Website salonformat.com ließ sich im Recherchewerkzeug nicht verlässlich öffnen. Die konkret gelieferten Screenshots haben deshalb Vorrang als verfügbare Bildreferenz.
+Sieben Stationen führen vom monumentalen Einstieg zum Meeresboden, zur Öffnung, zum Wachstum, zur jungen Muschel, zur Gezeitenwelt und zum Meereshorizont. Jede Welt besitzt eine eigene gemalte Vorlage. WebGL bewegt ausschließlich das Wasser. Gezeichnete Fische ziehen auf mehreren Tiefenebenen vorbei; ihre Schwanzbewegung stammt aus derselben Stiftzeichnung. Pause hält Strömung und Fische an; Text und Tiere bleiben unverzerrt. Ohne WebGL bleibt das Hintergrundbild. Reduzierte Bewegung entfernt Kamerafahrten und Wasserbewegung.
 
-## Gestalterische Entscheidung
+Die Schnecke ist ein vollständiges Originalbild. Eine kleine Bewegung ihres Fußes wird aus demselben Bild gezeichnet. Kein separat zusammengesetzter Ersatzkörper. Die Wachstumsdarstellung verwendet drei gezeichnete Stadien, keine mathematisch erzeugten Schalen. Der Übergang ist stark beschleunigt und vereinfacht; die frühe Spitze bleibt verankert. Die Muschelhälften werden an der Scharnierregion ausgerichtet.
 
-Blaues Meer, weiße Schalen, warmer heller Sand. Tiefe entsteht durch mehrere gezeichnete Ebenen, nicht durch eine Ansammlung von Interface-Karten. Das Bild nimmt den ganzen Bildschirm ein. Della Respira für die kurzen Überschriften, Josefin Sans für Text und Bedienung.
+Die gesamte Illustration passt in ihr Bildfeld. Nur die ausdrücklich beschriebene Nahaufnahme der Schalenöffnung zeigt einen Ausschnitt. Auf schmalen Bildschirmen stehen Zeichnung und kurze Erklärung untereinander. Eine eigene Hochformatzeichnung dient dem Einstieg.
 
-Die leuchtenden Schalen bilden den Blickpunkt. Große anatomische Ansichten dürfen den Bildraum einnehmen. Die Texte bleiben kurz und stehen in ruhigen, ausreichend dunklen oder hellen Bereichen. Bewegung hat einen Zweck: näher kommen, eine Öffnung zeigen, neues Material am Rand sichtbar machen, zwei Zustände vergleichen.
+Die Bildkarte enthält eine Illustration, natürliche Merksätze, den Hinweis auf die Vereinfachung und SALONFORMATs Urheberzeile. Sie wird lokal im Browser als PNG erzeugt. Keine Personendaten und keine E-Mail nötig.
 
-## Immersion
-
-- Ein zusammenhängender gezeichneter Ort über den ganzen Durchgang.
-- Nahansichten wechseln den Maßstab, aber nicht die Bildsprache.
-- Vordergrund, Tier, Seegras und entfernte Wasserfläche bewegen sich mit geringer, unterschiedlicher Geschwindigkeit.
-- Zeiger- oder Touchbewegung verändert den Blick nur sanft; kein Pflicht-Gestenrätsel.
-- Licht wandert langsam über die Schale und macht Relief und Rand sichtbar.
-- Geräuschkulisse ist leise, optional und beginnt nach einer Handlung. Keine Behauptung, synthetischer Ton sei eine Naturaufnahme.
-- Die Lernszene bleibt in allen Einstellungen verständlich. Ohne Animation treten frühe und spätere Zustände nebeneinander.
-
-## Bildproduktion
-
-Die erste Ozeanillustration in `assets/ocean-pastel.png` wurde mit dem eingebauten Imagegen-Werkzeug erzeugt. Sie dient als atmosphärischer Entwurf. Sie ist nicht die wissenschaftlich geprüfte Anatomieplatte und wird nicht zur exakten Vorlage der Wachstumsmechanik.
-
-Für die Umsetzung fehlen noch abgestimmte Einzelillustrationen: lebende Meeresschnecke mit klarer Öffnung, Mantelansicht, aufeinander aufbauende Wachstumsschritte, lebende Miesmuschel mit zwei Hälften und eine Kammmuschelschale für die Übertragung. Jeder Schritt erhält neue Abschnitte und behält die bereits gebildeten Teile an nachvollziehbaren Positionen. Die gesamte Schale einfach zu skalieren würde das Lernziel verfehlen.
-
-## Digitales Mitnahmebild
-
-Eine kleine, schöne Bildkarte, die denselben Vorgang festhält. Kein Zertifikat, keine Bewertung, kein Erfolgsabzeichen. Ein früher Umriss und die größere Schale zeigen unmittelbar, was dazukam. Export in der gewählten Sprache; später derselbe Entwurf als gedruckte Museumskarte möglich.
-
-## Veröffentlichungsgrenzen
-
-Derzeit Konzeptstand, keine veröffentlichte Website. Keine bestätigte Zusammenarbeit mit einem der Museen. Schriftdateien aus dem bestehenden lokalen Projekt; Original-Lizenztexte vor Veröffentlichung beilegen. Museumsspezifische Bildrechte und Objektangaben werden mit dem jeweiligen Haus geklärt.
+Die Schriftdateien werden lokal ausgeliefert; beide OFL-Lizenztexte liegen bei. Illustrationen sind eigene generierte Entwürfe nach dem Gestaltungsauftrag, keine behaupteten Sammlungsexponate.

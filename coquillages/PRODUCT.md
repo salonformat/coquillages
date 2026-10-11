@@ -16,7 +16,7 @@ Museumsbesucher ohne vorausgesetzte Fachkenntnisse. Arbeitsannahme für die Konz
 
 ## Operating Context
 
-Ein gemeinsamer Ablauf für die naturkundlichen Museen in La Rochelle, Nantes und Bordeaux. Lokale Speicherung im Ordner coquillages; neue private GitHub-Ablage im Konto salonformat. Zuerst das Konzept, dann die interaktive Umsetzung.
+Ein gemeinsamer Ablauf für die naturkundlichen Museen in La Rochelle, Nantes und Bordeaux. Lokale Speicherung im Ordner coquillages; neue private GitHub-Ablage im Konto salonformat. Konzept und interaktive Umsetzung sind vorhanden. Der Lernweg erklärt auch, warum die Schale wächst. Ein einziger Einstieg startet eine automatische Reise durch verschiedene Meereswelten. Regler und Pflichtklicks entfallen. Die Navigation liegt frei über dem randlosen Meer. Browser-Zurück und SALONFORMAT-Links sind in jeder Szene verfügbar.
 
 ## Capabilities and Constraints
 
@@ -32,7 +32,7 @@ Elio-Referenzbilder im Gespräch. Offizielle Sammlungs- und Vermittlungsquellen 
 
 ## Product Principles
 
-- Erst beobachten, dann handeln, dann mit eigenen Worten verstehen.
+- Erst beobachten, dann vergleichen, dann mit eigenen Worten verstehen.
 - Schönheit kommt aus dem Gegenstand und seiner Entstehung.
 - Ein zusammenhängender Lernweg mit wenigen klaren Handlungen.
 - Wissenschaftliche Vereinfachung bleibt erkennbar und verändert keine grundlegenden Zusammenhänge.

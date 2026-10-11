@@ -1,0 +1,11 @@
+{
+  "name": "coquillages",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.mjs",
+    "check": "node --check dist/app.js && node --check dist/world.js && node --check dist/immersion.js && node --check dist/art.js && node --check dist/learning.js && node --check dist/content.js && node --check server.mjs",
+    "test": "node --test tests/learning.test.mjs tests/content.test.mjs"
+  }
+}
