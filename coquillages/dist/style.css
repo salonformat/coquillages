@@ -207,3 +207,14 @@ html[data-direction=forward]::view-transition-new(root){animation:ocean-dive-in 
  body[data-scene=ending] #scene{min-height:0;padding-top:24px;padding-bottom:32px}
  body[data-scene=ending] .header{position:fixed}
 }
+
+/* The whole shell stays visible; the painted world supplies the close-up. */
+.scene-edge .stage>img{width:100%;height:100%;max-width:100%;object-fit:contain;transform:none;filter:none}
+.scene-edge .stage{overflow:visible}
+::view-transition-old(root),::view-transition-new(root),::view-transition-old(specimen),::view-transition-new(specimen),::view-transition-new(story){animation-duration:.7s!important}
+#living-snail{cursor:zoom-in;transition:filter .3s ease}
+#living-snail:hover{filter:drop-shadow(0 0 10px rgba(216,239,243,.2))}
+#living-snail:focus-visible{outline:2px solid #e7f5fa;outline-offset:4px}
+body[data-motion=on] .stage #living-snail{animation:snail-float 6s ease-in-out infinite alternate;transform-origin:50% 55%}
+@keyframes snail-float{0%{transform:translate(-7px,6px) rotate(-1deg)}100%{transform:translate(9px,-9px) rotate(1deg)}}
+@media(max-width:700px){@keyframes snail-float{0%{transform:translate(-3px,5px) rotate(-.7deg)}100%{transform:translate(4px,-7px) rotate(.7deg)}}}

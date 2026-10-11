@@ -9,6 +9,6 @@ export function clamp(value,min=0,max=1){return Math.max(min,Math.min(max,Number
 
 export function growthAssessment(place){return {correct:place==='edge',feedback:place==='edge'?'correct-feedback':'old-feedback'};}
 
-export const DURATIONS={animal:10,edge:9,growth:16,bivalve:19,transfer:9};
-export function automaticProgress(scene,elapsed){return scene==='growth'?clamp((elapsed-1)/13):scene==='bivalve'?clamp((elapsed-4)/13):0;}
+export const DURATIONS={animal:7,edge:6,growth:9,bivalve:9,transfer:6};
+export function automaticProgress(scene,elapsed){return scene==='growth'||scene==='bivalve'?clamp(elapsed/6):0;}
 export function shouldAdvance(scene,elapsed){return !!DURATIONS[scene]&&elapsed>=DURATIONS[scene];}

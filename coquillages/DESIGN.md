@@ -122,13 +122,13 @@ The ocean is fixed to all viewport edges. Seven backdrop assignments cover the e
 
 Desktop scenes use the existing two-column copy/specimen grid. The opening entrance floats at (7vw) from the right and (23vh) from the bottom; opening top inset is clamp(155px,23vh,215px). General scenes reserve (128px) above and (110px) below. Living snail, drawn growth, bivalve and transfer fields use clamp(320px,43vw,580px).
 
-At (700px), scenes become a single column with heading, short explanation, specimen, then timed explanation. Major specimen fields are (265px) tall. General top and bottom insets become (112px) and (124px). The opening button spans the available width between (23px) insets, above floating navigation. At (1000px), the desktop columns compact; at (1700px), the general scene container caps its width. On the mobile ending, the experience scrolls inside a clipped fixed inset (87px 0 104px); navigation remains outside that clip so it cannot cover the paper card. Ending scene padding is (24px) above and (32px) below. Complete specimens use contained drawing fields; only the explicit aperture macro uses a (170%) image with a translated crop.
+At (700px), scenes become a single column with heading, short explanation, specimen, then timed explanation. Major specimen fields are (265px) tall. General top and bottom insets become (112px) and (124px). The opening button spans the available width between (23px) insets, above floating navigation. At (1000px), the desktop columns compact; at (1700px), the general scene container caps its width. On the mobile ending, the experience scrolls inside a clipped fixed inset (87px 0 104px); navigation remains outside that clip so it cannot cover the paper card. Ending scene padding is (24px) above and (32px) below. Complete specimens use contained drawing fields; the entire shell remains visible in the aperture scene too, with the drawn environment supplying the close view.
 
 ## Elevation & Depth
 
 Depth comes primarily from painted water, scene-specific gradients and gentle camera transitions. No filled navigation bars interrupt the drawing. Small floating control groups use translucent navy backing with (2px) corners. Cream text receives a restrained contrast shadow where it floats over water. The paper card uses a shadow (0 20px 45px rgba(3,25,40,.25)) and rotation (3deg). The bottom time indicator is a fine luminous line (3px), rather than a footer surface.
 
-A stronger gentle water drift affects the backdrop. Six transparent ivory/cobalt chalk fish swim at different lanes, apparent depths and speeds; the aperture and growth close-ups reduce this to two subtler fish. All use the same fish drawing with only the tail bending, keeping the body intact. The full original snail is drawn into a canvas; a small region of that same raster moves softly. Growth blends three hand-drawn stages, with the early snail apex anchored and mussel frames aligned at the hinge. This is an accelerated, simplified illustrated sequence. Reduced motion removes camera movement, water movement and swimming. Global pause stops story progression, currents, fish and specimen animation. On the opening and ending, ambience can pause independently of the story.
+A stronger gentle water drift affects the backdrop. Six transparent ivory/cobalt chalk fish swim at different lanes, apparent depths and speeds; the aperture and growth close-ups reduce this to two subtler fish. All use the same fish drawing with only the tail bending, keeping the body intact. The full original snail is drawn into a canvas; its foot region moves visibly within that same raster, while the complete illustration drifts and bobs. This floating treatment does not claim real snail swimming behavior. Growth starts immediately and uses three opaque hand-drawn raster stages with piecewise anchored spatial interpolation. One opaque stage is selected at a time, avoiding transparent double contours. The early snail tip stays geometrically fixed without a separate rectangular patch; mussel stages align at the hinge. This is an accelerated, simplified illustrated sequence. Reduced motion removes camera movement, water movement and swimming. Global pause stops story progression, currents, fish and specimen animation. On the opening and ending, ambience can pause independently of the story.
 
 ## Shapes
 
@@ -154,7 +154,7 @@ Language, sound, global pause/resume and fullscreen controls float at the top. B
 
 ### Timed Illustration
 
-Short additional explanations reveal with opacity and a slight vertical movement over (1s). Drawn growth labels remain passive annotations, not hotspots. The automatic sequence has no sliders or required intermediate clicks. Visitors can pause, go back, advance or choose a progress marker.
+Short additional explanations reveal with opacity and a slight vertical movement over (1s). Scene view transitions run over (.7s). The first snail has a quiet zoom cursor and glow on hover, with a pale (2px) focus outline. Growth labels have been removed so the drawing contains no boxes that resemble buttons. In the aperture scene, the complete ivory shell silhouette appears first, then its original pencil grooves reveal progressively from tip to opening over (4s). This reveals an existing drawing; it does not represent anatomical material layers. The automatic sequence has no sliders or required intermediate clicks. Visitors can pause, go back, advance or choose a progress marker. Clicking the first snail drawing, or pressing Enter or Space while it is focused, advances directly to the aperture scene. Forward navigation, progress links and an initial deep link start playback; browser Back pauses. Scene durations are animal (7s), aperture (6s), growth (9s), bivalve (9s) and transfer (6s). The drawn growth itself progresses immediately over (6s); the bivalve starts already open.
 
 ## Do's and Don'ts
 
@@ -171,6 +171,6 @@ Short additional explanations reveal with opacity and a slight vertical movement
 
 - **Don't** restore filled blue header or footer bars.
 - **Don't** add sliders, hotspots or required scene clicks to the journey.
-- **Don't** crop specimens outside the explicit aperture macro scene.
+- **Don't** crop specimen drawings, including the aperture scene.
 - **Don't** describe the illustrated growth sequence as a biological simulation.
 - **Don't** add fine detail that undermines the requested minimal hand-drawn style.

@@ -15,7 +15,7 @@ export class PaintedWater{
           uv=(uv-.5)*cover+.5;
           vec2 drift=vec2(sin(uv.y*9.0+time*.30),cos(uv.x*10.0-time*.25))*.006;
           float dist=distance(vUv,vec2(pointer.x,1.0-pointer.y));
-          float wave=sin(dist*36.0-time*1.7)*exp(-dist*3.0)*ripple*.003;
+          float wave=sin(dist*36.0-time*1.7)*exp(-dist*3.0)*ripple*.007;
           uv+=drift+normalize(vUv-vec2(pointer.x,1.0-pointer.y)+.0001)*wave;
           vec3 color=texture2D(painting,uv).rgb;
           float light=pow(max(0.0,sin(uv.x*12.0+sin(uv.y*8.0+time*.12)+time*.09)),12.0)*.043;
@@ -29,6 +29,7 @@ export class PaintedWater{
       this.texture=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D,this.texture);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);
       this.resize=()=>{if(this.scene)this.setScene(this.scene);const dpr=Math.min(devicePixelRatio||1,1.5);this.canvas.width=innerWidth*dpr;this.canvas.height=innerHeight*dpr;gl.viewport(0,0,this.canvas.width,this.canvas.height);gl.uniform2f(this.uniforms.resolution,this.canvas.width,this.canvas.height);this.draw();};window.addEventListener('resize',this.resize);this.resize();
       window.addEventListener('pointermove',e=>{this.pointer=[e.clientX/innerWidth,e.clientY/innerHeight];this.ripple=.9;},{passive:true});
+      window.addEventListener('pointerdown',e=>{this.pointer=[e.clientX/innerWidth,e.clientY/innerHeight];this.ripple=2.4;},{passive:true});
       this.canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();this.ready=false;this.canvas.style.opacity='0';});
       this.frame=this.frame.bind(this);requestAnimationFrame(this.frame);
     }catch{this.ready=false;this.canvas.style.opacity='0';}

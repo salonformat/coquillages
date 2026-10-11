@@ -10,6 +10,6 @@ Das Lernziel: Das Tier bildet seine Schale selbst. Neues Material kommt am Rand 
 
 `npm run dev` öffnet den Server unter http://127.0.0.1:4173.
 
-`npm run check` prüft Syntax. `npm test` prüft Inhalte und Routen. `node tests/browser.mjs` prüft den automatischen Ablauf, Pause, Browser-Zurück, Sprachen, Bildexport und mobile Darstellung mit Playwright.
+`npm run check` prüft Syntax. `npm test` prüft Inhalte und Routen. `node tests/interaction.mjs` prüft den unmittelbaren Animationsbeginn, Pause und direkte Bedienung. `node tests/browser.mjs` prüft den automatischen Ablauf, Pause, Browser-Zurück, Sprachen, Bildexport und mobile Darstellung mit Playwright.
 
 Weitere Informationen in `docs/`. Die technische Prüfung ersetzt keine Erprobung der Lernwirkung mit Besuchern.
