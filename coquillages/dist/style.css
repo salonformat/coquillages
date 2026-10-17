@@ -218,3 +218,49 @@ html[data-direction=forward]::view-transition-new(root){animation:ocean-dive-in 
 body[data-motion=on] .stage #living-snail{animation:snail-float 6s ease-in-out infinite alternate;transform-origin:50% 55%}
 @keyframes snail-float{0%{transform:translate(-7px,6px) rotate(-1deg)}100%{transform:translate(9px,-9px) rotate(1deg)}}
 @media(max-width:700px){@keyframes snail-float{0%{transform:translate(-3px,5px) rotate(-.7deg)}100%{transform:translate(4px,-7px) rotate(.7deg)}}}
+/* Scroll is the journey's clock; the painted ocean keeps its own rhythm. */
+html{scroll-behavior:auto;scrollbar-color:#96b9cb #07344e}
+body,body[data-scene=ending]{overflow-y:auto!important}
+#scroll-track{position:relative;width:1px;pointer-events:none}
+#experience{position:fixed;inset:0;overflow:clip;z-index:1}
+.header{position:fixed}
+#scene{padding-bottom:145px}
+.scene-animal .stage{animation:none!important;transform:translateY(var(--subject-y,0px)) scale(var(--subject-scale,1))!important;transition:none}
+.ocean-painting{animation:none!important;transform:translate3d(calc(var(--px,0)*-8px),var(--camera-y,0px),0) scale(var(--camera-scale,1));transition:filter .4s}
+#painted-water{transform:translate3d(calc(var(--px,0)*-6px),var(--camera-y,0px),0) scale(var(--camera-scale,1))}
+#journey-hint{position:fixed;z-index:5;bottom:88px;left:50%;transform:translateX(-50%);max-width:calc(100% - 40px);margin:0;font-size:14px;line-height:1.45;text-align:center;color:#fff7e8;text-shadow:0 1px 8px #02223c,0 1px 3px #02223c;pointer-events:none}
+.art-loading{position:absolute;bottom:10%;font-size:14px;color:#fff4df}
+#scene[data-ready=true] .art-loading{display:none}
+.scene-transfer .stage{cursor:crosshair}
+.shell-touch{position:absolute;z-index:3;transform:translate(-50%,-50%);width:48px;height:48px;border:0;border-radius:50%;background:transparent;padding:0;cursor:pointer}
+.shell-touch::before{content:'';position:absolute;inset:12px;border:2px solid #093b65;border-radius:50%;background:rgba(255,251,236,.65)}
+.shell-touch::after{content:'';position:absolute;inset:21px;background:#093b65;border-radius:50%}
+.shell-touch:hover::before,.shell-touch:focus-visible::before{background:#ffdda4;inset:9px}
+.shell-touch[aria-pressed=true]::before{background:#ffdda4}
+.transfer-feedback{min-height:3.2em;color:#fff0cc!important;font-size:18px!important}
+.transfer-feedback:empty{min-height:1.5em}
+#scene-body{min-height:3.2em}
+body[data-scene=ending] #experience,body[data-scene=about] #experience{inset:104px 0 104px;overflow-y:auto;overscroll-behavior:auto}
+body[data-scene=ending] #scene{min-height:0;padding-top:25px;padding-bottom:35px}
+body[data-scene=about]{overflow:hidden!important}
+@media(max-width:700px){
+ #scene{padding-top:106px;padding-bottom:140px}
+ .scene-animal .stage,.scene-edge .stage,.scene-growth .stage,.scene-bivalve .stage,.scene-transfer .stage{height:clamp(155px,28svh,245px);min-height:0;margin:10px 0}
+ #scene-body{min-height:0}
+ .transfer-feedback{order:3;font-size:16px!important}
+ .scene-transfer .actions{order:4}
+ #journey-hint{bottom:104px;font-size:12px;width:calc(100% - 40px)}
+ body[data-scene=ending] #experience,body[data-scene=about] #experience{inset:87px 0 104px;overflow-y:auto;overscroll-behavior:auto}
+ body[data-scene=ending] #scene{min-height:0;padding-top:24px;padding-bottom:32px}
+}
+@media(max-width:700px) and (max-height:740px){
+ #scene{padding-top:92px;padding-bottom:110px}
+ .scene-copy h1,.scene-bivalve .scene-copy h1{font-size:30px;margin-bottom:14px;line-height:1.12}
+ .scene-copy p{font-size:16px;line-height:1.4;margin-bottom:14px}
+ .scene-animal .stage,.scene-edge .stage,.scene-growth .stage,.scene-bivalve .stage,.scene-transfer .stage{height:150px;margin:0 0 8px}
+ #journey-hint{bottom:94px;font-size:11px}
+ .scene-transfer .actions{margin-top:5px}.scene-transfer .secondary{min-height:40px;padding:10px 14px;font-size:14px}
+}
+@media(prefers-reduced-motion:reduce){.ocean-painting,#painted-water{transform:none!important}.scene-animal .stage{transform:none!important}}
+@media(max-width:700px){body:is([data-scene=animal],[data-scene=bivalve],[data-scene=transfer]) #ocean::after{background:linear-gradient(180deg,rgba(2,29,50,.74),rgba(2,29,50,.52) 43%,rgba(2,29,50,.12) 70%,rgba(2,29,50,.4))}}
+@media(max-width:700px){.scene-bivalve .scene-copy .model-note{order:1}}

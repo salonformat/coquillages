@@ -1,19 +1,21 @@
-# Der vollständige Ablauf
+# Die Reise selbst steuern
 
-Nach einem Klick auf „Eintauchen“ läuft die Reise automatisch. Die Besucherin kann jederzeit anhalten, weitergehen oder zurückgehen. Es gibt keine Regler und keine Pflichtaufgaben.
+Stand: 17. Oktober 2026. Die Scroll-Fassung ersetzt den automatisch ablaufenden Film.
 
-| Station | Was sichtbar wird | Was verständlich werden soll |
-| --- | --- | --- |
-| Einstieg | Blaues Wasser, eine große weiße Schalenöffnung | Es geht um Schalen und ihre Entstehung. |
-| Meeresboden, 7 s | Eine gezeichnete lebende Meeresschnecke zwischen Seegras und Felsen | Die Schale schützt den weichen Körper. Der Körper wächst; die Schale wächst mit. |
-| Schalenöffnung, 6 s | Eine andere, große Welt an der Schalenöffnung | Der Mantel bildet neues Material am Rand. Innen ist zusätzlich Verdickung möglich. |
-| Wachstum, 9 s | Drei gezeichnete Wachstumsstadien in ruhigem blauem Wasser | Neues Material kommt an der Öffnung dazu. Der frühe Teil bleibt erhalten. |
-| Muschel, 9 s | Eine sonnige flache Meereswelt. Die junge Muschel ist bereits offen; das Wachstum beginnt sofort. | Zwei Schalenhälften, dasselbe Prinzip am Rand. |
-| Andere Form, 6 s | Eine fächerförmige Muschelschale in einer Gezeitenwelt. Ihr freier Rand wird markiert. | Das Prinzip ist auch an einer anderen Form wiederzuerkennen. |
-| Abschluss | Meereshorizont und eine Bildkarte | Die wichtigsten Sätze lassen sich als Bild in DE, FR oder EN speichern. |
+| Station | Was die Besucherin tut | Was sich verändert | Was sie verstehen kann |
+| --- | --- | --- | --- |
+| Einstieg | Scrollen oder nach oben wischen; der große Einstiegsknopf ist eine Abkürzung. | Die Kamera taucht ins gezeichnete Meer ein. | Die Reise lässt sich im eigenen Tempo erkunden. |
+| Meeresboden | Langsam weiterscrollen. | Die vollständige Schnecke kommt näher. Nach der Erklärung ihres Schutzes folgt der Grund für das Wachstum. | Der weiche Körper wird größer; die schützende Schale wächst mit. |
+| Schale allein | Weiter- oder zurückscrollen. | Die originalen gezeichneten Rillen erscheinen von der Spitze zur Öffnung oder verschwinden wieder. | Der Mantel bildet Schalenmaterial am Rand. Innen ist zusätzlich Verdickung möglich. Die Zeichenanimation ist eine Darstellung der Illustration. |
+| Wachstum | Weiter- oder zurückscrollen, jederzeit stehen bleiben. | Das gezeichnete Wachstumsstadium folgt unmittelbar der Scrollposition. | Am Rand kommt neues Material hinzu; die frühe Spitze bleibt erkennbar. |
+| Muschel | Mit derselben Bewegung vergleichen. | Die beiden gezeichneten Schalenhälften werden größer oder kleiner. | Eine andere Form folgt demselben Grundprinzip. |
+| Selbst ausprobieren | Eine Stelle auf der fächerförmigen Schale berühren. | Am freien Rand entsteht eine gezeichnete Markierung. Bei einer früheren Stelle gibt es einen kurzen Hinweis. | Die Besucherin wendet die Beobachtung an. Es gibt keine Punkte oder Strafe. |
+| Mitnehmen | Zur Bildkarte scrollen, Motiv auswählen und PNG speichern. | Die Zeichnung und die Merksätze bleiben als Bild erhalten. | Das Tier bildet seine Schale selbst. Neues Material kommt am Rand hinzu. |
 
-Browser-Zurück hält den Ablauf an und stellt den vorherigen Zeitpunkt wieder her. Pause hält die Szenenzeit und die Bewegung an. Weiter überspringt die verbleibende Zeit einer Station. Der Sprachwechsel erhält den Zeitpunkt. Die Stationen lassen sich auch direkt über die Wegpunkte aufrufen.
+Keine Station wechselt nach einer Wartezeit weiter. Wasser, Fische und die leichte Bewegung der Schneckenzeichnung besitzen eine unabhängige Zeit. Die Pausentaste hält die Umgebung an; die Scrollbedienung bleibt verfügbar. Reduzierte Bewegung wird berücksichtigt.
 
-Die Animation ist eine künstlerische, stark beschleunigte Vereinfachung. Drei gezeichnete Stadien sind keine biologische Simulation. Eine tatsächliche Lernwirkung muss mit Besuchern geprüft werden: danach eine andere Schale zeigen und fragen, wo sie größer wird und warum.
+Normales Scrollen, Wischen und die üblichen Tastaturtasten bewegen die Reise. Es werden keine Rad- oder Wischereignisse abgefangen. Weiter, Anfang und die Wegpunkte sind alternative direkte Wege. Die Schnecke lässt sich zusätzlich anklicken oder per Enter/Leertaste aktivieren. Für die letzte Frage gibt es zwei fokussierbare Berührungsstellen; die Schale selbst nimmt Berührungen an. Transparenter Bildrand gilt nicht als Antwort.
 
-Beim Aufrufen einer Station oder bei Weiter beginnt deren Animation automatisch. Browser-Zurück stellt den früheren Zeitpunkt wieder her und hält an. Die Schale allein wird durch eine Zeichenanimation sichtbar: erst die helle Silhouette, danach die originalen Linien von der Spitze zur Öffnung. Ein Klick oder Enter auf der treibenden Schneckenzeichnung führt direkt zur Öffnung.
+Browser-Zurück stellt den zuvor besuchten Ort und dessen Scrollposition wieder her. Ein Sprachwechsel erhält Position und Antwort. Bei einem Größenwechsel bleibt der entsprechende Ort der Reise erhalten. Der Abschluss lässt seine längeren Inhalte in einem eigenen Bereich oberhalb der Navigation scrollen, damit die Bildkarte nicht verdeckt wird.
+
+Die letzte Frage ist eine Einladung, keine Sperre. Wer möchte, kann weiter zur Karte scrollen. Technische Bedienbarkeit ist geprüft; tatsächlicher Lernerfolg mit Museumsbesuchern ist noch nicht gemessen.

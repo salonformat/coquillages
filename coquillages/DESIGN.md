@@ -22,6 +22,10 @@ colors:
   floating-control: "rgba(3,28,48,.64)"
   top-control: "rgba(3,30,51,.88)"
   top-control-border: "rgba(240,247,250,.6)"
+  touch-ink: "#093b65"
+  touch-paper: "rgba(255,251,236,.65)"
+  touch-selected: "#ffdda4"
+  transfer-feedback: "#fff0cc"
 typography:
   display:
     fontFamily: "Della Respira, serif"
@@ -84,6 +88,12 @@ components:
     backgroundColor: "{colors.next-paper}"
     textColor: "{colors.next-ink}"
     padding: "12px 19px"
+  shell-touch:
+    backgroundColor: "transparent"
+    rounded: "{rounded.circular}"
+    padding: "0px"
+    height: "48px"
+    width: "48px"
 ---
 
 # Design System: Coquillages — SALONFORMAT
@@ -92,85 +102,91 @@ components:
 
 **Creative North Star: "The Hand-Drawn Ocean"**
 
-Seven hand-drawn sea worlds fill the screen edge to edge. A monumental cream-white shell opens the journey; each subsequent scene receives its own drawn backdrop. Minimal pencil marks, large specimens, flowing water and drawn fish carry the immersive SALONFORMAT direction. Transparent ivory and cobalt chalk fish belong to the same sparse drawing world.
+Seven hand-drawn sea worlds fill the screen edge to edge. Cream-white pencil specimens, flowing blue water and transparent ivory/cobalt chalk fish preserve the minimal SALONFORMAT drawing world. Della Respira and Josefin Sans carry the quiet literary and geometric voices.
 
-One entrance starts an automatic journey. Short explanations appear with the drawings, while floating pause, back and next controls preserve the visitor’s pace. Della Respira and Josefin Sans remain the committed pairing. The final warm paper card offers a downloadable memory of the journey.
+This independent SALONFORMAT Experience follows the visitor’s native scroll or swipe. Approaching the seabed, revealing original grooves and comparing illustrated growth all follow movement forward and backward. Water, fish and the slight snail drift have their own globally pausable ambience. An optional touch question invites recognition before a warm downloadable paper card.
 
 **Key Characteristics:**
 
 - Seven edge-to-edge drawn sea worlds
+- Native reversible scroll journey
 - Minimal cream-white pencil specimens
-- Flowing water and ivory/cobalt chalk fish
-- Floating navigation without top or bottom bars
-- One entrance and automatic progression
-- Warm downloadable paper card
+- Independent flowing water and chalk fish
+- Floating navigation without filled bars
+- Optional scallop question and warm PNG keepsake
 
 ## Colors
 
-Blue water and cream-white pencil drawing define the palette. Deep and Sea support contrast; Ink carries explanations; Sand supports focus, selected choices and progress. Entrance Blue and Entrance White remain the blue-white action family. The opening uses translucent Entry Ocean with a pale hover treatment. Next Paper and Next Ink distinguish the global advance control. Card Paper warms the keepsake. Floating Control belongs only to small individual navigation groups, never a screen-wide bar. Line provides quiet borders. Top Control and Top Control Border keep individual language and icon buttons readable against sunlit water without filling the header.
+Sea and Deep support open blue water; Ink supplies cream-white text and drawn marks. Sand supports focus and selected controls. The opening uses Entry Ocean with a pale hover treatment; blue-white rectangles remain the action family. Card Paper warms the keepsake. Floating Control belongs only to individual bottom groups. Top Control and its pale border keep language and icon buttons legible over sunlit water; the header and footer remain unfilled. Touch Ink, Touch Paper and Touch Selected define the small scallop answer dots. Transfer Feedback is warm pale text over dark water.
 
 ## Typography
 
 **Display Font:** Della Respira (serif fallback).
 **Body Font:** Josefin Sans (sans-serif fallback).
 
-The opening display is monumental; scene headings remain calm and literary. Explanations use open geometric letterforms and short lines. Desktop opening copy uses (21px), line-height (1.6), and a maximum (26ch). General scene copy uses the body token and a maximum (37ch). Timed explanations use (21px) and line-height (1.5). Mobile opening headings use clamp(44px,12vw,59px); mobile copy uses (17px). Keepsake headings and card text also use Della Respira.
+Opening headings are monumental; scene headings remain calm and literary. Desktop opening text uses (21px), line-height (1.6), and maximum (26ch). Scene copy uses the body token and maximum (37ch). Mobile opening headings use clamp(44px,12vw,59px), with body text (17px). At mobile heights below (740px), scene headings reduce to (30px) and body to (16px) with line-height (1.4). Card titles and memory lines use Della Respira.
 
 ## Layout
 
-The ocean is fixed to all viewport edges. Seven backdrop assignments cover the entrance, seabed snail, aperture, growth, young mussel, tidal shore and sea horizon. The opening uses a separate portrait drawing on mobile. The header is absolutely positioned over the drawing; the footer floats at the bottom. Both have no fill or border. Individual control groups may carry a small translucent backing.
+A native root scroll track spans (9.05 viewport heights). Seven fixed-world scenes occupy one clipped viewport: entrance, seabed snail, shell, growth, mussel, scallop question and horizon/card. Chapter distances in viewport heights are (1.05), (1.4), (1.2), (1.75), (1.5), (1.15) and the final viewport. The entrance button, global Next and progress markers are direct alternatives to scrolling. No wheel or swipe interception is used.
 
-Desktop scenes use the existing two-column copy/specimen grid. The opening entrance floats at (7vw) from the right and (23vh) from the bottom; opening top inset is clamp(155px,23vh,215px). General scenes reserve (128px) above and (110px) below. Living snail, drawn growth, bivalve and transfer fields use clamp(320px,43vw,580px).
+The desktop two-column copy/specimen grid remains. The ocean reaches all edges, while navigation floats above it. Camera approach and snail proximity follow scroll position, without a timed scene transition. The full illustrations fit their fields, including the shell-only view. The opening retains its portrait drawing on mobile.
 
-At (700px), scenes become a single column with heading, short explanation, specimen, then timed explanation. Major specimen fields are (265px) tall. General top and bottom insets become (112px) and (124px). The opening button spans the available width between (23px) insets, above floating navigation. At (1000px), the desktop columns compact; at (1700px), the general scene container caps its width. On the mobile ending, the experience scrolls inside a clipped fixed inset (87px 0 104px); navigation remains outside that clip so it cannot cover the paper card. Ending scene padding is (24px) above and (32px) below. Complete specimens use contained drawing fields; the entire shell remains visible in the aperture scene too, with the drawn environment supplying the close view.
+At (700px), headings, short explanation and illustrations form a single column. Major specimen fields use clamp(155px,28svh,245px); below (740px) viewport height they use (150px). Main mobile scene padding is (106px) above and (140px) below, shrinking to (92px) and (110px) on short screens. The bivalve simplification note has order (1), placing it on dark water above the illustration. A mobile overlay on animal, bivalve and transfer fades from rgba(2,29,50,.74), through rgba(2,29,50,.52) at (43%), to rgba(2,29,50,.12) at (70%), then rgba(2,29,50,.4), keeping text readable.
+
+The ending uses an inner scroller inset (104px 0 104px) on desktop and (87px 0 104px) on mobile. Navigation stays outside the clip, so the card remains unobscured. Browser Back restores scene and scroll position; changing language preserves progress and the answer. Resizing preserves the corresponding journey position.
 
 ## Elevation & Depth
 
-Depth comes primarily from painted water, scene-specific gradients and gentle camera transitions. No filled navigation bars interrupt the drawing. Small floating control groups use translucent navy backing with (2px) corners. Cream text receives a restrained contrast shadow where it floats over water. The paper card uses a shadow (0 20px 45px rgba(3,25,40,.25)) and rotation (3deg). The bottom time indicator is a fine luminous line (3px), rather than a footer surface.
+Painted water, restrained gradients and scroll-driven approach create depth. Header and footer have no fill or border. Individual bottom groups use translucent navy with (2px) corners; floating text receives a restrained contrast shadow. The paper card uses shadow (0 20px 45px rgba(3,25,40,.25)) and rotation (3deg). A thin bottom line reflects journey progress, not elapsed time.
 
-A stronger gentle water drift affects the backdrop. Six transparent ivory/cobalt chalk fish swim at different lanes, apparent depths and speeds; the aperture and growth close-ups reduce this to two subtler fish. All use the same fish drawing with only the tail bending, keeping the body intact. The full original snail is drawn into a canvas; its foot region moves visibly within that same raster, while the complete illustration drifts and bobs. This floating treatment does not claim real snail swimming behavior. Growth starts immediately and uses three opaque hand-drawn raster stages with piecewise anchored spatial interpolation. One opaque stage is selected at a time, avoiding transparent double contours. The early snail tip stays geometrically fixed without a separate rectangular patch; mussel stages align at the hinge. This is an accelerated, simplified illustrated sequence. Reduced motion removes camera movement, water movement and swimming. Global pause stops story progression, currents, fish and specimen animation. On the opening and ending, ambience can pause independently of the story.
+Six ivory/cobalt chalk fish occupy different lanes, depths and speeds; the shell and growth views use two subtler fish. Tail bending uses the same raster while the body stays intact. The complete original snail drifts and bobs as an illustration, with foot movement from the same drawing. This does not assert swimming behavior. Water, fish and snail ambience are globally pausable, independently of scroll. Reduced motion stops ambient movement and camera transforms; the reversible illustrated journey stays available.
 
 ## Shapes
 
-Actions and paper remain rectangular. Icon controls and progress markers are circular. Floating navigation group corners are only slightly softened. Shell silhouettes supply the organic forms; minimal hand-drawn lines retain their texture.
+Actions and paper remain rectangular; icon controls, progress dots and touch targets are circular. Organic specimen silhouettes and minimal pencil texture carry the visual character. Full specimens remain contained, with no rectangular tip patches or floating growth-label boxes.
 
 ## Components
 
 ### Buttons
 
-The opening entrance is a large blue-white rectangle: minimum width (340px), minimum height (86px), type (22px), pale border (2px), and padding (25px 30px 23px). Mobile uses full width, minimum height (78px), and padding (21px 25px 19px). Its hover becomes pale paper with blue text. Other primary actions retain the blue-white family. Secondary actions use pale paper and blue text; text actions remain visually light. Focus uses a sand outline (3px) with (4px) button offset. Disabled controls use opacity (.45).
+The entrance is a blue-white rectangle with minimum width (340px), minimum height (86px), (22px) type, pale (2px) border and padding (25px 30px 23px). It advances directly into the journey rather than starting playback. Mobile uses full width, minimum height (78px), and padding (21px 25px 19px). Hover becomes pale paper with blue text. Secondary actions use pale paper and blue text; text actions remain light. Focus uses a sand (3px) outline with (4px) button offset. Disabled controls have opacity (.45).
 
 ### Chips
 
-The ending offers snail and bivalve keepsake choices. Buttons have minimum height (42px), thin borders and translucent navy fill; selection switches to sand and sea.
+The ending offers snail and bivalve keepsake choices: minimum height (42px), thin line border and translucent navy fill. Selection changes to sand with sea text.
 
 ### Cards / Containers
 
-A warm rectangular paper preview contains the drawing, natural-language memory lines, simplification note and SALONFORMAT credit. It uses the paper shadow and slight rotation. The browser creates the downloadable PNG locally.
+The warm rectangular paper preview contains an illustration, natural-language memory lines, a simplification note and SALONFORMAT credit. The selected DE, FR or EN version downloads locally as a PNG. No extra card action appears inside the scallop scene: visitors scroll onward or use global Next.
 
 ### Navigation
 
-Language, sound, global pause/resume and fullscreen controls float at the top. Back, next, progress and SALONFORMAT float below; there is no header or footer fill. The global next action uses pale paper and blue text, with padding (12px 19px), shrinking to (9px 12px) on mobile. Individual bottom groups use padding (6px 12px), or (6px 9px) on mobile. Fullscreen and the home control are hidden on mobile. Unselected language and icon controls have opaque-enough deep-blue backing (rgba(3,30,51,.88)) and a pale border (rgba(240,247,250,.6)); their individual footprints float over the sea. Selected language controls have a pale fill; the current progress dot uses sand. A fine bottom time line shows automatic scene progress.
+Fixed language, sound, ambience pause and fullscreen controls float above the ocean. Back, Next, progress and SALONFORMAT float below. Individual top controls use the Top Control backing and border; selected language uses pale paper. Bottom groups have padding (6px 12px), or (6px 9px) on mobile. Next uses pale paper with blue text. Fullscreen and home are hidden on mobile. Pausing ambience never disables scrolling. The first snail is also activatable by click, Enter or Space to reach the next view, with a quiet zoom cursor, hover glow and pale (2px) focus outline.
 
-### Timed Illustration
+### Scroll Illustration
 
-Short additional explanations reveal with opacity and a slight vertical movement over (1s). Scene view transitions run over (.7s). The first snail has a quiet zoom cursor and glow on hover, with a pale (2px) focus outline. Growth labels have been removed so the drawing contains no boxes that resemble buttons. In the aperture scene, the complete ivory shell silhouette appears first, then its original pencil grooves reveal progressively from tip to opening over (4s). This reveals an existing drawing; it does not represent anatomical material layers. The automatic sequence has no sliders or required intermediate clicks. Visitors can pause, go back, advance or choose a progress marker. Clicking the first snail drawing, or pressing Enter or Space while it is focused, advances directly to the aperture scene. Forward navigation, progress links and an initial deep link start playback; browser Back pauses. Scene durations are animal (7s), aperture (6s), growth (9s), bivalve (9s) and transfer (6s). The drawn growth itself progresses immediately over (6s); the bivalve starts already open.
+The shell silhouette and original pencil grooves reveal from tip to opening as scroll progresses and reverse on return. Both growth sequences follow scroll position immediately: three original opaque raster stages use anchored spatial interpolation, with the early snail tip fixed geometrically and mussel frames aligned near the hinge. There is no opening delay, transparent ghost blending or separate tip patch. These are artistic simplifications, not anatomical or time-accurate simulations. The groove reveal shows an existing drawing appearing, not material layers forming.
+
+### Scallop Question
+
+Visitors may touch the complete scallop illustration or use two accessible circular dot targets. Each target has a (48px) hit area with an inset pale dot, blue ring and blue center. Hover, focus and selection use warm Touch Selected. Touching an earlier part gives a supportive hint; choosing the free rim draws a tracing there. Transparent image margin is not an answer. Warm feedback uses a live status region. There are no scores, penalties or gate; visitors may scroll onward without answering.
 
 ## Do's and Don'ts
 
 ### Do:
 
-- **Do** preserve edge-to-edge sea with navigation floating over the drawing.
-- **Do** use a different drawn backdrop for each of the seven worlds.
-- **Do** fit complete specimen drawings inside their fields.
-- **Do** animate the complete original snail using its own raster.
-- **Do** describe growth as three hand-drawn, accelerated and simplified stages.
-- **Do** keep global pause, back and next controls available.
+- **Do** let native scroll and swipe determine story position.
+- **Do** preserve complete original specimen drawings and sparse pencil texture.
+- **Do** keep ambient pause independent from scroll progression.
+- **Do** retain progress and answer when changing language.
+- **Do** make the scallop question optional and keyboard accessible.
+- **Do** call the raster growth an artistic simplification.
 
 ### Don't:
 
+- **Don't** add timed scene changes or intercept wheel and swipe gestures.
 - **Don't** restore filled blue header or footer bars.
-- **Don't** add sliders, hotspots or required scene clicks to the journey.
-- **Don't** crop specimen drawings, including the aperture scene.
-- **Don't** describe the illustrated growth sequence as a biological simulation.
-- **Don't** add fine detail that undermines the requested minimal hand-drawn style.
+- **Don't** present illustrated growth or groove reveal as biological simulation.
+- **Don't** require a correct answer to reach the card.
+- **Don't** crop specimens or add label boxes that resemble controls.

@@ -2,20 +2,15 @@
 function random(seed){const n=Math.sin(seed*127.1+311.7)*43758.5453;return n-Math.floor(n);}
 function context(canvas){const box=canvas.getBoundingClientRect(),w=box.width||canvas.width,h=box.height||canvas.height,dpr=box.width?Math.min(devicePixelRatio||1,2):1;canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);const ctx=canvas.getContext('2d');ctx.scale(dpr,dpr);return {ctx,w,h};}
 
-export function drawTransfer(canvas,image){
+const rimCache=new WeakMap();
+export function drawTransfer(canvas,image,progress=1){
   if(!image?.complete||!image.naturalWidth)return;
-  const {ctx,w,h}=context(canvas),sample=document.createElement('canvas');
-  sample.width=image.naturalWidth;sample.height=image.naturalHeight;
-  const source=sample.getContext('2d',{willReadFrequently:true});source.drawImage(image,0,0);const pixels=source.getImageData(0,0,sample.width,sample.height).data;
-  const scale=Math.min(w/sample.width,h/sample.height),ox=(w-sample.width*scale)/2,oy=(h-sample.height*scale)/2;
-  ctx.strokeStyle='#ffdda4';ctx.lineWidth=5;ctx.lineCap='round';ctx.beginPath();let started=false;
-  // Follow the real illustrated free rim rather than drawing a guessed circle.
-  for(let x=Math.floor(sample.width*.2);x<sample.width*.8;x+=4){
-    let y=sample.height-1;while(y>sample.height*.6&&pixels[(y*sample.width+x)*4+3]<190)y--;
-    if(y<=sample.height*.6)continue;
-    const px=ox+x*scale,py=oy+y*scale+3;started?ctx.lineTo(px,py):ctx.moveTo(px,py);started=true;
+  if(!rimCache.has(image)){
+    const sample=document.createElement('canvas');sample.width=image.naturalWidth;sample.height=image.naturalHeight;const source=sample.getContext('2d',{willReadFrequently:true});source.drawImage(image,0,0);const pixels=source.getImageData(0,0,sample.width,sample.height).data,points=[];
+    for(let x=Math.floor(sample.width*.2);x<sample.width*.8;x+=4){let y=sample.height-1;while(y>sample.height*.6&&pixels[(y*sample.width+x)*4+3]<190)y--;if(y>sample.height*.6)points.push([x,y]);}rimCache.set(image,points);
   }
-  ctx.stroke();
+  const {ctx,w,h}=context(canvas),scale=Math.min(w/image.naturalWidth,h/image.naturalHeight),ox=(w-image.naturalWidth*scale)/2,oy=(h-image.naturalHeight*scale)/2,points=rimCache.get(image),count=Math.floor(points.length*Math.max(0,Math.min(1,progress)));
+  if(count<2)return;ctx.strokeStyle='#ffdda4';ctx.lineWidth=5;ctx.lineCap='round';ctx.lineJoin='round';ctx.beginPath();points.slice(0,count).forEach(([x,y],i)=>{i?ctx.lineTo(ox+x*scale,oy+y*scale+2):ctx.moveTo(ox+x*scale,oy+y*scale+2);});ctx.stroke();
 }
 
 export class Ocean{

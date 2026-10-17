@@ -1,26 +1,40 @@
-import {createRequire} from 'node:module';
-import {mkdirSync,writeFileSync} from 'node:fs';
-import assert from 'node:assert/strict';
-const require=createRequire(import.meta.url);
-const {chromium}=require(process.env.PLAYWRIGHT_MODULE_PATH||'/Users/isabellakohout/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
-const base=process.env.TEST_URL||'http://127.0.0.1:4173/',out='output/qa';mkdirSync(out,{recursive:true});
-const browser=await chromium.launch({headless:true}),errors=[],results=[];
+import {createRequire} from 'node:module';import {mkdirSync,writeFileSync} from 'node:fs';import assert from 'node:assert/strict';
+import {offsetFor} from '../dist/journey.js';import {CONTENT} from '../dist/content.js';
+const require=createRequire(import.meta.url),{chromium}=require(process.env.PLAYWRIGHT_MODULE_PATH||'/Users/isabellakohout/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const browser=await chromium.launch({headless:true}),out='output/qa-scroll',errors=[],results=[];mkdirSync(out,{recursive:true});
+const base=process.env.TEST_URL||'http://127.0.0.1:4173/';
 const context=await browser.newContext({viewport:{width:1440,height:900},acceptDownloads:true,reducedMotion:'reduce'}),page=await context.newPage();
 page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)errors.push(`${r.status()} ${r.url()}`);});
-const ready=async id=>{await page.waitForFunction(id=>location.hash==='#'+id&&document.querySelector('#scene').dataset.ready==='true',id,{polling:100});};
-const screenshot=async name=>{await page.evaluate(()=>document.fonts.ready);await page.screenshot({path:`${out}/${name}.png`,fullPage:true,animations:'disabled'});};
-
+const at=async(id,p=.1)=>{const height=await page.evaluate(()=>innerHeight);await page.evaluate(y=>window.scrollTo({top:y,behavior:'instant'}),offsetFor(id,p,height));await page.waitForFunction(id=>document.body.dataset.scene===id&&document.querySelector('#scene').dataset.ready==='true',id);await page.waitForTimeout(100);};
+const shot=async name=>{await page.evaluate(()=>document.fonts.ready);await page.screenshot({path:`${out}/${name}.png`});};
+const pixels=selector=>page.locator(selector).evaluate(canvas=>canvas.toDataURL());
 for(const lang of ['de','fr','en']){
- await page.clock.resume().catch(()=>{});await page.goto(`${base}?lang=${lang}#start`);await ready('start');assert.equal(await page.locator('html').getAttribute('lang'),lang);if(lang==='de')await screenshot('desktop-start');
- await page.locator('[data-action="begin"]').click();await ready('animal');await page.clock.install();assert.equal(await page.locator('input[type=range]').count(),0);if(lang==='de')await screenshot('desktop-animal');
- for(const [id,seconds,next] of [['animal',7.3,'edge'],['edge',6.3,'growth'],['growth',9.3,'bivalve'],['bivalve',9.3,'transfer'],['transfer',6.3,'ending']]){
-  await ready(id);if(id==='growth'){await page.clock.runFor(4000);await page.locator('#motion').click();const before=await page.locator('#scene-time').getAttribute('style');await page.clock.runFor(3000);assert.equal(await page.locator('#scene-time').getAttribute('style'),before);if(lang==='de')await screenshot('desktop-growth');await page.locator('#motion').click();await page.clock.runFor((seconds-4)*1000);}else if(id==='bivalve'){await page.clock.runFor(7000);if(lang==='de')await screenshot('desktop-mussel');await page.clock.runFor((seconds-7)*1000);}else await page.clock.runFor(seconds*1000);
-  await ready(next);
- }
- if(lang==='de')await screenshot('desktop-ending');const downloadPromise=page.waitForEvent('download');await page.locator('[data-action="download"]').click();const download=await downloadPromise;assert.equal(download.suggestedFilename(),`coquillages-${lang}.png`);await download.saveAs(`${out}/coquillages-${lang}.png`);
- await page.goBack();await ready('transfer');await page.clock.runFor(15000);assert.equal(new URL(page.url()).hash,'#transfer');assert.equal(await page.locator('#motion').getAttribute('aria-pressed'),'true');
- await page.locator('#back').click();await ready('bivalve');await page.locator('[data-lang="en"]').click();await ready('bivalve');assert.equal(await page.locator('html').getAttribute('lang'),'en');assert.equal(await page.locator('a[href="https://salonformat.com"]').count(),2);
- results.push({lang,oneClickJourney:true,pause:true,backPauses:true,download:true,noSliders:true});
+ await page.goto(`${base}?lang=${lang}&run=${lang}&v=scroll#start`);await page.waitForFunction(()=>document.querySelector('#scene')?.dataset.ready==='true');if(lang==='de')await shot('desktop-start');
+ await page.mouse.wheel(0,450);await page.waitForFunction(()=>scrollY>100);assert.equal(await page.locator('body').getAttribute('data-scene'),'start');
+ await at('animal',.15);assert.equal(await page.locator('#scene-body').textContent(),CONTENT[lang].animal.body);if(lang==='de')await shot('desktop-animal');
+ await at('animal',.7);assert.equal(await page.locator('#scene-body').textContent(),CONTENT[lang].why.body);
+ await at('edge',.2);const edgeEarly=await pixels('#shell-layers');await at('edge',.7);assert.ok(await pixels('#shell-layers')!==edgeEarly);if(lang==='de')await shot('desktop-edge');
+ await at('growth',.15);const early=await pixels('#shell-growth'),stillY=await page.evaluate(()=>scrollY);await page.waitForTimeout(650);assert.equal(await page.evaluate(()=>scrollY),stillY);assert.ok(await pixels('#shell-growth')===early,'Growth stays still without scroll');
+ await at('growth',.65);assert.ok(await pixels('#shell-growth')!==early);if(lang==='de')await shot('desktop-growth');await at('growth',.15);assert.ok(await pixels('#shell-growth')===early,'Reverse scroll restores drawing');
+ await at('bivalve',.2);const young=await pixels('#mussel-growth');await at('bivalve',.8);assert.ok(await pixels('#mussel-growth')!==young);if(lang==='de')await shot('desktop-bivalve');
+ await at('transfer',.1);assert.equal(await page.locator('#transfer-feedback').textContent(),'');const untouched=await pixels('#transfer-growth');
+ await page.locator('[data-place="hinge"]').click();assert.equal(await page.locator('#transfer-feedback').textContent(),CONTENT[lang].journey.wrong);if(lang==='de')await shot('desktop-transfer-wrong');
+ const point=await page.locator('.scene-transfer .stage').evaluate(stage=>{const img=stage.querySelector('img'),box=stage.getBoundingClientRect(),scale=Math.min(box.width/img.naturalWidth,box.height/img.naturalHeight);return{x:box.left+box.width/2+img.naturalWidth*.1*scale,y:box.top+(box.height-img.naturalHeight*scale)/2+img.naturalHeight*.91*scale};});
+ await page.mouse.click(point.x,point.y);assert.equal(await page.locator('#transfer-feedback').textContent(),CONTENT[lang].journey.correct);assert.ok(await pixels('#transfer-growth')!==untouched);if(lang==='de')await shot('desktop-transfer');
+ await page.mouse.wheel(0,1300);await page.waitForTimeout(100);await page.waitForFunction(()=>location.hash==='#ending'&&document.querySelector('#scene').dataset.ready==='true');if(lang==='de')await shot('desktop-ending');
+ const downloadPromise=page.waitForEvent('download');await page.locator('[data-action="download"]').click();const download=await downloadPromise;assert.equal(download.suggestedFilename(),`coquillages-${lang}.png`);await download.saveAs(`${out}/coquillages-${lang}.png`);
+ await page.goBack();await page.waitForFunction(()=>location.hash==='#transfer');assert.equal(await page.locator('#transfer-feedback').textContent(),CONTENT[lang].journey.correct);
+ await page.waitForTimeout(250);const y=await page.evaluate(()=>scrollY),nextLang=lang==='en'?'de':'en';await page.locator(`[data-lang="${nextLang}"]`).click();assert.equal(await page.evaluate(()=>scrollY),y);assert.equal(await page.locator('#transfer-feedback').textContent(),CONTENT[nextLang].journey.correct);
+ assert.equal(await page.locator('input[type=range]').count(),0);assert.equal(await page.locator('a[href="https://salonformat.com"]').count(),2);results.push({lang,nativeWheel:true,reversibleGrowth:true,noAutoplay:true,touchOnImage:true,feedback:true,download:true,back:true,languagePreservesPosition:true});
 }
-await page.setViewportSize({width:390,height:844});for(const id of ['start','animal','edge','growth','bivalve','transfer','ending']){await page.goto(`${base}?lang=de#${id}`);await ready(id);await screenshot('mobile-'+id);const dimensions=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}));assert.equal(dimensions.scroll,dimensions.width,`Mobile overflow: ${id}`);assert.ok(await page.locator('.wordmark').isVisible());assert.ok(await page.locator('#back').isVisible());}
-assert.deepEqual(errors,[]);writeFileSync(`${out}/results.json`,JSON.stringify({results,errors},null,2));console.log(JSON.stringify({results,errors,screenshots:out}));await browser.close();
+await page.locator('[data-lang="de"]').click();
+for(const [width,height]of [[390,844],[375,667]]){
+ await page.setViewportSize({width,height});await page.waitForFunction(height=>Math.abs(parseFloat(document.querySelector('#scroll-track').style.height)-9.05*height)<1,height);await page.waitForTimeout(80);
+ for(const id of ['start','animal','edge','growth','bivalve','transfer','ending']){await at(id,id==='animal'?.65:.6);await shot(`mobile-${width}-${id}`);const size=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}));assert.ok(size.scroll<=size.width,`Horizontal overflow: ${width}/${id}`);
+ if(id!=='ending'&&id!=='start'){const stage=await page.locator('.stage').boundingBox(),footer=await page.locator('.footer').boundingBox();assert.ok(stage.y+stage.height<=footer.y+5,`Stage behind footer: ${width}/${id}`);}
+ if(id==='ending'){const main=await page.locator('#experience').boundingBox(),footer=await page.locator('.footer').boundingBox();assert.ok(main.y+main.height<=footer.y);await page.locator('[data-action="download"]').scrollIntoViewIfNeeded();await shot(`mobile-${width}-ending-actions`);}
+ }
+}
+await page.setViewportSize({width:375,height:667});await page.waitForTimeout(120);for(const lang of ['fr','en']){await page.locator(`[data-lang="${lang}"]`).click();for(const id of ['animal','growth','transfer']){await at(id,.8);await shot(`mobile-375-${lang}-${id}`);const stage=await page.locator('.stage').boundingBox(),footer=await page.locator('.footer').boundingBox();assert.ok(stage.y+stage.height<=footer.y+5,`Localized stage overlap: ${lang}/${id}`);}}
+const touchContext=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,reducedMotion:'reduce'}),touch=await touchContext.newPage();await touch.goto(`${base}?lang=fr&v=touch#start`);await touch.waitForFunction(()=>document.querySelector('#scene')?.dataset.ready==='true');const cdp=await touchContext.newCDPSession(touch);await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:180,y:610}]});for(let y=580;y>=250;y-=30){await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:180,y}]});await touch.waitForTimeout(16);}await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await touch.waitForTimeout(200);assert.ok(await touch.evaluate(()=>scrollY)>50,'Native swipe moves through journey');
+await touchContext.close();assert.deepEqual(errors,[]);writeFileSync(`${out}/results.json`,JSON.stringify({results,mobile:[390,375],nativeSwipe:true,errors},null,2));console.log(JSON.stringify({results,nativeSwipe:true,errors,screenshots:out}));await browser.close();

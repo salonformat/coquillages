@@ -1,13 +1,13 @@
 # Unter der Schale
 
-Eine gezeichnete Reise vom offenen Wasser zum Meeresboden, vom Tier zur Schalenöffnung und schließlich zu verschiedenen Muschelformen.
+Eine gezeichnete Reise vom offenen Meer zum Meeresboden, vom Tier zur Schalenöffnung und schließlich zu anderen Muschelformen.
 
-Der Ablauf beantwortet drei einfache Fragen in dieser Reihenfolge: Warum braucht das Tier eine Schale? Warum muss sie wachsen? Wo entsteht das neue Material?
+Der Ablauf folgt dem Bogen: entdecken → genauer hinschauen → Wachstum verstehen → selbst wiedererkennen. Er beantwortet zuerst, warum eine Schale wachsen muss: Der weiche Körper des Tiers wird größer und braucht weiter Platz und Schutz. Das Tier bildet die Schale selbst. Ein Gewebe, der Mantel, übernimmt die Materialbildung. Größer wird die Schale durch Materialzugabe am Rand; innen kann sie zusätzlich dicker werden.
 
-Der weiche Körper wächst. Seine Schale wächst mit und schützt ihn. Das Tier bildet das Material selbst; das dafür zuständige Gewebe heißt Mantel. Größer wird die Schale durch Materialzugabe am Rand. Innen kann sie zusätzlich dicker werden. Bei Muscheln gilt das für beide Schalenhälften.
+Die Besucherin bestimmt das Tempo durch Scrollen oder Wischen. Die Annäherung und das Wachstumsstadium folgen ihrer Bewegung. Wer stehen bleibt, kann das Bild in Ruhe ansehen. Zurückscrollen bringt den früheren Zustand zurück. Keine Regler und keine automatisch weiterschaltenden Szenen.
 
-Ein einziger Startklick reicht. Anschließend wechseln die gezeichneten Meereswelten automatisch. Die Navigation liegt frei über dem Wasser. Keine oberen oder unteren Farbleisten. Keine Regler, Suchaufgaben oder vorgeschriebenen Klickfolgen. Pause, Zurück und Weiter erlauben das eigene Tempo.
+An einer anderen Schalenform kann die Besucherin einmal selbst zeigen, wo neues Material dazukommt. Die Berührung am freien Rand löst dort eine gezeichnete Markierung aus. Eine andere Stelle erhält einen unterstützenden Hinweis. Danach lässt sich eine Bildkarte mit Zeichnung und Merksätzen speichern.
 
-Die letzte Szene fasst das Prinzip zusammen. Eine gezeichnete Bildkarte mit den Merksätzen lässt sich ohne Anmeldung speichern. Deutsch, Französisch und Englisch sind gleichwertige Fassungen. Sichtbare Sammlungsbezüge wurden auf Wunsch entfernt.
+Wasser und Fische bewegen sich unabhängig von der Scrollposition. Die Umgebung kann angehalten werden. Die Bildwelt bleibt handgezeichnet, in Blau und Weiß, mit Della Respira und Josefin Sans. Die Navigation liegt frei über dem Wasser. Deutsch, Französisch und Englisch sind gleichwertige Fassungen. Sichtbare Sammlungsbezüge fehlen auf Wunsch.
 
-Der Lernanspruch ist Beobachtung und Wiedererkennen, keine nachgewiesene Wirksamkeit. Die Illustration ersetzt keine zoologische Detailzeichnung.
+Die Wachstumsdarstellung verwendet drei gezeichnete Stadien mit räumlicher Interpolation. Sie ist eine künstlerische Vereinfachung und keine anatomische oder zeitgetreue Simulation. Die Zeichenanimation der Rillen stellt das Erscheinen einer Zeichnung dar. Ob Besucher das Prinzip anschließend an einer anderen echten Schale erklären können, muss noch in einer Erprobung untersucht werden.

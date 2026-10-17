@@ -1,5 +1,7 @@
 # Coquillages — EN
 
+Scroll or swipe to explore. You choose the pace.
+
 ## Beneath the shell
 
 Dive to the seabed and watch a shell grow.
@@ -26,9 +28,13 @@ Look at the opening: new shell is added here.
 
 Two shell halves protect its soft body. They grow at the edges too.
 
-## A different shape. The same growth.
+## Where does this shell grow?
 
-This shell gets bigger at the edge too. The earlier part stays in place.
+It has a different shape. Where does the animal add new material?
+
+This part was already here. Look at the free edge.
+
+Yes, here. The animal adds new material at the free edge.
 
 ## A shell grows with the animal.
 

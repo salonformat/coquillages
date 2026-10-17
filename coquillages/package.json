@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "node server.mjs",
-    "check": "node --check dist/app.js && node --check dist/world.js && node --check dist/immersion.js && node --check dist/art.js && node --check dist/learning.js && node --check dist/content.js && node --check server.mjs",
-    "test": "node --test tests/learning.test.mjs tests/content.test.mjs"
+    "check": "node --check dist/app.js && node --check dist/world.js && node --check dist/immersion.js && node --check dist/art.js && node --check dist/journey.js && node --check dist/learning.js && node --check dist/content.js && node --check server.mjs",
+    "test": "node --test tests/learning.test.mjs tests/content.test.mjs",
+    "test:browser": "node tests/browser.mjs"
   }
 }

@@ -1,5 +1,7 @@
 # Coquillages — DE
 
+Du bestimmst das Tempo. Scrolle oder wische weiter.
+
 ## Unter der Schale
 
 Tauche zum Meeresboden und schau, wie eine Schale wächst.
@@ -26,9 +28,13 @@ Schau auf die Öffnung: Hier kommt neue Schale dazu.
 
 Zwei Schalenhälften schützen ihren weichen Körper. Auch sie wachsen am Rand.
 
-## Eine andere Form. Dasselbe Wachstum.
+## Wo wächst diese Schale?
 
-Auch diese Muschelschale wird am Rand größer. Ihr früherer Teil bleibt erhalten.
+Sie sieht anders aus. Wo kommt hier neues Material dazu?
+
+Dieser Teil war schon früher da. Schau auf den freien Rand.
+
+Ja, hier. Am freien Rand kommt neue Schale dazu.
 
 ## Eine Schale wächst mit dem Tier.
 

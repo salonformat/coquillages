@@ -4,7 +4,7 @@ export const CONTENT = {
       "title": "Unter der Schale",
       "body": "Tauche zum Meeresboden und schau, wie eine Schale wächst.",
       "action": "Eintauchen",
-      "hint": "Der Ablauf läuft von selbst. Du kannst jederzeit anhalten."
+      "hint": "Du bestimmst das Tempo. Scrolle oder wische weiter."
     },
     "animal": {
       "title": "Am Meeresboden.",
@@ -128,6 +128,23 @@ export const CONTENT = {
       ],
       "audioUnavailable": "Der Ton ist hier nicht verfügbar. Du kannst ohne Ton weitermachen.",
       "fullscreenUnavailable": "Vollbild ist in diesem Browser nicht verfügbar."
+    },
+    "journey": {
+      "startHint": "Du bestimmst das Tempo. Scrolle oder wische weiter.",
+      "animalHint": "Scrolle weiter, um näher zu kommen.",
+      "edgeHint": "Scrolle weiter und schau auf die Öffnung.",
+      "growthHint": "Scrolle weiter, um das Wachstum zu sehen.",
+      "bivalveHint": "Du kannst auch wieder zurückscrollen.",
+      "transferHint": "Berühre die Stelle, an der sie wächst.",
+      "transferTitle": "Wo wächst diese Schale?",
+      "transferBody": "Sie sieht anders aus. Wo kommt hier neues Material dazu?",
+      "hingeLabel": "Nahe am Scharnier",
+      "edgeLabel": "Am freien Rand",
+      "outsideHint": "Berühre eine Stelle auf der Schale.",
+      "wrong": "Dieser Teil war schon früher da. Schau auf den freien Rand.",
+      "correct": "Ja, hier. Am freien Rand kommt neue Schale dazu.",
+      "loadError": "Die Zeichnung konnte nicht geladen werden. Lade die Seite bitte neu.",
+      "doneHint": "Scrolle weiter, um dein Bild zu speichern."
     }
   },
   "fr": {
@@ -135,7 +152,7 @@ export const CONTENT = {
       "title": "Sous la coquille",
       "body": "Descends au fond de la mer et regarde une coquille grandir.",
       "action": "Entrer dans l’eau",
-      "hint": "Le parcours avance tout seul. Tu peux l’arrêter à tout moment."
+      "hint": "Avance en faisant défiler la page. C’est toi qui choisis le rythme."
     },
     "animal": {
       "title": "Au fond de la mer.",
@@ -259,6 +276,23 @@ export const CONTENT = {
       ],
       "audioUnavailable": "Le son n’est pas disponible ici. Tu peux continuer sans le son.",
       "fullscreenUnavailable": "Le plein écran n’est pas disponible dans ce navigateur."
+    },
+    "journey": {
+      "startHint": "Avance en faisant défiler la page. C’est toi qui choisis le rythme.",
+      "animalHint": "Continue à faire défiler pour te rapprocher.",
+      "edgeHint": "Continue et regarde l’ouverture.",
+      "growthHint": "Fais défiler pour voir la coquille grandir.",
+      "bivalveHint": "Tu peux aussi revenir en arrière.",
+      "transferHint": "Touche la coquille là où elle grandit.",
+      "transferTitle": "Où cette coquille grandit-elle ?",
+      "transferBody": "Elle a une autre forme. Où l’animal ajoute-t-il de la matière ?",
+      "hingeLabel": "Près de la charnière",
+      "edgeLabel": "Sur le bord libre",
+      "outsideHint": "Touche un endroit sur la coquille.",
+      "wrong": "Cette partie était déjà là. Regarde le bord libre.",
+      "correct": "Oui, ici. L’animal ajoute de la matière sur le bord libre.",
+      "loadError": "Le dessin n’a pas pu être chargé. Recharge la page.",
+      "doneHint": "Fais défiler pour enregistrer ton image."
     }
   },
   "en": {
@@ -266,7 +300,7 @@ export const CONTENT = {
       "title": "Beneath the shell",
       "body": "Dive to the seabed and watch a shell grow.",
       "action": "Go underwater",
-      "hint": "The story moves on its own. You can pause at any time."
+      "hint": "Scroll or swipe to explore. You choose the pace."
     },
     "animal": {
       "title": "On the seabed.",
@@ -390,6 +424,23 @@ export const CONTENT = {
       ],
       "audioUnavailable": "Sound is not available here. You can continue without it.",
       "fullscreenUnavailable": "Full screen is not available in this browser."
+    },
+    "journey": {
+      "startHint": "Scroll or swipe to explore. You choose the pace.",
+      "animalHint": "Keep scrolling to get closer.",
+      "edgeHint": "Keep scrolling and look at the opening.",
+      "growthHint": "Scroll to see the shell grow.",
+      "bivalveHint": "You can scroll back too.",
+      "transferHint": "Touch the shell where it grows.",
+      "transferTitle": "Where does this shell grow?",
+      "transferBody": "It has a different shape. Where does the animal add new material?",
+      "hingeLabel": "Near the hinge",
+      "edgeLabel": "At the free edge",
+      "outsideHint": "Touch a spot on the shell.",
+      "wrong": "This part was already here. Look at the free edge.",
+      "correct": "Yes, here. The animal adds new material at the free edge.",
+      "loadError": "The drawing could not load. Please reload the page.",
+      "doneHint": "Scroll on to save your picture."
     }
   }
 };

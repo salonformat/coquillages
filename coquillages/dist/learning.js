@@ -8,7 +8,3 @@ export function routeUrl(url,scene,lang){const u=new URL(url);u.hash=scene==='ab
 export function clamp(value,min=0,max=1){return Math.max(min,Math.min(max,Number(value)||0));}
 
 export function growthAssessment(place){return {correct:place==='edge',feedback:place==='edge'?'correct-feedback':'old-feedback'};}
-
-export const DURATIONS={animal:7,edge:6,growth:9,bivalve:9,transfer:6};
-export function automaticProgress(scene,elapsed){return scene==='growth'||scene==='bivalve'?clamp(elapsed/6):0;}
-export function shouldAdvance(scene,elapsed){return !!DURATIONS[scene]&&elapsed>=DURATIONS[scene];}

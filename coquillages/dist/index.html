@@ -10,7 +10,7 @@
   <link rel="preload" href="assets/josefin-sans.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/ocean-entry.jpg" as="image">
   <link rel="stylesheet" href="style.css">
-  <script type="module" src="app.js?v=live-sea-2"></script>
+  <script type="module" src="app.js?v=scroll-journey-1"></script>
 </head>
 <body>
   <div id="ocean" aria-hidden="true"><div class="ocean-painting"></div><div class="water-light"></div><canvas id="water"></canvas></div>
@@ -23,6 +23,7 @@
       <button id="fullscreen" class="icon-button" aria-label="Vollbild"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3H3v6m12-6h6v6M3 15v6h6m12-6v6h-6"/></svg></button>
     </nav>
   </header>
+  <div id="scroll-track" aria-hidden="true"></div>
   <main id="experience">
     <section id="scene" aria-labelledby="scene-title"></section>
     <section id="about" class="about" hidden aria-labelledby="about-title"></section>
@@ -32,6 +33,7 @@
     <nav id="progress" aria-label="Dein Weg"></nav>
     <a class="portfolio-link" href="https://salonformat.com">SALONFORMAT<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
   </footer>
+  <p id="journey-hint" class="journey-caption"></p>
   <div id="scene-time" aria-hidden="true"></div>
   <div id="status" class="sr-only" role="status" aria-live="polite"></div>
   <noscript><div class="no-script">Bitte aktiviere JavaScript. / Active JavaScript pour commencer. / Enable JavaScript to begin. <a href="https://salonformat.com">SALONFORMAT</a></div></noscript>
