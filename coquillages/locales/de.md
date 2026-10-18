@@ -1,44 +1,43 @@
 # Coquillages — DE
 
-Du bestimmst das Tempo. Scrolle oder wische weiter.
+Scrolle nach unten oder wische nach oben.
 
-## Unter der Schale
+## Wie wächst ein Schneckenhaus?
 
-Tauche zum Meeresboden und schau, wie eine Schale wächst.
+Komm mit zum Meeresboden. Hier lebt eine Schnecke, die ihr Haus selbst baut.
 
-## Am Meeresboden.
+## Da ist eine Meeresschnecke.
 
-Diese Meeresschnecke hat einen weichen Körper. Ihre Schale schützt ihn.
+Ihr Körper ist weich. Das harte Schneckenhaus schützt ihn.
 
-## Die Schnecke wird größer.
+## Die Schnecke wächst.
 
-Ihr weicher Körper wächst. Die Schale wächst mit, damit er weiter Platz hat und geschützt bleibt.
+Sie wird größer und braucht mehr Platz. Deshalb wächst ihr Haus mit.
 
-## Neue Schale entsteht am Rand.
+## Das Haus wächst an der Öffnung.
 
-Das Tier bildet hier neues Material. Ein Gewebe in seinem Körper übernimmt das. Es heißt Mantel.
+Am Rand der Öffnung kommt neues Material dazu. Es entsteht in einer dünnen Haut der Schnecke. Diese Haut heißt Mantel.
 
-Innen kann die Schale zusätzlich dicker werden.
+## Schau, wie ihr Haus wächst.
 
-## Schau, wie die Schale wächst.
+Achte auf die Öffnung. An ihrem Rand kommt neues Material dazu.
 
-Schau auf die Öffnung: Hier kommt neue Schale dazu.
+## Und wie wächst eine Muschel?
 
-## Und bei einer Muschel?
+Ihr weicher Körper liegt zwischen zwei Muschelschalen. Beide wachsen am Rand.
 
-Zwei Schalenhälften schützen ihren weichen Körper. Auch sie wachsen am Rand.
+## Wo wächst diese Muschelschale?
 
-## Wo wächst diese Schale?
+Schau sie dir an. Wo kommt neues Material dazu?
 
-Sie sieht anders aus. Wo kommt hier neues Material dazu?
+Dieser Teil war schon da. Schau weiter außen am Rand.
 
-Dieser Teil war schon früher da. Schau auf den freien Rand.
+Genau, hier am Rand kommt neues Material dazu.
 
-Ja, hier. Am freien Rand kommt neue Schale dazu.
+## Am Rand kommt Neues dazu.
 
-## Eine Schale wächst mit dem Tier.
+Die Schnecke baut ihr Haus selbst. Die Muschel bildet ihre Muschelschalen. Beide wachsen am Rand weiter.
 
-Das Tier bildet neues Material am Rand. Der alte Teil bleibt erhalten.
+Wenn du am Strand ein Schneckenhaus oder eine Muschelschale findest, schau dir den Rand einmal genauer an.
 
-Das Tier bildet seine Schale selbst. Am Rand kommt neue Schale dazu.
-
+Das Tier bildet neues Material. Am Rand wachsen sie weiter.
