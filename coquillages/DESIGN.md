@@ -190,3 +190,23 @@ Visitors may touch the complete scallop illustration or use two accessible circu
 - **Don't** present illustrated growth or groove reveal as biological simulation.
 - **Don't** require a correct answer to reach the card.
 - **Don't** crop specimens or add label boxes that resemble controls.
+
+
+## Verfeinerung · 18. Oktober 2026
+
+Der Einstieg stellt die blaue Meereswelt und das große weiße Schneckenhaus frei
+in den Vordergrund. Weiße Schrift erklärt kurz Lernziel und selbst gestaltete
+Entdeckerkarte; eine helle Hauptaktion lädt zum Eintauchen ein. Der sichtbare
+Absender lautet ausschließlich SALONFORMAT.
+
+Die Schnecke bleibt in Bewegung als komplette Zeichnung erhalten. Ganze
+Wachstumsbilder werden am Bildanker angepasst und bei einem Stadienwechsel
+kurz zeitlich überblendet. Die Meereswelten gehen über 650 ms ineinander über.
+Keine streifenweise Körperverformung oder gleichzeitig schwebende CSS-Animation.
+
+Am Ende ersetzt die eigene Entdeckerkarte die Motivwahl. Die ungedrehte helle
+Karte trägt eine Muschelschale als Zeichenvorlage und die individuelle blaue Linie.
+Freihandzeichnen per Finger, Stift oder Maus bleibt auf die Karte begrenzt.
+Eine Schaltfläche erlaubt die Randmarkierung ohne Zeichnen. Die eigene Zeichnung
+bleibt beim Sprachwechsel und Rückweg erhalten; nur ein ausdrücklicher Neustart
+oder „Linie neu zeichnen“ löscht sie. Die Karte bleibt lokal im Browser.

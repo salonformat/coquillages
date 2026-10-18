@@ -1,10 +1,10 @@
 # Coquillages — FR
 
-Avance en faisant défiler la page. C’est toi qui choisis le rythme.
-
 ## Sous la coquille
 
-Descends au fond de la mer et regarde une coquille grandir.
+Suis un escargot de mer. Découvre comment il construit sa coquille et comment grandissent celles des moules.
+
+À la fin, dessine à ton tour et emporte ta propre carte de découverte.
 
 ## Au fond de la mer.
 
@@ -18,8 +18,6 @@ Son corps mou grandit. Sa coquille doit grandir aussi pour lui laisser de la pla
 
 L’animal ajoute de la matière ici. Un tissu de son corps la fabrique. Il s’appelle le manteau.
 
-La coquille peut aussi s’épaissir par l’intérieur.
-
 ## Regarde la coquille grandir.
 
 Regarde l’ouverture : la coquille grandit ici.
@@ -28,17 +26,12 @@ Regarde l’ouverture : la coquille grandit ici.
 
 Deux parties de coquille protègent son corps mou. Elles grandissent aussi par le bord.
 
-## Où cette coquille grandit-elle ?
+## À toi de dessiner.
 
-Elle a une autre forme. Où l’animal ajoute-t-il de la matière ?
+Prolonge la coquille en dessinant le long de son bord extérieur, en bas. Ton trait fera partie de ta carte.
 
-Cette partie était déjà là. Regarde le bord libre.
+Dessine directement sur la carte avec le doigt ou la souris.
 
-Oui, ici. L’animal ajoute de la matière sur le bord libre.
+Ton trait est sur la carte. Tu peux maintenant l’enregistrer.
 
-## La coquille grandit avec l’animal.
-
-L’animal ajoute de la matière au bord. La partie déjà formée reste en place.
-
-L’animal fabrique sa coquille. Elle grandit par le bord.
-
+La coquille grandit par le bord.

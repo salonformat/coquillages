@@ -2,9 +2,10 @@ export const CONTENT = {
   "de": {
     "start": {
       "title": "Wie wächst ein Schneckenhaus?",
-      "body": "Komm mit zum Meeresboden. Hier lebt eine Schnecke, die ihr Haus selbst baut.",
+      "body": "Begleite eine Meeresschnecke. Entdecke, wie sie ihr Haus baut und wie auch Muschelschalen wachsen.",
       "action": "Eintauchen",
-      "hint": "Scrolle nach unten oder wische nach oben. Du bestimmst das Tempo."
+      "hint": "Scrolle nach unten oder wische nach oben. Du bestimmst das Tempo.",
+      "reward": "Zum Schluss zeichnest du selbst weiter und nimmst deine eigene Entdeckerkarte mit."
     },
     "animal": {
       "title": "Da ist eine Meeresschnecke.",
@@ -66,19 +67,19 @@ export const CONTENT = {
       "body": "Auch diese Muschelschale wächst am Rand weiter. Der alte Teil bleibt erhalten."
     },
     "ending": {
-      "title": "Am Rand kommt Neues dazu.",
-      "body": "Die Schnecke baut ihr Haus selbst. Die Muschel bildet ihre Muschelschalen. Beide wachsen am Rand weiter.",
+      "title": "Jetzt zeichnest du weiter.",
+      "body": "Zeichne unten am äußeren Rand der Muschelschale weiter. Deine Linie kommt auf deine Entdeckerkarte.",
       "transfer": "Wenn du am Strand ein Schneckenhaus oder eine Muschelschale findest, schau dir den Rand einmal genauer an.",
-      "keepsake-title": "Ein Bild zum Mitnehmen",
+      "keepsake-title": "Deine Entdeckerkarte",
       "keepsake-body": "Was möchtest du mitnehmen?",
       "snail": "Das Schneckenhaus",
       "bivalve": "Die Muschelschale",
-      "download": "Bild speichern",
+      "download": "Meine Karte speichern",
       "card-note": "Vereinfachte Darstellung",
       "replay": "Noch einmal ansehen",
       "sources": "Mehr erfahren",
       "card-line-1": "Das Tier bildet neues Material.",
-      "card-line-2": "Am Rand wachsen sie weiter."
+      "card-line-2": "Die Muschelschale wächst am Rand."
     },
     "controls": {
       "back": "Zurück",
@@ -112,7 +113,7 @@ export const CONTENT = {
       "museumChoice": "Ein Museum auswählen",
       "collection": "Schalen im Museum",
       "research": "Über das Wachstum",
-      "credits": "Zeichnungen und Gestaltung: Isabella Kohout / SALONFORMAT. Bildillustrationen mit Unterstützung von Imagegen.",
+      "credits": "Gestaltung: SALONFORMAT.",
       "cardSaved": "Dein Bild wird gespeichert.",
       "ready": "Scrolle weiter oder schau noch einmal zurück.",
       "whyCard": "Schneckenhaus und Muschelschale wachsen mit.",
@@ -144,15 +145,22 @@ export const CONTENT = {
       "wrong": "Dieser Teil war schon da. Schau weiter außen am Rand.",
       "correct": "Genau, hier am Rand kommt neues Material dazu.",
       "loadError": "Die Zeichnung konnte nicht geladen werden. Lade die Seite bitte neu.",
-      "doneHint": "Scrolle weiter. Am Ende kannst du ein Bild mitnehmen."
+      "doneHint": "Scrolle weiter. Jetzt kannst du selbst zeichnen."
+    },
+    "sketch": {
+      "clear": "Linie neu zeichnen",
+      "mark": "Den Rand ohne Zeichnen markieren",
+      "hint": "Zeichne mit dem Finger oder der Maus direkt auf die Karte.",
+      "saved": "Deine Zeichnung ist auf der Karte. Du kannst sie jetzt speichern."
     }
   },
   "fr": {
     "start": {
       "title": "Sous la coquille",
-      "body": "Descends au fond de la mer et regarde une coquille grandir.",
+      "body": "Suis un escargot de mer. Découvre comment il construit sa coquille et comment grandissent celles des moules.",
       "action": "Entrer dans l’eau",
-      "hint": "Avance en faisant défiler la page. C’est toi qui choisis le rythme."
+      "hint": "Avance en faisant défiler la page. C’est toi qui choisis le rythme.",
+      "reward": "À la fin, dessine à ton tour et emporte ta propre carte de découverte."
     },
     "animal": {
       "title": "Au fond de la mer.",
@@ -190,7 +198,7 @@ export const CONTENT = {
       "pause": "Arrêter",
       "old-label": "Cette partie était déjà là.",
       "new-label": "Cette partie est nouvelle.",
-      "after": "Tu vois encore la petite pointe ? Elle était déjà là au début. De la matière s’est ajoutée au bord de l’ouverture.",
+      "after": "La coquille est plus grande. De la matière s’est ajoutée au bord de l’ouverture. La partie déjà formée reste en place.",
       "model-note": "La croissance est simplifiée et très accélérée.",
       "next": "Voir la moule"
     },
@@ -214,19 +222,19 @@ export const CONTENT = {
       "body": "Cette coquille grandit elle aussi par le bord. La partie déjà formée reste en place."
     },
     "ending": {
-      "title": "La coquille grandit avec l’animal.",
-      "body": "L’animal ajoute de la matière au bord. La partie déjà formée reste en place.",
+      "title": "À toi de dessiner.",
+      "body": "Prolonge la coquille en dessinant le long de son bord extérieur, en bas. Ton trait fera partie de ta carte.",
       "transfer": "La prochaine fois que tu vois une coquille, regarde son ouverture ou son bord.",
-      "keepsake-title": "Une image à garder",
+      "keepsake-title": "Ta carte de découverte",
       "keepsake-body": "Quelle coquille veux-tu sur ton image ?",
       "snail": "La coquille de l’escargot",
       "bivalve": "La coquille de la moule",
-      "download": "Enregistrer l’image",
+      "download": "Enregistrer ma carte",
       "card-note": "Dessin simplifié",
       "replay": "Recommencer",
       "sources": "En savoir plus",
       "card-line-1": "L’animal fabrique sa coquille.",
-      "card-line-2": "Elle grandit par le bord."
+      "card-line-2": "La coquille grandit par le bord."
     },
     "controls": {
       "back": "Retour",
@@ -260,7 +268,7 @@ export const CONTENT = {
       "museumChoice": "Choisir un musée",
       "collection": "Les coquilles au musée",
       "research": "La croissance des coquilles",
-      "credits": "Illustrations et conception : Isabella Kohout / SALONFORMAT. Illustrations réalisées avec l’aide d’Imagegen.",
+      "credits": "Conception : SALONFORMAT.",
       "cardSaved": "Ton image est en cours d’enregistrement.",
       "ready": "Tu peux continuer ou regarder encore.",
       "whyCard": "La coquille grandit avec l’animal.",
@@ -292,15 +300,22 @@ export const CONTENT = {
       "wrong": "Cette partie était déjà là. Regarde le bord libre.",
       "correct": "Oui, ici. L’animal ajoute de la matière sur le bord libre.",
       "loadError": "Le dessin n’a pas pu être chargé. Recharge la page.",
-      "doneHint": "Fais défiler pour enregistrer ton image."
+      "doneHint": "Continue. Tu vas pouvoir dessiner à ton tour."
+    },
+    "sketch": {
+      "clear": "Recommencer le trait",
+      "mark": "Marquer le bord sans dessiner",
+      "hint": "Dessine directement sur la carte avec le doigt ou la souris.",
+      "saved": "Ton trait est sur la carte. Tu peux maintenant l’enregistrer."
     }
   },
   "en": {
     "start": {
       "title": "Beneath the shell",
-      "body": "Dive to the seabed and watch a shell grow.",
+      "body": "Follow a sea snail. Discover how it builds its shell and how mussel shells grow too.",
       "action": "Go underwater",
-      "hint": "Scroll or swipe to explore. You choose the pace."
+      "hint": "Scroll or swipe to explore. You choose the pace.",
+      "reward": "At the end, add your own drawing and take your discovery card with you."
     },
     "animal": {
       "title": "On the seabed.",
@@ -338,7 +353,7 @@ export const CONTENT = {
       "pause": "Pause",
       "old-label": "This part was already here.",
       "new-label": "This part is new.",
-      "after": "Can you still see the little tip? It was there at the start. New shell has been added at the edge.",
+      "after": "The shell is bigger now. New material has been added at the opening. The older part remains.",
       "model-note": "The growth shown here is simplified and greatly sped up.",
       "next": "See the mussel"
     },
@@ -362,19 +377,19 @@ export const CONTENT = {
       "body": "This shell gets bigger at the edge too. The earlier part stays in place."
     },
     "ending": {
-      "title": "A shell grows with the animal.",
-      "body": "The animal adds new material at the edge. The old part stays in place.",
+      "title": "Now it’s your turn to draw.",
+      "body": "Extend the shell by drawing along its outer edge at the bottom. Your line will become part of your discovery card.",
       "transfer": "Next time you see a shell, look at its opening or its edge.",
-      "keepsake-title": "A picture to keep",
+      "keepsake-title": "Your discovery card",
       "keepsake-body": "Which shell would you like on your picture?",
       "snail": "The snail shell",
       "bivalve": "The mussel shell",
-      "download": "Save picture",
+      "download": "Save my card",
       "card-note": "Simplified illustration",
       "replay": "Start again",
       "sources": "Find out more",
       "card-line-1": "The animal makes its own shell.",
-      "card-line-2": "New shell is added at the edge."
+      "card-line-2": "The shell grows at its edge."
     },
     "controls": {
       "back": "Back",
@@ -408,7 +423,7 @@ export const CONTENT = {
       "museumChoice": "Choose a museum",
       "collection": "Shells in the museum",
       "research": "How shells grow",
-      "credits": "Illustrations and design: Isabella Kohout / SALONFORMAT. Illustrations made with support from Imagegen.",
+      "credits": "Design: SALONFORMAT.",
       "cardSaved": "Your picture is being saved.",
       "ready": "You can continue or take another look.",
       "whyCard": "The shell grows with the animal.",
@@ -440,7 +455,13 @@ export const CONTENT = {
       "wrong": "This part was already here. Look at the free edge.",
       "correct": "Yes, here. The animal adds new material at the free edge.",
       "loadError": "The drawing could not load. Please reload the page.",
-      "doneHint": "Scroll on to save your picture."
+      "doneHint": "Scroll on. Now you can add your own drawing."
+    },
+    "sketch": {
+      "clear": "Draw the line again",
+      "mark": "Mark the edge without drawing",
+      "hint": "Draw directly on the card with your finger or mouse.",
+      "saved": "Your line is on the card. You can save it now."
     }
   }
 };

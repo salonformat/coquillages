@@ -6,7 +6,7 @@ Der Ablauf folgt dem Bogen: entdecken → genauer hinschauen → Wachstum verste
 
 Die Besucherin bestimmt das Tempo durch Scrollen oder Wischen. Die Annäherung und das Wachstumsstadium folgen ihrer Bewegung. Wer stehen bleibt, kann das Bild in Ruhe ansehen. Zurückscrollen bringt den früheren Zustand zurück. Keine Regler und keine automatisch weiterschaltenden Szenen.
 
-An einer anderen Schalenform kann die Besucherin einmal selbst zeigen, wo neues Material dazukommt. Die Berührung am freien Rand löst dort eine gezeichnete Markierung aus. Eine andere Stelle erhält einen unterstützenden Hinweis. Danach lässt sich eine Bildkarte mit Zeichnung und Merksätzen speichern.
+An einer anderen Schalenform kann die Besucherin einmal selbst zeigen, wo neues Material dazukommt. Die Berührung am freien Rand löst dort eine gezeichnete Markierung aus. Eine andere Stelle erhält einen unterstützenden Hinweis. Danach zeichnet die Besucherin selbst den Muschelrand weiter. Ihre eigene Linie und der Merksatz werden als Entdeckerkarte gespeichert.
 
 Wasser und Fische bewegen sich unabhängig von der Scrollposition. Die Umgebung kann angehalten werden. Die Bildwelt bleibt handgezeichnet, in Blau und Weiß, mit Della Respira und Josefin Sans. Die Navigation liegt frei über dem Wasser. Deutsch, Französisch und Englisch sind gleichwertige Fassungen. Sichtbare Sammlungsbezüge fehlen auf Wunsch.
 

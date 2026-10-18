@@ -1,10 +1,10 @@
 # Coquillages — DE
 
-Scrolle nach unten oder wische nach oben.
-
 ## Wie wächst ein Schneckenhaus?
 
-Komm mit zum Meeresboden. Hier lebt eine Schnecke, die ihr Haus selbst baut.
+Begleite eine Meeresschnecke. Entdecke, wie sie ihr Haus baut und wie auch Muschelschalen wachsen.
+
+Zum Schluss zeichnest du selbst weiter und nimmst deine eigene Entdeckerkarte mit.
 
 ## Da ist eine Meeresschnecke.
 
@@ -26,18 +26,12 @@ Achte auf die Öffnung. An ihrem Rand kommt neues Material dazu.
 
 Ihr weicher Körper liegt zwischen zwei Muschelschalen. Beide wachsen am Rand.
 
-## Wo wächst diese Muschelschale?
+## Jetzt zeichnest du weiter.
 
-Schau sie dir an. Wo kommt neues Material dazu?
+Zeichne unten am äußeren Rand der Muschelschale weiter. Deine Linie kommt auf deine Entdeckerkarte.
 
-Dieser Teil war schon da. Schau weiter außen am Rand.
+Zeichne mit dem Finger oder der Maus direkt auf die Karte.
 
-Genau, hier am Rand kommt neues Material dazu.
+Deine Zeichnung ist auf der Karte. Du kannst sie jetzt speichern.
 
-## Am Rand kommt Neues dazu.
-
-Die Schnecke baut ihr Haus selbst. Die Muschel bildet ihre Muschelschalen. Beide wachsen am Rand weiter.
-
-Wenn du am Strand ein Schneckenhaus oder eine Muschelschale findest, schau dir den Rand einmal genauer an.
-
-Das Tier bildet neues Material. Am Rand wachsen sie weiter.
+Die Muschelschale wächst am Rand.

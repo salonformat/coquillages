@@ -14,28 +14,39 @@ export function frameBlend(progress){
   const p=clamp(progress);if(p===0)return{lower:0,upper:0,mix:0};if(p===.5)return{lower:1,upper:1,mix:0};if(p===1)return{lower:2,upper:2,mix:0};
   return p<.5?{lower:0,upper:1,mix:p*2}:{lower:1,upper:2,mix:(p-.5)*2};
 }
+const stageTransitions=new WeakMap();
 export function drawPaintedGrowth(canvas,progress,kind='snail'){
   const {ctx,w,h}=drawingContext(canvas);if(!w||!h)return;
   const sequence=frames[kind],blend=frameBlend(progress),scale=Math.min(w/1536,h/1024),ox=(w-1536*scale)/2,oy=(h-1024*scale)/2;
   const points=kind==='snail'?[[585,390],[960,655],[1190,655]]:[[750,610],[930,640],[1190,650]];
   const from=points[blend.lower],to=points[blend.upper],target=[from[0]+(to[0]-from[0])*blend.mix,from[1]+(to[1]-from[1])*blend.mix];
-  const paint=(idx,alpha)=>{
-    const frame=sequence[idx],image=artImage(frame.src);if(!image.complete||!image.naturalWidth)return;
-    ctx.save();ctx.globalAlpha=alpha;ctx.translate(ox,oy);ctx.scale(scale,scale);
+  const selected=blend.mix<.5?blend.lower:blend.upper,image=artImage(sequence[selected].src);
+  if(!image.complete||!image.naturalWidth)return;
+  let state=stageTransitions.get(canvas);
+  if(!state){state={selected,started:0,previous:null,raf:0};stageTransitions.set(canvas,state);}
+  cancelAnimationFrame(state.raf);
+  if(state.selected!==selected){
+    const previous=document.createElement('canvas');previous.width=canvas.width;previous.height=canvas.height;
+    // Render the preceding complete life stage at this same growth position.
+    const old=artImage(sequence[state.selected].src),pc=previous.getContext('2d');pc.scale(canvas.width/w,canvas.height/h);
+    paintStage(pc,old,state.selected);state.previous=previous;state.started=performance.now();state.selected=selected;
+  }
+  function paintStage(context,asset,idx){
+    context.save();context.translate(ox,oy);context.scale(scale,scale);
     if(kind==='snail'){
-      // Interpolate the painted growing region. The original early tip stays fixed.
-      const ax=410,ay=265,sx=(target[0]-ax)/(points[idx][0]-ax),sy=(target[1]-ay)/(points[idx][1]-ay);
-      ctx.drawImage(image,0,0,ax,ay,0,0,ax,ay);
-      ctx.drawImage(image,ax,0,1536-ax,ay,ax,0,(1536-ax)*sx,ay);
-      ctx.drawImage(image,0,ay,ax,1024-ay,0,ay,ax,(1024-ay)*sy);
-      ctx.drawImage(image,ax,ay,1536-ax,1024-ay,ax,ay,(1536-ax)*sx,(1024-ay)*sy);
+      const ax=180,ay=100,sx=(target[0]-ax)/(points[idx][0]-ax),sy=(target[1]-ay)/(points[idx][1]-ay);
+      context.translate(ax,ay);context.scale(sx,sy);context.drawImage(asset,-ax,-ay,1536,1024);
     }else{
-      const ax=315,ay=578,stretch=(target[0]-ax)/(points[idx][0]-ax);
-      ctx.translate(ax,ay);ctx.scale(stretch,stretch);ctx.drawImage(image,frame.x-ax,frame.y-ay,1536,1024);
-    }
-    ctx.restore();
-  };
-  paint(blend.mix<.5?blend.lower:blend.upper,1);
+      const ax=315,ay=578,stretch=(target[0]-ax)/(points[idx][0]-ax),frame=sequence[idx];
+      context.translate(ax,ay);context.scale(stretch,stretch);context.drawImage(asset,frame.x-ax,frame.y-ay,1536,1024);
+    }context.restore();
+  }
+  paintStage(ctx,image,selected);
+  const elapsed=performance.now()-state.started;
+  if(state.previous&&elapsed<140&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+    ctx.save();ctx.globalAlpha=1-elapsed/140;ctx.drawImage(state.previous,0,0,w,h);ctx.restore();
+    state.raf=requestAnimationFrame(()=>{if(canvas.isConnected)drawPaintedGrowth(canvas,progress,kind);});
+  }else state.previous=null;
   return {x:ox+target[0]*scale,y:oy+target[1]*scale};
 }
 export function drawShell(canvas,progress){return drawPaintedGrowth(canvas,progress,'snail');}
@@ -45,12 +56,11 @@ export async function readyGrowth(kind){await Promise.all(frames[kind].map(async
 export function drawLivingSnail(canvas,time,active){
   const {ctx,w,h}=drawingContext(canvas),image=artImage('assets/snail.png');if(!image.complete||!image.naturalWidth)return;
   const scale=Math.min(w/1640,h/1120),ox=(w-1536*scale)/2,oy=(h-1024*scale)/2;
-  const walk=active?Math.min(Math.max(0,(w-1440*scale)/2-4),Math.sin(time*.7)*18+Math.min(time*3,24)):0;ctx.drawImage(image,ox+walk,oy,1536*scale,1024*scale);
-  if(!active)return;
-  // Animate only a small soft-body region of the SAME original drawing.
-  // No generated replacement body and no disjoint collage parts.
-  ctx.clearRect(ox+walk+760*scale,oy+660*scale,776*scale,364*scale);
-  for(let y=660;y<1024;y+=6){const fade=Math.sin(Math.PI*(y-660)/364),shift=Math.sin(time*2.6+(y-660)*.009)*(canvas.matches(":hover")?38:30)*fade;ctx.drawImage(image,760,y,776,Math.min(6,1024-y),ox+walk+(760+shift)*scale,oy+y*scale,776*scale,Math.min(6,1024-y)*scale);}
+  // Keep the complete painted contour intact, including the shell/body junction.
+  // A gentle whole-body drift avoids cutting the raster into independently moving strips.
+  const drift=active?Math.sin(time*.65)*5:0,bob=active?Math.sin(time*.9)*2:0;
+  ctx.save();ctx.translate(w/2+drift,h/2+bob);ctx.rotate(active?Math.sin(time*.55)*.004:0);
+  ctx.drawImage(image,ox-w/2,oy-h/2,1536*scale,1024*scale);ctx.restore();
 }
 
 export function drawClosedMussel(canvas){

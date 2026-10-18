@@ -264,3 +264,49 @@ body[data-scene=about]{overflow:hidden!important}
 @media(prefers-reduced-motion:reduce){.ocean-painting,#painted-water{transform:none!important}.scene-animal .stage{transform:none!important}}
 @media(max-width:700px){body:is([data-scene=animal],[data-scene=bivalve],[data-scene=transfer]) #ocean::after{background:linear-gradient(180deg,rgba(2,29,50,.74),rgba(2,29,50,.52) 43%,rgba(2,29,50,.12) 70%,rgba(2,29,50,.4))}}
 @media(max-width:700px){.scene-bivalve .scene-copy .model-note{order:1}}
+
+/* One gentle motion for the complete drawing; no competing CSS float. */
+body[data-motion=on] .stage #living-snail{animation:none;transform:none}
+.ocean-painting,#painted-water{transition:transform .28s ease-out}
+@media(prefers-reduced-motion:reduce){.ocean-painting,#painted-water{transition:none}}
+/* The first view is a sea scene with a brief invitation, not a menu. */
+.scene-start .intro-learning{max-width:30ch!important}
+.scene-start .intro-reward{font-size:16px!important;line-height:1.5!important;max-width:35ch!important;color:#e1f3fa!important;margin-top:24px}
+.scene-start .journey-hint{font-size:13px!important;max-width:34ch!important;opacity:.88}
+.scene-start .scene-copy h1{font-size:clamp(60px,6.5vw,94px);max-width:12ch}
+.scene-start .primary{background:#f3faf9;color:#124c77;border-color:#f3faf9}
+.scene-start .primary:hover{background:#c8e9f4}
+.card-preview{transform:none}
+#card-drawing{touch-action:none;cursor:crosshair;border:1px solid #8daebe;border-radius:2px}
+#card-drawing:focus-visible{outline:3px solid #22578a;outline-offset:4px}
+.sketch-tools{display:flex;gap:12px 24px;flex-wrap:wrap;margin:14px 0}
+.sketch-tools .text-button{font-size:14px;text-decoration:underline;text-underline-offset:4px;min-height:44px}
+.sketch-help,#sketch-status{font-size:16px!important;line-height:1.45!important}
+#sketch-status:empty{display:none}
+.primary:disabled{opacity:.55;cursor:default;transform:none}
+.scene-ending .stage{height:auto;min-height:0}
+@media(max-width:700px){
+ .scene-start{padding-top:112px!important}
+ .scene-start .scene-copy h1{font-size:clamp(38px,10.5vw,48px);max-width:13ch;margin-bottom:18px}
+ .scene-start .scene-copy>p.intro-learning{font-size:17px;line-height:1.45;max-width:29ch}
+ .scene-start .intro-reward{font-size:14px!important;line-height:1.45!important;max-width:31ch!important;margin-top:16px;margin-bottom:14px}
+ .scene-start .scene-copy .journey-hint{font-size:12px!important;margin-bottom:18px}
+ .scene-start .actions{position:static;margin-top:18px}
+ .scene-start .primary{min-height:66px;font-size:19px}
+ .sketch-tools{order:4;margin:10px 0;gap:5px 16px}
+ .sketch-help{order:3!important}
+ #sketch-status{order:4}
+ .scene-ending .actions{order:5}
+ .scene-ending .stage{height:auto!important;min-height:0!important;margin:20px 0!important}
+ .scene-ending .card-preview{max-width:340px}
+}
+@media(max-width:700px) and (max-height:740px){
+ .scene-start{padding-top:94px!important}
+ .scene-start .scene-copy h1{font-size:36px;max-width:15ch;margin-bottom:14px}
+ .scene-start .scene-copy>p.intro-learning{font-size:16px}
+ .scene-start .intro-reward{margin-top:12px;font-size:13px!important}
+ .scene-start .scene-copy .journey-hint{font-size:11px!important;margin-bottom:12px}
+ .scene-start .primary{min-height:58px}
+}
+@media(min-width:701px){.scene-start .scene-copy h1{font-size:clamp(56px,5.4vw,82px);max-width:12ch}}
+.card-preview{background:#f2f7f5}

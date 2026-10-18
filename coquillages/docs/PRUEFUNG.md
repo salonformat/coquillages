@@ -18,3 +18,31 @@ Ein separater Durchgang mit normaler Bewegung bestätigt: Fische und Wasser bewe
 Die Browserprüfung verwendet Chromium und emulierte Handygrößen. Safari, Firefox und physische Mobilgeräte wurden nicht separat geprüft. Lernerfolg mit echten Besuchern ist noch nicht gemessen. Die Rasterstadien sind künstlerische Vereinfachungen, keine biologische Simulation.
 
 Aktuelle Prüfergebnisse und Ansichten liegen lokal unter output/qa-scroll und werden nicht ausgeliefert. Ältere Aufnahmen unter output/qa dokumentieren die ersetzte automatische Fassung.
+
+
+## Prüfung von Bewegung und Lernweg · 18. Oktober 2026
+
+Die Schnecke wird als vollständige Zeichnung bewegt. Die frühere streifenweise
+Verformung mit einer Löschung am Übergang zwischen Haus und Körper wurde entfernt.
+Beim Wachstum bleiben die drei gezeichneten Entwicklungsstände erhalten. Ganze
+Zeichnungen werden am gemeinsamen Bildanker angepasst; ein kurzer zeitlicher
+Übergang ersetzt den harten Bildwechsel. Zwischenzustände sind künstlerische
+Annäherungen, keine anatomisch exakte Wachstumssimulation. Die bereits gebildeten
+Schalenabschnitte wachsen in der Natur nicht durch Dehnung.
+
+Die Meereswelten werden über 650 ms überblendet. Die Annäherung folgt dem Scrollen,
+Wasser und Fische laufen unabhängig weiter. Bei reduzierter Bewegung entfällt die
+animierte Annäherung. Navigation, Rückweg und Bildkarte bleiben erreichbar.
+
+Fachliche Gegenprüfung: Der Mantel bildet Kalk und organische Bestandteile. Die
+Vergrößerung erfolgt an der Öffnung bzw. am Schalenrand; innen ist zusätzliches
+Dickenwachstum möglich. Die gezeichneten Tiere stehen für allgemeine Formen, nicht
+für eine bestimmte Art oder einen Sammlungsgegenstand. Die Zeichnungsstriche sind
+keine einzelnen Kalkschichten und keine Jahresringe.
+
+Quellen: Smithsonian, [Cowries](https://naturalhistory.si.edu/research/invertebrate-zoology/news-and-highlights/cowrie);
+Smithsonian Ocean, [A Shell’s Story](https://ocean.si.edu/ecosystems/shells-story);
+Johnson et al., [Growth and morphogenesis of the gastropod shell](https://pubmed.ncbi.nlm.nih.gov/30867292/).
+
+Die Prüfung bewertet Verständlichkeit und Funktion. Eine fachliche Abnahme durch
+ein Museum und Nutzertests mit Besuchenden sind damit nicht ersetzt.
