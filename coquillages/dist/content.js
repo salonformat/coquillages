@@ -42,7 +42,7 @@ export const CONTENT = {
       "pause": "Anhalten",
       "old-label": "Dieser Teil war schon da.",
       "new-label": "Dieser Teil ist neu.",
-      "after": "Siehst du die kleine Spitze? Sie war von Anfang an da. Das Haus ist am Rand der Öffnung weitergewachsen.",
+      "after": "Das Haus ist größer geworden. Am Rand der Öffnung ist neues Material dazugekommen. Der ältere Teil bleibt erhalten.",
       "model-note": "Hier siehst du das Wachstum vereinfacht und viel schneller als in der Natur.",
       "next": "Zur Muschel"
     },
@@ -103,7 +103,7 @@ export const CONTENT = {
       "loading": "Die Zeichnung wird geladen …"
     },
     "ui": {
-      "name": "Coquillages",
+      "name": "Vom Meeresboden",
       "step": "Schritt",
       "animalLabel": "Der weiche Körper",
       "shellLabel": "Das schützende Schneckenhaus",
