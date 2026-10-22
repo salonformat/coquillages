@@ -310,3 +310,9 @@ body[data-motion=on] .stage #living-snail{animation:none;transform:none}
 }
 @media(min-width:701px){.scene-start .scene-copy h1{font-size:clamp(56px,5.4vw,82px);max-width:12ch}}
 .card-preview{background:#f2f7f5}
+/* A quiet ending: no task, just a living piece of the sea. */
+#postcard{display:block;width:100%;aspect-ratio:3/2;height:auto;border:1px solid rgba(244,250,249,.7);box-shadow:0 18px 42px rgba(0,25,48,.22)}
+.scene-ending .stage{min-height:0;height:auto;align-self:center}
+.scene-ending .primary{text-decoration:none}
+.scene-ending .postcard-format{font-size:12px;line-height:1.4;margin-top:16px;color:#d9edf2}
+@media(max-width:700px){.scene-ending .stage{order:2}.scene-ending .actions{order:3}.scene-ending .postcard-format{order:4}}

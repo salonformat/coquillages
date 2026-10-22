@@ -46,3 +46,19 @@ Johnson et al., [Growth and morphogenesis of the gastropod shell](https://pubmed
 
 Die Prüfung bewertet Verständlichkeit und Funktion. Eine fachliche Abnahme durch
 ein Museum und Nutzertests mit Besuchenden sind damit nicht ersetzt.
+
+
+## Bewegte Erinnerung · 19. Oktober 2026
+
+Der Zeichenabschluss entfällt. Geprüft wurden die freiwilligen GIF-Downloads
+in DE/FR/EN, jeweils 540 × 360 Pixel, 120 Bilder mit 50 ms Dauer pro Bild,
+Endlosschleife und ungefähr 16 MB. Die Animation verwendet die Originalmotive
+und beide Projektschriften; keine Videolaufzeit, Kamera- oder Mikrofonberechtigung.
+Die Live-Vorschau bewegt sich ohne Interaktion und hält über die Pausentaste an.
+Bei reduzierter Bewegung bleibt sie zunächst still. Die GIF-Datei selbst ist ein
+bewegtes Erinnerungsstück und wird erst auf ausdrücklichen Wunsch heruntergeladen.
+
+Der komplette Weg, native Wischbedienung, Browser-Zurück, Sprachwechsel und
+Darstellung auf 375/390 Pixel breiten Bildschirmen wurden erneut geprüft.
+Die Ergebnisse beziehen sich auf Chromium; andere Browser und reale
+Museumsbesucher wurden nicht stellvertretend als getestet ausgewiesen.

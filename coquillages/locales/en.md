@@ -4,7 +4,7 @@
 
 Follow a sea snail. Discover how it builds its shell and how mussel shells grow too.
 
-At the end, add your own drawing and take your discovery card with you.
+A moving sea postcard is waiting at the end. Save it if you’d like to keep it.
 
 ## On the seabed.
 
@@ -26,12 +26,10 @@ Look at the opening: new shell is added here.
 
 Two shell halves protect its soft body. They grow at the edges too.
 
-## Now it’s your turn to draw.
+## A little piece of the sea for you.
 
-Extend the shell by drawing along its outer edge at the bottom. Your line will become part of your discovery card.
+The snail builds its shell. So does the mussel. Their shells grow at the edges.
 
-Draw directly on the card with your finger or mouse.
+Save the sea postcard
 
-Your line is on the card. You can save it now.
-
-The shell grows at its edge.
+Animated GIF · no sound

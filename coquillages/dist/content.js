@@ -5,7 +5,7 @@ export const CONTENT = {
       "body": "Begleite eine Meeresschnecke. Entdecke, wie sie ihr Haus baut und wie auch Muschelschalen wachsen.",
       "action": "Eintauchen",
       "hint": "Scrolle nach unten oder wische nach oben. Du bestimmst das Tempo.",
-      "reward": "Zum Schluss zeichnest du selbst weiter und nimmst deine eigene Entdeckerkarte mit."
+      "reward": "Zum Schluss wartet eine bewegte Meerespostkarte auf dich. Wenn du möchtest, kannst du sie speichern."
     },
     "animal": {
       "title": "Da ist eine Meeresschnecke.",
@@ -67,14 +67,14 @@ export const CONTENT = {
       "body": "Auch diese Muschelschale wächst am Rand weiter. Der alte Teil bleibt erhalten."
     },
     "ending": {
-      "title": "Jetzt zeichnest du weiter.",
-      "body": "Zeichne unten am äußeren Rand der Muschelschale weiter. Deine Linie kommt auf deine Entdeckerkarte.",
+      "title": "Ein kleines Stück Meer für dich.",
+      "body": "Die Schnecke baut ihr Haus selbst. Die Muschel ihre beiden Schalen. Beide wachsen am Rand weiter.",
       "transfer": "Wenn du am Strand ein Schneckenhaus oder eine Muschelschale findest, schau dir den Rand einmal genauer an.",
       "keepsake-title": "Deine Entdeckerkarte",
       "keepsake-body": "Was möchtest du mitnehmen?",
       "snail": "Das Schneckenhaus",
       "bivalve": "Die Muschelschale",
-      "download": "Meine Karte speichern",
+      "download": "Meerespostkarte speichern",
       "card-note": "Vereinfachte Darstellung",
       "replay": "Noch einmal ansehen",
       "sources": "Mehr erfahren",
@@ -145,13 +145,13 @@ export const CONTENT = {
       "wrong": "Dieser Teil war schon da. Schau weiter außen am Rand.",
       "correct": "Genau, hier am Rand kommt neues Material dazu.",
       "loadError": "Die Zeichnung konnte nicht geladen werden. Lade die Seite bitte neu.",
-      "doneHint": "Scrolle weiter. Jetzt kannst du selbst zeichnen."
+      "doneHint": "Scrolle weiter und nimm dir noch einen Moment am Meer."
     },
-    "sketch": {
-      "clear": "Linie neu zeichnen",
-      "mark": "Den Rand ohne Zeichnen markieren",
-      "hint": "Zeichne mit dem Finger oder der Maus direkt auf die Karte.",
-      "saved": "Deine Zeichnung ist auf der Karte. Du kannst sie jetzt speichern."
+    "postcard": {
+      "title": "Ein kleines Stück Meer",
+      "line": "Die Schnecke baut ihr Haus selbst.",
+      "format": "Animiertes GIF · ohne Ton",
+      "label": "Gezeichnetes Meer mit fließendem Wasser, vorbeiziehenden Fischen und einem weißen Schneckenhaus."
     }
   },
   "fr": {
@@ -160,7 +160,7 @@ export const CONTENT = {
       "body": "Suis un escargot de mer. Découvre comment il construit sa coquille et comment grandissent celles des moules.",
       "action": "Entrer dans l’eau",
       "hint": "Avance en faisant défiler la page. C’est toi qui choisis le rythme.",
-      "reward": "À la fin, dessine à ton tour et emporte ta propre carte de découverte."
+      "reward": "À la fin, une carte postale animée t’attend. Tu peux l’enregistrer si tu le souhaites."
     },
     "animal": {
       "title": "Au fond de la mer.",
@@ -222,14 +222,14 @@ export const CONTENT = {
       "body": "Cette coquille grandit elle aussi par le bord. La partie déjà formée reste en place."
     },
     "ending": {
-      "title": "À toi de dessiner.",
-      "body": "Prolonge la coquille en dessinant le long de son bord extérieur, en bas. Ton trait fera partie de ta carte.",
+      "title": "Un petit bout de mer pour toi.",
+      "body": "L’escargot fabrique sa coquille. La moule aussi. Elles grandissent par le bord.",
       "transfer": "La prochaine fois que tu vois une coquille, regarde son ouverture ou son bord.",
       "keepsake-title": "Ta carte de découverte",
       "keepsake-body": "Quelle coquille veux-tu sur ton image ?",
       "snail": "La coquille de l’escargot",
       "bivalve": "La coquille de la moule",
-      "download": "Enregistrer ma carte",
+      "download": "Enregistrer la carte",
       "card-note": "Dessin simplifié",
       "replay": "Recommencer",
       "sources": "En savoir plus",
@@ -300,13 +300,13 @@ export const CONTENT = {
       "wrong": "Cette partie était déjà là. Regarde le bord libre.",
       "correct": "Oui, ici. L’animal ajoute de la matière sur le bord libre.",
       "loadError": "Le dessin n’a pas pu être chargé. Recharge la page.",
-      "doneHint": "Continue. Tu vas pouvoir dessiner à ton tour."
+      "doneHint": "Continue et profite encore un peu de la mer."
     },
-    "sketch": {
-      "clear": "Recommencer le trait",
-      "mark": "Marquer le bord sans dessiner",
-      "hint": "Dessine directement sur la carte avec le doigt ou la souris.",
-      "saved": "Ton trait est sur la carte. Tu peux maintenant l’enregistrer."
+    "postcard": {
+      "title": "Un petit bout de mer",
+      "line": "L’escargot fabrique sa coquille.",
+      "format": "GIF animé · sans son",
+      "label": "Une mer dessinée, de l’eau en mouvement, des poissons et une coquille blanche."
     }
   },
   "en": {
@@ -315,7 +315,7 @@ export const CONTENT = {
       "body": "Follow a sea snail. Discover how it builds its shell and how mussel shells grow too.",
       "action": "Go underwater",
       "hint": "Scroll or swipe to explore. You choose the pace.",
-      "reward": "At the end, add your own drawing and take your discovery card with you."
+      "reward": "A moving sea postcard is waiting at the end. Save it if you’d like to keep it."
     },
     "animal": {
       "title": "On the seabed.",
@@ -377,14 +377,14 @@ export const CONTENT = {
       "body": "This shell gets bigger at the edge too. The earlier part stays in place."
     },
     "ending": {
-      "title": "Now it’s your turn to draw.",
-      "body": "Extend the shell by drawing along its outer edge at the bottom. Your line will become part of your discovery card.",
+      "title": "A little piece of the sea for you.",
+      "body": "The snail builds its shell. So does the mussel. Their shells grow at the edges.",
       "transfer": "Next time you see a shell, look at its opening or its edge.",
       "keepsake-title": "Your discovery card",
       "keepsake-body": "Which shell would you like on your picture?",
       "snail": "The snail shell",
       "bivalve": "The mussel shell",
-      "download": "Save my card",
+      "download": "Save the sea postcard",
       "card-note": "Simplified illustration",
       "replay": "Start again",
       "sources": "Find out more",
@@ -455,13 +455,13 @@ export const CONTENT = {
       "wrong": "This part was already here. Look at the free edge.",
       "correct": "Yes, here. The animal adds new material at the free edge.",
       "loadError": "The drawing could not load. Please reload the page.",
-      "doneHint": "Scroll on. Now you can add your own drawing."
+      "doneHint": "Scroll on and enjoy another moment by the sea."
     },
-    "sketch": {
-      "clear": "Draw the line again",
-      "mark": "Mark the edge without drawing",
-      "hint": "Draw directly on the card with your finger or mouse.",
-      "saved": "Your line is on the card. You can save it now."
+    "postcard": {
+      "title": "A little piece of the sea",
+      "line": "The snail builds its own shell.",
+      "format": "Animated GIF · no sound",
+      "label": "A hand-drawn sea with flowing water, passing fish and a white snail shell."
     }
   }
 };

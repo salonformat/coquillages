@@ -2,7 +2,7 @@
 
 Eine gezeichnete Unterwasserreise von Isabella Kohout / SALONFORMAT. Deutsch, français, English. Della Respira und Josefin Sans.
 
-Die Besucherin steuert die Annäherung und das Wachstum durch Scrollen oder Wischen. Stehen bleiben hält das Wachstumsbild an; Zurückscrollen zeigt den früheren Zustand. Wasser und Fische bewegen sich unabhängig davon. An einer anderen Schalenform lässt sich das Prinzip durch eine Berührung selbst anwenden. Die Bildkarte am Ende kann als PNG gespeichert werden.
+Die Besucherin steuert die Annäherung und das Wachstum durch Scrollen oder Wischen. Stehen bleiben hält das Wachstumsbild an; Zurückscrollen zeigt den früheren Zustand. Wasser und Fische bewegen sich unabhängig davon. An einer anderen Schalenform lässt sich das Prinzip durch eine Berührung selbst anwenden. Die bewegte Meerespostkarte am Ende lässt sich freiwillig als animiertes GIF speichern.
 
 Der Bogen: entdecken → genauer hinschauen → Wachstum verstehen → selbst wiedererkennen. Das Tier bildet seine Schale selbst; neues Material kommt am Rand hinzu. Die Wachstumsbilder sind eine künstlerische Vereinfachung.
 

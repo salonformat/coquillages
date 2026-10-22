@@ -18,7 +18,7 @@ Menschen ohne vorausgesetzte Fachkenntnisse, darunter Museumsbesucher, Familien 
 
 Eine eigenständige SALONFORMAT-Experience im Browser. Lokales Projekt coquillages und private GitHub-Ablage salonformat/coquillages. Scrollen oder Wischen steuert die Annäherung zum Meeresboden, die Nähe zur Schnecke und die Wachstumsstadien. Die Reise läuft nicht automatisch weiter. Zurückscrollen zeigt frühere Zustände. Wasser und Fische bewegen sich unabhängig und lassen sich anhalten.
 
-An einer anderen Schalenform kann die Besucherin selbst eine Stelle berühren. Am freien Rand entsteht eine gezeichnete Markierung; andere Stellen erhalten einen unterstützenden Hinweis. Die Aufgabe sperrt den weiteren Weg nicht. Am Ende zeichnet die Besucherin selbst den neuen Rand einer Muschelschale. Die eigene Linie und ein kurzer Merksatz werden als persönliche Entdeckerkarte gespeichert. Eine fokussierbare Schaltfläche bietet eine Alternative ohne Freihandzeichnung. Der Einstieg kündigt Lernziel und eigenes Ergebnis kurz an.
+An einer anderen Schalenform kann die Besucherin selbst eine Stelle berühren. Am freien Rand entsteht eine gezeichnete Markierung; andere Stellen erhalten einen unterstützenden Hinweis. Die Aufgabe sperrt den weiteren Weg nicht. Am Ende wartet eine bewegte Meerespostkarte: Wasser, gezeichnete Fische und ein weißes Schneckenhaus. Sie lässt sich freiwillig als animiertes GIF speichern. Keine zusätzliche Zeichenaufgabe. Der Einstieg kündigt Lernziel und Postkarte kurz an.
 
 ## Capabilities and Constraints
 

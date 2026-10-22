@@ -210,3 +210,14 @@ Freihandzeichnen per Finger, Stift oder Maus bleibt auf die Karte begrenzt.
 Eine Schaltfläche erlaubt die Randmarkierung ohne Zeichnen. Die eigene Zeichnung
 bleibt beim Sprachwechsel und Rückweg erhalten; nur ein ausdrücklicher Neustart
 oder „Linie neu zeichnen“ löscht sie. Die Karte bleibt lokal im Browser.
+
+
+## Abschluss · 19. Oktober 2026
+
+Die eigene Zeichenkarte ist durch eine freiwillige bewegte Meerespostkarte ersetzt.
+Sie verwendet die vorhandenen gemalten Wasser- und gezeichneten Tiermotive mit
+Della Respira und Josefin Sans. Eine sechssekündige Schleife mit 120 Bildern wird
+als animiertes GIF in Deutsch, Französisch und Englisch angeboten. Die Live-Vorschau
+läuft unabhängig vom Scrollen; die Pausentaste und reduzierte Bewegung werden
+respektiert. Kein Zeichnen, keine Aufgabe vor dem Download. Die Datei wird nur
+auf ausdrücklichen Klick geladen.

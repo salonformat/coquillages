@@ -4,7 +4,7 @@
 
 Suis un escargot de mer. Découvre comment il construit sa coquille et comment grandissent celles des moules.
 
-À la fin, dessine à ton tour et emporte ta propre carte de découverte.
+À la fin, une carte postale animée t’attend. Tu peux l’enregistrer si tu le souhaites.
 
 ## Au fond de la mer.
 
@@ -26,12 +26,10 @@ Regarde l’ouverture : la coquille grandit ici.
 
 Deux parties de coquille protègent son corps mou. Elles grandissent aussi par le bord.
 
-## À toi de dessiner.
+## Un petit bout de mer pour toi.
 
-Prolonge la coquille en dessinant le long de son bord extérieur, en bas. Ton trait fera partie de ta carte.
+L’escargot fabrique sa coquille. La moule aussi. Elles grandissent par le bord.
 
-Dessine directement sur la carte avec le doigt ou la souris.
+Enregistrer la carte
 
-Ton trait est sur la carte. Tu peux maintenant l’enregistrer.
-
-La coquille grandit par le bord.
+GIF animé · sans son

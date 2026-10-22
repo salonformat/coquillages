@@ -4,7 +4,7 @@
 
 Begleite eine Meeresschnecke. Entdecke, wie sie ihr Haus baut und wie auch Muschelschalen wachsen.
 
-Zum Schluss zeichnest du selbst weiter und nimmst deine eigene Entdeckerkarte mit.
+Zum Schluss wartet eine bewegte Meerespostkarte auf dich. Wenn du möchtest, kannst du sie speichern.
 
 ## Da ist eine Meeresschnecke.
 
@@ -26,12 +26,10 @@ Achte auf die Öffnung. An ihrem Rand kommt neues Material dazu.
 
 Ihr weicher Körper liegt zwischen zwei Muschelschalen. Beide wachsen am Rand.
 
-## Jetzt zeichnest du weiter.
+## Ein kleines Stück Meer für dich.
 
-Zeichne unten am äußeren Rand der Muschelschale weiter. Deine Linie kommt auf deine Entdeckerkarte.
+Die Schnecke baut ihr Haus selbst. Die Muschel ihre beiden Schalen. Beide wachsen am Rand weiter.
 
-Zeichne mit dem Finger oder der Maus direkt auf die Karte.
+Meerespostkarte speichern
 
-Deine Zeichnung ist auf der Karte. Du kannst sie jetzt speichern.
-
-Die Muschelschale wächst am Rand.
+Animiertes GIF · ohne Ton
