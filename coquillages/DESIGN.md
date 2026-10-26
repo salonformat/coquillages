@@ -239,3 +239,15 @@ Ontogenese oder eine bestimmte Artengeometrie. Innenverdickung wird gesondert
 erklärt und durch dieses Modell nicht simuliert. Zeitdauer, Materialmenge und
 Randform sind nicht quantitativ zu lesen. Die Texte in DE/FR/EN benennen den
 gezeigten kurzen Schritt.
+
+
+## Freie Nahansicht · 26. Oktober 2026
+
+Die Richtig-falsch-Aufgabe an der weiteren Muschel wurde entfernt. Die komplette
+Illustration ist eine native Schaltfläche mit aria-expanded und wechselndem
+Aktionsnamen. Eine Berührung oder Enter/Leertaste nähert das Bild über 700 ms
+an und zeichnet den freien Rand nach. Erneute Aktivierung stellt die weitere
+Ansicht her. Eine kurze sachliche Erklärung ersetzt Lob und Fehlerhinweise.
+Der Zustand bleibt beim Sprachwechsel und Browser-Rückweg erhalten.
+Bei reduzierter Bewegung entfällt die Kamerabewegung; die Markierung ist sofort
+sichtbar. Weiteres Scrollen ist jederzeit möglich.
