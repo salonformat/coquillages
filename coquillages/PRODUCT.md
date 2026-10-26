@@ -30,7 +30,7 @@ SALONFORMAT und die bereitgestellten Elio-Screenshots sind die verbindliche visu
 
 ## Evidence on Hand
 
-Elio-Referenzbilder aus dem Gespräch, vorhandene gezeichnete PNG-Illustrationen und gemalte JPEG-Welten, lokal ausgelieferte Schriften mit OFL-Lizenzen. Fachquellen und frühere Recherche stehen in docs/QUELLEN.md. Browserprüfungen dokumentieren Bedienbarkeit. Tatsächlicher Lernerfolg mit Besuchern ist noch nicht gemessen. Die drei gezeichneten Wachstumsstadien sind eine künstlerische Vereinfachung und keine biologische Simulation.
+Elio-Referenzbilder aus dem Gespräch, vorhandene gezeichnete PNG-Illustrationen und gemalte JPEG-Welten, lokal ausgelieferte Schriften mit OFL-Lizenzen. Fachquellen und frühere Recherche stehen in docs/QUELLEN.md. Browserprüfungen dokumentieren Bedienbarkeit. Tatsächlicher Lernerfolg mit Besuchern ist noch nicht gemessen. Das Außenwachstum wird als kurzer Materialzuwachs am vorhandenen Rand gezeigt. Die bestehende Zeichnung bleibt unverformt; das Modell bildet weder die gesamte Entwicklung noch eine konkrete Art quantitativ nach.
 
 ## Product Principles
 

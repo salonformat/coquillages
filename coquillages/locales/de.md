@@ -18,9 +18,13 @@ Sie wird größer und braucht mehr Platz. Deshalb wächst ihr Haus mit.
 
 Am Rand der Öffnung kommt neues Material dazu. Es entsteht in einer dünnen Haut der Schnecke. Diese Haut heißt Mantel.
 
-## Schau, wie ihr Haus wächst.
+## Hier wächst das Haus weiter.
 
-Achte auf die Öffnung. An ihrem Rand kommt neues Material dazu.
+Schau auf diesen Abschnitt am Rand der Öffnung. Hier kommt neues Material dazu.
+
+Am Rand ist ein Stück dazugekommen. Der ältere Teil hat sich nicht verändert.
+
+Wir zeigen einen kurzen Wachstumsschritt. In der Natur dauert das viel länger.
 
 ## Und wie wächst eine Muschel?
 

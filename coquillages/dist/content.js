@@ -35,16 +35,16 @@ export const CONTENT = {
       "extra": "Von innen kann das Haus auch dicker werden."
     },
     "growth": {
-      "title": "Schau, wie ihr Haus wächst.",
-      "instruction": "Achte auf die Öffnung. An ihrem Rand kommt neues Material dazu.",
+      "title": "Hier wächst das Haus weiter.",
+      "instruction": "Schau auf diesen Abschnitt am Rand der Öffnung. Hier kommt neues Material dazu.",
       "earlier": "Früher",
       "later": "Später",
       "play": "Wachstum ansehen",
       "pause": "Anhalten",
       "old-label": "Dieser Teil war schon da.",
       "new-label": "Dieser Teil ist neu.",
-      "after": "Das Haus ist größer geworden. Am Rand der Öffnung ist neues Material dazugekommen. Der ältere Teil bleibt erhalten.",
-      "model-note": "Hier siehst du das Wachstum vereinfacht und viel schneller als in der Natur.",
+      "after": "Am Rand ist ein Stück dazugekommen. Der ältere Teil hat sich nicht verändert.",
+      "model-note": "Wir zeigen einen kurzen Wachstumsschritt. In der Natur dauert das viel länger.",
       "next": "Zur Muschel"
     },
     "bivalve": {
@@ -134,7 +134,7 @@ export const CONTENT = {
       "startHint": "Scrolle nach unten oder wische nach oben.",
       "animalHint": "Scrolle weiter, um näher zur Schnecke zu kommen.",
       "edgeHint": "Schau auf den Rand der Öffnung.",
-      "growthHint": "Scrolle weiter. So wächst das Haus vor deinen Augen.",
+      "growthHint": "Scrolle langsam weiter und schau auf den Rand.",
       "bivalveHint": "Scrolle zurück, wenn du es noch einmal sehen möchtest.",
       "transferHint": "Tippe auf die Stelle, an der die Muschelschale wächst.",
       "transferTitle": "Wo wächst diese Muschelschale?",
@@ -190,16 +190,16 @@ export const CONTENT = {
       "extra": "La coquille peut aussi s’épaissir par l’intérieur."
     },
     "growth": {
-      "title": "Regarde la coquille grandir.",
-      "instruction": "Regarde l’ouverture : la coquille grandit ici.",
+      "title": "La coquille continue de grandir ici.",
+      "instruction": "Regarde cette partie du bord de l’ouverture. De la matière s’ajoute ici.",
       "earlier": "Avant",
       "later": "Après",
       "play": "Voir la croissance",
       "pause": "Arrêter",
       "old-label": "Cette partie était déjà là.",
       "new-label": "Cette partie est nouvelle.",
-      "after": "La coquille est plus grande. De la matière s’est ajoutée au bord de l’ouverture. La partie déjà formée reste en place.",
-      "model-note": "La croissance est simplifiée et très accélérée.",
+      "after": "Une nouvelle partie s’est ajoutée au bord. La partie déjà formée n’a pas changé.",
+      "model-note": "Nous montrons une courte étape de croissance. Dans la nature, cela prend bien plus de temps.",
       "next": "Voir la moule"
     },
     "bivalve": {
@@ -289,7 +289,7 @@ export const CONTENT = {
       "startHint": "Avance en faisant défiler la page. C’est toi qui choisis le rythme.",
       "animalHint": "Continue à faire défiler pour te rapprocher.",
       "edgeHint": "Continue et regarde l’ouverture.",
-      "growthHint": "Fais défiler pour voir la coquille grandir.",
+      "growthHint": "Continue doucement et regarde le bord.",
       "bivalveHint": "Tu peux aussi revenir en arrière.",
       "transferHint": "Touche la coquille là où elle grandit.",
       "transferTitle": "Où cette coquille grandit-elle ?",
@@ -345,16 +345,16 @@ export const CONTENT = {
       "extra": "The shell can also get thicker on the inside."
     },
     "growth": {
-      "title": "Watch the shell grow.",
-      "instruction": "Look at the opening: new shell is added here.",
+      "title": "The shell grows here.",
+      "instruction": "Look at this part of the opening’s edge. New material is added here.",
       "earlier": "Earlier",
       "later": "Later",
       "play": "Play the growth",
       "pause": "Pause",
       "old-label": "This part was already here.",
       "new-label": "This part is new.",
-      "after": "The shell is bigger now. New material has been added at the opening. The older part remains.",
-      "model-note": "The growth shown here is simplified and greatly sped up.",
+      "after": "A new section has formed at the edge. The older part has not changed.",
+      "model-note": "This shows a short stage of growth. In nature, it takes much longer.",
       "next": "See the mussel"
     },
     "bivalve": {
@@ -444,7 +444,7 @@ export const CONTENT = {
       "startHint": "Scroll or swipe to explore. You choose the pace.",
       "animalHint": "Keep scrolling to get closer.",
       "edgeHint": "Keep scrolling and look at the opening.",
-      "growthHint": "Scroll to see the shell grow.",
+      "growthHint": "Scroll slowly and watch the edge.",
       "bivalveHint": "You can scroll back too.",
       "transferHint": "Touch the shell where it grows.",
       "transferTitle": "Where does this shell grow?",

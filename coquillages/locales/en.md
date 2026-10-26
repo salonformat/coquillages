@@ -18,9 +18,13 @@ Its soft body grows. Its shell grows too, making room for the animal and keeping
 
 The animal makes new material here. A tissue in its body does this. It is called the mantle.
 
-## Watch the shell grow.
+## The shell grows here.
 
-Look at the opening: new shell is added here.
+Look at this part of the opening’s edge. New material is added here.
+
+A new section has formed at the edge. The older part has not changed.
+
+This shows a short stage of growth. In nature, it takes much longer.
 
 ## What about a mussel?
 

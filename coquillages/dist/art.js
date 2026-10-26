@@ -1,3 +1,4 @@
+import {rimAt,accretionStrip} from './accretion.js';
 import {clamp} from './learning.js';
 
 const cache=new Map();
@@ -6,52 +7,64 @@ export function artImage(src){
   return cache.get(src);
 }
 function drawingContext(canvas){const box=canvas.getBoundingClientRect(),w=box.width||canvas.width,h=box.height||canvas.height,dpr=box.width?Math.min(devicePixelRatio||1,2):1;const width=Math.round(w*dpr),height=Math.round(h*dpr);if(canvas.width!==width||canvas.height!==height){canvas.width=width;canvas.height=height;}const ctx=canvas.getContext('2d');ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);return{ctx,w,h};}
-const frames={
-  snail:[{src:'assets/snail-young.png',x:0,y:0},{src:'assets/snail-middle.png',x:0,y:0},{src:'assets/snail.png',x:0,y:0}],
-  mussel:[{src:'assets/mussel-young.png',x:-105,y:-38},{src:'assets/mussel-middle.png',x:-125,y:18},{src:'assets/mussel.png',x:0,y:0}]
-};
-export function frameBlend(progress){
-  const p=clamp(progress);if(p===0)return{lower:0,upper:0,mix:0};if(p===.5)return{lower:1,upper:1,mix:0};if(p===1)return{lower:2,upper:2,mix:0};
-  return p<.5?{lower:0,upper:1,mix:p*2}:{lower:1,upper:2,mix:(p-.5)*2};
+const growthSources={snail:'assets/snail-shell.png',mussel:'assets/mussel.png'};
+const growthDetails=new Map();
+function prepareAccretion(image,kind){
+ if(growthDetails.has(kind))return growthDetails.get(kind);
+ const sample=document.createElement('canvas');sample.width=1536;sample.height=1024;const context=sample.getContext('2d',{willReadFrequently:true});context.drawImage(image,0,0,1536,1024);const pixels=context.getImageData(0,0,1536,1024).data;
+ const solid=(x,y)=>x>=0&&x<1536&&y>=0&&y<1024&&pixels[(Math.round(y)*1536+Math.round(x))*4+3]>180&&pixels[(Math.round(y)*1536+Math.round(x))*4]+pixels[(Math.round(y)*1536+Math.round(x))*4+1]+pixels[(Math.round(y)*1536+Math.round(x))*4+2]>480;
+ let rims=[];
+ if(kind==='snail'){
+   const lip=[];for(let y=625;y<=749;y+=2){let x=1390;while(x>1000&&!solid(x,y))x--;if(x>1000)lip.push([x,y]);}rims=[lip];
+ }else{
+   // Ray-cast the actual painted contours, separately for the two open valves.
+   for(const [cx,cy,upper] of [[830,300,true],[810,760,false]]){
+     const radii=[];for(let i=0;i<360;i++){const angle=i*Math.PI/180,dx=Math.cos(angle),dy=Math.sin(angle);let last=0;for(let r=0;r<900;r+=1){const x=cx+dx*r,y=cy+dy*r;if(x<0||x>=1536||y<0||y>=1024||upper&&y>574||!upper&&y<581)break;if(solid(x,y))last=r;}radii.push(last);}
+     // Remove pigment-grain outliers from the measured silhouette. This is a
+     // fixed spatial smoothing pass, not a time-varying deformation.
+     const median=radii.map((_,i)=>Array.from({length:21},(_,j)=>radii[(i+j-10+360)%360]).sort((a,b)=>a-b)[10]);
+     const smooth=median.map((_,i)=>Array.from({length:15},(_,j)=>median[(i+j-7+360)%360]).reduce((a,b)=>a+b,0)/15);
+     const rim=smooth.map((r,i)=>[cx+Math.cos(i*Math.PI/180)*r,cy+Math.sin(i*Math.PI/180)*r]);rim.push(rim[0]);rims.push(rim);
+   }
+ }
+ // The original chalk/paper texture supplies the new material as well.
+ const texture=document.createElement('canvas');texture.width=texture.height=96;texture.getContext('2d').drawImage(image,kind==='snail'?650:720,kind==='snail'?420:260,96,96,0,0,96,96);
+ const result={rims,texture};growthDetails.set(kind,result);return result;
 }
-const stageTransitions=new WeakMap();
+function trace(ctx,points,close=false){ctx.beginPath();points.forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y));if(close)ctx.closePath();}
+const fixedPaintings=new WeakMap();
+function fixedPainting(canvas,image,w,h,scale,ox,oy){
+ const key=image.src+':'+canvas.width+':'+canvas.height;let cached=fixedPaintings.get(canvas);if(cached?.key===key)return cached;
+ const base=document.createElement('canvas'),mask=document.createElement('canvas');base.width=mask.width=canvas.width;base.height=mask.height=canvas.height;
+ const bc=base.getContext('2d',{willReadFrequently:true});bc.setTransform(canvas.width/w,0,0,canvas.height/h,0,0);bc.translate(ox,oy);bc.scale(scale,scale);bc.drawImage(image,0,0,1536,1024);
+ const pixels=bc.getImageData(0,0,base.width,base.height);for(let i=0;i<pixels.data.length;i+=4){pixels.data[i]=pixels.data[i+1]=pixels.data[i+2]=0;pixels.data[i+3]=pixels.data[i+3]>=140?255:0;}mask.getContext('2d').putImageData(pixels,0,0);
+ cached={key,base,mask};fixedPaintings.set(canvas,cached);return cached;
+}
 export function drawPaintedGrowth(canvas,progress,kind='snail'){
-  const {ctx,w,h}=drawingContext(canvas);if(!w||!h)return;
-  const sequence=frames[kind],blend=frameBlend(progress),scale=Math.min(w/1536,h/1024),ox=(w-1536*scale)/2,oy=(h-1024*scale)/2;
-  const points=kind==='snail'?[[585,390],[960,655],[1190,655]]:[[750,610],[930,640],[1190,650]];
-  const from=points[blend.lower],to=points[blend.upper],target=[from[0]+(to[0]-from[0])*blend.mix,from[1]+(to[1]-from[1])*blend.mix];
-  const selected=blend.mix<.5?blend.lower:blend.upper,image=artImage(sequence[selected].src);
-  if(!image.complete||!image.naturalWidth)return;
-  let state=stageTransitions.get(canvas);
-  if(!state){state={selected,started:0,previous:null,raf:0};stageTransitions.set(canvas,state);}
-  cancelAnimationFrame(state.raf);
-  if(state.selected!==selected){
-    const previous=document.createElement('canvas');previous.width=canvas.width;previous.height=canvas.height;
-    // Render the preceding complete life stage at this same growth position.
-    const old=artImage(sequence[state.selected].src),pc=previous.getContext('2d');pc.scale(canvas.width/w,canvas.height/h);
-    paintStage(pc,old,state.selected);state.previous=previous;state.started=performance.now();state.selected=selected;
-  }
-  function paintStage(context,asset,idx){
-    context.save();context.translate(ox,oy);context.scale(scale,scale);
-    if(kind==='snail'){
-      const ax=180,ay=100,sx=(target[0]-ax)/(points[idx][0]-ax),sy=(target[1]-ay)/(points[idx][1]-ay);
-      context.translate(ax,ay);context.scale(sx,sy);context.drawImage(asset,-ax,-ay,1536,1024);
-    }else{
-      const ax=315,ay=578,stretch=(target[0]-ax)/(points[idx][0]-ax),frame=sequence[idx];
-      context.translate(ax,ay);context.scale(stretch,stretch);context.drawImage(asset,frame.x-ax,frame.y-ay,1536,1024);
-    }context.restore();
-  }
-  paintStage(ctx,image,selected);
-  const elapsed=performance.now()-state.started;
-  if(state.previous&&elapsed<140&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
-    ctx.save();ctx.globalAlpha=1-elapsed/140;ctx.drawImage(state.previous,0,0,w,h);ctx.restore();
-    state.raf=requestAnimationFrame(()=>{if(canvas.isConnected)drawPaintedGrowth(canvas,progress,kind);});
-  }else state.previous=null;
-  return {x:ox+target[0]*scale,y:oy+target[1]*scale};
+ const {ctx,w,h}=drawingContext(canvas),image=artImage(growthSources[kind]);if(!image.complete||!image.naturalWidth)return;
+ // One fixed viewport transform for every scroll position. Never scale, warp,
+ // replace or cross-fade previously deposited material.
+ const scale=Math.min(w/1760,h/1160),ox=(w-1536*scale)/2-35*scale,oy=(h-1024*scale)/2;
+ const {rims,texture}=prepareAccretion(image,kind),p=clamp(progress),fixed=fixedPainting(canvas,image,w,h,scale,ox,oy);
+ ctx.save();ctx.translate(ox,oy);ctx.scale(scale,scale);
+ if(p>0){
+   ctx.fillStyle=ctx.createPattern(texture,'repeat');
+   for(const rim of rims){trace(ctx,accretionStrip(rim,p,kind),true);ctx.fill();
+     trace(ctx,rimAt(rim,p,kind));ctx.strokeStyle='#4478b4';ctx.lineWidth=7;ctx.lineCap='round';ctx.lineJoin='round';ctx.globalAlpha=Math.min(1,p*40);ctx.stroke();ctx.globalAlpha=1;
+   }
+ }
+ // The complete original sits above its new edge, at the identical size and
+ // location in every frame. This also preserves its original hand-drawn lines.
+ ctx.restore();ctx.save();ctx.setTransform(1,0,0,1,0,0);
+ // Exclude existing painted material from the new layer, even where the source
+ // uses translucent pigment. Then composite the exact cached old painting.
+ if(p>0){ctx.globalCompositeOperation='destination-out';ctx.drawImage(fixed.mask,0,0);ctx.globalCompositeOperation='source-over';}
+ ctx.drawImage(fixed.base,0,0);ctx.restore();
+ return {scale,ox,oy};
 }
 export function drawShell(canvas,progress){return drawPaintedGrowth(canvas,progress,'snail');}
 export function drawMussel(canvas,progress){return drawPaintedGrowth(canvas,progress,'mussel');}
-export async function readyGrowth(kind){await Promise.all(frames[kind].map(async f=>{const image=artImage(f.src);await image.decode();}));}
+export async function readyGrowth(kind){await artImage(growthSources[kind]).decode();}
 
 export function drawLivingSnail(canvas,time,active){
   const {ctx,w,h}=drawingContext(canvas),image=artImage('assets/snail.png');if(!image.complete||!image.naturalWidth)return;

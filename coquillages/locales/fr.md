@@ -18,9 +18,13 @@ Son corps mou grandit. Sa coquille doit grandir aussi pour lui laisser de la pla
 
 L’animal ajoute de la matière ici. Un tissu de son corps la fabrique. Il s’appelle le manteau.
 
-## Regarde la coquille grandir.
+## La coquille continue de grandir ici.
 
-Regarde l’ouverture : la coquille grandit ici.
+Regarde cette partie du bord de l’ouverture. De la matière s’ajoute ici.
+
+Une nouvelle partie s’est ajoutée au bord. La partie déjà formée n’a pas changé.
+
+Nous montrons une courte étape de croissance. Dans la nature, cela prend bien plus de temps.
 
 ## Et chez une moule ?
 

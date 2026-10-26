@@ -62,3 +62,35 @@ Der komplette Weg, native Wischbedienung, Browser-Zurück, Sprachwechsel und
 Darstellung auf 375/390 Pixel breiten Bildschirmen wurden erneut geprüft.
 Die Ergebnisse beziehen sich auf Chromium; andere Browser und reale
 Museumsbesucher wurden nicht stellvertretend als getestet ausgewiesen.
+
+
+## Randwachstum · 26. Oktober 2026
+
+Die neue Implementierung ergänzt Materialzonen am festen Rand statt Bilder zu
+vergrößern oder zwischen Altersstadien zu wechseln. Nach der Sichtprüfung wurden
+Ausreißer in der abgetasteten Muschel-Pigmentkontur räumlich geglättet. Der
+vorhandene Bildbereich bleibt unverformt und wird nicht vom neuen Rand überlagert.
+
+`tests/accretion.browser.mjs` prüft getrennt:
+- Bildidentität der vorhandenen pigmentierten Bereiche (Alpha ≥ 180), an mehreren Zwischenständen;
+- Materialzugabe außerhalb der Ausgangskontur;
+- exakt reproduzierbaren Anfang beim Zurückscrollen;
+- 120 fein abgestufte Wachstumsstände und deren reine Renderzeit;
+- Ansichten in 1440 × 900 und 390 × 844.
+
+Der Test umfasst 91.210 vorhandene Pixel beim Schneckenhaus und 131.803 bei
+der Muschel: keine Veränderung in diesen Bereichen. Die 95. Perzentile der
+reinen Zeichenzeit lagen auf dem Testgerät unter 1 ms. Das ist keine allgemeine
+FPS-Garantie für jedes Gerät; Einlesen und einmalige Konturvorbereitung sind
+nicht Teil dieser laufenden Renderzeit. Die vollständige Browserreise in
+DE/FR/EN einschließlich Wischen, Rückweg, Sprachwechsel und GIF-Download wurde
+zusätzlich geprüft.
+
+Das Modell zeigt nur einen kurzen Außenwachstumsschritt. Es behauptet keine
+artspezifische Form, vollständige Schalenentwicklung oder quantitative
+Wachstumsrate. Verdickung und mögliche Umbauvorgänge an der Innenseite sind
+nicht Gegenstand dieser Animation.
+
+Fachgrundlage: [Johnson et al., Growth and morphogenesis of the gastropod shell](https://pmc.ncbi.nlm.nih.gov/articles/PMC6452709/),
+[The mechanical framework of molluskan shell growth](https://pmc.ncbi.nlm.nih.gov/articles/PMC6687210/)
+und [Bivalvia, Digital Atlas of Ancient Life](https://www.digitalatlasofancientlife.org/learn/mollusca/bivalvia/).

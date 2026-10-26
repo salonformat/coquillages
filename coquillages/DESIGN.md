@@ -221,3 +221,21 @@ als animiertes GIF in Deutsch, Französisch und Englisch angeboten. Die Live-Vor
 läuft unabhängig vom Scrollen; die Pausentaste und reduzierte Bewegung werden
 respektiert. Kein Zeichnen, keine Aufgabe vor dem Download. Die Datei wird nur
 auf ausdrücklichen Klick geladen.
+
+
+## Randwachstum · 26. Oktober 2026
+
+Die bisherigen Wachstumsstadien und ihre Größeninterpolation wurden entfernt.
+Für das Außenwachstum bleiben Maßstab, Position und bestehende Schalenzeichnungen
+über alle Scrollpositionen identisch. Die neue Materialzone wird am sichtbaren
+Öffnungsrand bzw. an den freien Rändern beider Muschelhälften ergänzt. Ihre
+Papier-/Stifttextur stammt aus den bestehenden Originalillustrationen. Der
+Scharnierbereich bleibt fest. Eine glatte, kontinuierliche Randbewegung ersetzt
+Bildwechsel und Morphing. Bestehendes pigmentiertes Material wird vor einer
+Überlagerung durch den neuen Rand geschützt.
+
+Die Darstellung erklärt einen kurzen Außenwachstumsschritt, nicht die komplette
+Ontogenese oder eine bestimmte Artengeometrie. Innenverdickung wird gesondert
+erklärt und durch dieses Modell nicht simuliert. Zeitdauer, Materialmenge und
+Randform sind nicht quantitativ zu lesen. Die Texte in DE/FR/EN benennen den
+gezeigten kurzen Schritt.

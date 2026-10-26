@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {frameBlend} from '../dist/art.js';
+import {rimAt,accretionStrip} from '../dist/accretion.js';
 import {SCENES,nextScene,previousScene,readRoute,routeUrl,growthAssessment} from '../dist/learning.js';
 test('A full path explains why before how and finishes with transfer',()=>{
   let scene='start';const visited=[scene];while(scene!=='ending'){scene=nextScene(scene);visited.push(scene);}
@@ -13,7 +13,7 @@ test('Every scene and sources route round-trips in all languages',()=>{
   for(const scene of [...SCENES,'about'])for(const lang of ['de','fr','en'])assert.deepEqual(readRoute(routeUrl('https://example.org/coquillages/',scene,lang)),{scene,lang});
   assert.deepEqual(readRoute('https://example.org/?lang=invalid#missing'),{scene:'start',lang:'de'});
 });
-test('Painted growth selects chronological drawing stages',()=>{assert.deepEqual(frameBlend(0),{lower:0,upper:0,mix:0});assert.deepEqual(frameBlend(.5),{lower:1,upper:1,mix:0});assert.deepEqual(frameBlend(1),{lower:2,upper:2,mix:0});assert.ok(Math.abs(frameBlend(.25).mix-.5)<1e-10);});
+test('Accretion preserves the starting rim and hinge; only new material extends outward',()=>{const base=[[315,578],[900,100],[1200,300],[315,578]],original=structuredClone(base);for(const p of [0,.2,.5,1]){const rim=rimAt(base,p,'mussel');assert.deepEqual(rim[0],base[0]);for(let i=1;i<rim.length-1;i++)assert.ok(Math.hypot(rim[i][0]-315,rim[i][1]-578)>=Math.hypot(base[i][0]-315,base[i][1]-578));assert.deepEqual(accretionStrip(base,p,'mussel').slice(0,base.length),base);}assert.deepEqual(base,original);const lip=[[1100,625],[1220,690],[1190,749]];assert.deepEqual(rimAt(lip,0,'snail'),lip);assert.ok(rimAt(lip,1,'snail')[1][0]>lip[1][0]);});
 test('Feedback corrects the old-area misconception',()=>{
   assert.equal(growthAssessment('tip').correct,false);
   assert.equal(growthAssessment('hinge').feedback,'old-feedback');
