@@ -30,6 +30,12 @@ This shows a short stage of growth. In nature, it takes much longer.
 
 Two shell halves protect its soft body. They grow at the edges too.
 
+## Take a closer look at this shell.
+
+Touch the shell to take a closer look.
+
+The shell grows at the edge. The pale line shows where new material is added.
+
 ## A little piece of the sea for you.
 
 The snail builds its shell. So does the mussel. Their shells grow at the edges.

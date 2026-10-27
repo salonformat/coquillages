@@ -30,6 +30,12 @@ Wir zeigen einen kurzen Wachstumsschritt. In der Natur dauert das viel länger.
 
 Ihr weicher Körper liegt zwischen zwei Muschelschalen. Beide wachsen am Rand.
 
+## Schau dir diese Muschel an.
+
+Berühre die Muschel, um sie näher anzusehen.
+
+Die Muschelschale wächst am Rand. Die helle Linie zeigt dir, wo neues Material dazukommt.
+
 ## Ein kleines Stück Meer für dich.
 
 Die Schnecke baut ihr Haus selbst. Die Muschel ihre beiden Schalen. Beide wachsen am Rand weiter.

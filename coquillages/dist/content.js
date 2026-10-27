@@ -64,7 +64,7 @@ export const CONTENT = {
       "old-feedback": "Dieser Teil war schon da. Schau weiter außen am Rand.",
       "retry": "Noch einmal versuchen",
       "next": "Ein Bild mitnehmen",
-      "body": "Auch diese Muschelschale wächst am Rand weiter. Der alte Teil bleibt erhalten."
+      "body": "Die Muschelschale wächst am Rand. Die helle Linie zeigt dir, wo neues Material dazukommt."
     },
     "ending": {
       "title": "Ein kleines Stück Meer für dich.",
@@ -138,7 +138,7 @@ export const CONTENT = {
       "bivalveHint": "Scrolle zurück, wenn du es noch einmal sehen möchtest.",
       "transferHint": "Berühre die Muschel, um näher hinzuschauen.",
       "transferTitle": "Schau dir diese Muschel an.",
-      "transferBody": "Sie hat eine andere Form. Berühre sie, um näher hinzuschauen.",
+      "transferBody": "Berühre die Muschel, um sie näher anzusehen.",
       "hingeLabel": "Oben, wo die Hälften verbunden sind",
       "edgeLabel": "Am äußeren Rand",
       "outsideHint": "Tippe direkt auf die Muschelschale.",
@@ -148,7 +148,7 @@ export const CONTENT = {
       "doneHint": "Scrolle weiter und nimm dir noch einen Moment am Meer.",
       "inspectNear": "Die Muschel näher ansehen",
       "inspectFar": "Die Muschel wieder von weiter weg ansehen",
-      "inspectBody": "Auch diese Muschelschale wächst am Rand. Die helle Linie zeigt die Stelle."
+      "inspectBody": "Die Muschelschale wächst am Rand. Die helle Linie zeigt dir, wo neues Material dazukommt."
     },
     "postcard": {
       "title": "Ein kleines Stück Meer",
@@ -214,7 +214,7 @@ export const CONTENT = {
       "next": "Regarder une autre coquille"
     },
     "transfer": {
-      "title": "Une autre forme. La même croissance.",
+      "title": "Regarde cette coquille de plus près.",
       "instruction": "Où grandit-elle ? Clique sur l’un des deux endroits.",
       "old-area": "Près de la charnière",
       "growth-area": "Sur le bord libre",
@@ -222,7 +222,7 @@ export const CONTENT = {
       "old-feedback": "Cette partie était déjà là. La coquille grandit sur le bord libre.",
       "retry": "Regarder encore",
       "next": "Garder une image",
-      "body": "Cette coquille grandit elle aussi par le bord. La partie déjà formée reste en place."
+      "body": "La coquille grandit par le bord. Le trait clair montre où la matière s’ajoute."
     },
     "ending": {
       "title": "Un petit bout de mer pour toi.",
@@ -296,7 +296,7 @@ export const CONTENT = {
       "bivalveHint": "Tu peux aussi revenir en arrière.",
       "transferHint": "Touche la coquille pour te rapprocher.",
       "transferTitle": "Regarde cette coquille de plus près.",
-      "transferBody": "Elle a une autre forme. Touche-la pour te rapprocher.",
+      "transferBody": "Touche la coquille pour la voir de plus près.",
       "hingeLabel": "Près de la charnière",
       "edgeLabel": "Sur le bord libre",
       "outsideHint": "Touche un endroit sur la coquille.",
@@ -306,7 +306,7 @@ export const CONTENT = {
       "doneHint": "Continue et profite encore un peu de la mer.",
       "inspectNear": "Voir la coquille de plus près",
       "inspectFar": "Reculer pour voir la coquille entière",
-      "inspectBody": "Cette coquille grandit aussi par le bord. Le trait clair montre cet endroit."
+      "inspectBody": "La coquille grandit par le bord. Le trait clair montre où la matière s’ajoute."
     },
     "postcard": {
       "title": "Un petit bout de mer",
@@ -372,7 +372,7 @@ export const CONTENT = {
       "next": "Look at another shell"
     },
     "transfer": {
-      "title": "A different shape. The same growth.",
+      "title": "Take a closer look at this shell.",
       "instruction": "Where is new shell added? Click on one of the two places.",
       "old-area": "Near the hinge",
       "growth-area": "At the free edge",
@@ -380,7 +380,7 @@ export const CONTENT = {
       "old-feedback": "This part was already here. New material is added at the free edge.",
       "retry": "Look again",
       "next": "Take a picture with you",
-      "body": "This shell gets bigger at the edge too. The earlier part stays in place."
+      "body": "The shell grows at the edge. The pale line shows where new material is added."
     },
     "ending": {
       "title": "A little piece of the sea for you.",
@@ -454,7 +454,7 @@ export const CONTENT = {
       "bivalveHint": "You can scroll back too.",
       "transferHint": "Touch the shell to move closer.",
       "transferTitle": "Take a closer look at this shell.",
-      "transferBody": "It has a different shape. Touch it to move closer.",
+      "transferBody": "Touch the shell to take a closer look.",
       "hingeLabel": "Near the hinge",
       "edgeLabel": "At the free edge",
       "outsideHint": "Touch a spot on the shell.",
@@ -464,7 +464,7 @@ export const CONTENT = {
       "doneHint": "Scroll on and enjoy another moment by the sea.",
       "inspectNear": "Look closer at the shell",
       "inspectFar": "Move back from the shell",
-      "inspectBody": "This shell grows at the edge too. The pale line shows where."
+      "inspectBody": "The shell grows at the edge. The pale line shows where new material is added."
     },
     "postcard": {
       "title": "A little piece of the sea",

@@ -30,6 +30,12 @@ Nous montrons une courte étape de croissance. Dans la nature, cela prend bien p
 
 Deux parties de coquille protègent son corps mou. Elles grandissent aussi par le bord.
 
+## Regarde cette coquille de plus près.
+
+Touche la coquille pour la voir de plus près.
+
+La coquille grandit par le bord. Le trait clair montre où la matière s’ajoute.
+
 ## Un petit bout de mer pour toi.
 
 L’escargot fabrique sa coquille. La moule aussi. Elles grandissent par le bord.
