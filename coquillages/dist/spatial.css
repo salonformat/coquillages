@@ -1,0 +1,100 @@
+/* A single painted space; the camera carries the subject between observations. */
+#journey-stage{position:fixed;inset:0;width:100%;height:100%;z-index:2;pointer-events:none}
+#experience{z-index:4;pointer-events:none}
+#experience #scene{display:block!important;position:relative;width:100%;height:100svh;min-height:100svh!important;max-width:none;margin:0;padding:0!important;overflow:visible}
+#experience #scene .scene-copy{display:block!important;position:absolute;padding:0!important;max-width:none;opacity:var(--copy-opacity,1);pointer-events:auto}
+#experience #scene .scene-copy h1{font-size:clamp(32px,3.6vw,52px);line-height:1.15;max-width:17ch;margin:0 0 18px}
+#experience #scene .scene-copy p{font-size:clamp(18px,1.45vw,21px);line-height:1.5;max-width:31ch;margin:0 0 16px;text-shadow:0 1px 12px rgba(0,28,46,.4)}
+#experience #scene .stage{display:none!important}
+#experience #scene .actions{position:static;display:flex;flex-wrap:wrap;gap:12px;margin-top:22px;z-index:auto}
+#experience #scene.scene-start .scene-copy{top:15vh;left:50%;transform:translateX(-50%);width:min(820px,88vw);text-align:center}
+#experience #scene.scene-start .scene-copy h1{font-size:clamp(54px,5.8vw,84px);max-width:16ch;margin:0 auto 22px;line-height:1.08}
+#experience #scene.scene-start .scene-copy p{max-width:37ch!important;margin-left:auto;margin-right:auto}
+#experience #scene.scene-start .intro-reward{font-size:15px!important;margin-top:14px}
+#experience #scene.scene-start .journey-hint{font-size:12px!important;opacity:.85}
+#experience #scene.scene-start .actions{justify-content:center;margin-top:18px}
+#experience #scene.scene-start .primary{min-width:260px;min-height:66px;padding:18px 24px;font-size:19px}
+#experience #scene.scene-animal .scene-copy{top:22vh;left:7vw;width:30vw}
+#experience #scene.scene-edge .scene-copy{top:15vh;left:7vw;width:35vw}
+#experience #scene.scene-edge .scene-copy h1{font-size:32px}
+#experience #scene.scene-edge .scene-copy p{max-width:32ch;font-size:20px}
+#experience #scene.scene-growth .scene-copy{top:16vh;left:7vw;width:min(650px,58vw)}
+#experience #scene.scene-growth .scene-copy p{font-size:24px;max-width:43ch}
+#experience #scene.scene-growth .model-note{position:fixed;top:70vh;left:0;font-size:12px!important;max-width:42ch!important}
+#experience #scene.scene-bivalve .scene-copy{top:34vh;left:68vw;width:27vw}
+#experience #scene.scene-bivalve .scene-copy h1{font-size:38px}
+#experience #scene.scene-bivalve .model-note{font-size:12px!important;max-width:33ch!important}
+.mussel-inspection{position:fixed;z-index:4;display:block;background:transparent;border:0;padding:0;color:#f1f8f9;cursor:zoom-in;transform:none}
+.mussel-inspection span{position:absolute;right:0;bottom:-22px;display:block;padding:9px 13px;background:rgba(4,39,66,.88);border:1px solid rgba(230,247,249,.7);font-size:13px;line-height:1.3}
+.mussel-inspection[aria-expanded=true]{cursor:zoom-out}
+.mussel-inspection:focus-visible{outline:2px solid #f2f8f8;outline-offset:6px}
+.header,.footer{z-index:8}
+#journey-hint{z-index:7}
+body:is([data-scene=start],[data-scene=animal],[data-scene=edge],[data-scene=growth]) .ocean-painting{background-image:url('assets/world-snail.jpg')!important}
+body[data-scene=bivalve] .ocean-painting{background-image:url('assets/world-mussel.jpg')!important}
+body[data-scene=ending] .ocean-painting{background-image:url('assets/world-ending.jpg')!important}
+.ocean-painting,#painted-water{animation:none!important;transform:translate3d(var(--world-x,0px),var(--world-y,0px),0) scale(var(--world-zoom,1.02))!important;transition:filter .35s;filter:brightness(calc(1 - var(--observation-focus,0)*.3)) blur(calc(var(--observation-focus,0)*1px))}
+#ocean::after,body[data-scene=start] #ocean::after,body:is([data-scene=animal],[data-scene=edge],[data-scene=growth],[data-scene=bivalve],[data-scene=ending]) #ocean::after{background:linear-gradient(180deg,rgba(3,27,58,.60),rgba(3,32,57,.08) 52%,rgba(3,28,46,.35))!important}
+.water-light{transform:translateY(calc(var(--foreground-y,0px)*.25));opacity:.3}
+.foreground-painting{position:fixed;inset:-5%;z-index:3;pointer-events:none;background:url('assets/world-snail.jpg') center bottom/cover;mask-image:linear-gradient(transparent 63%,rgba(0,0,0,.7) 88%,#000);transform:translate3d(calc(var(--world-x,0px)*1.45),var(--foreground-y,0px),0) scale(1.1);opacity:var(--foreground-opacity,.5)}
+body[data-scene=ending] #experience,body[data-scene=about] #experience{pointer-events:auto;z-index:4}
+#experience #scene.scene-ending{height:auto!important;min-height:0!important;padding:28px 5vw 35px!important;display:flex!important;flex-direction:column;align-items:center;gap:20px}
+#experience #scene.scene-ending .scene-copy{position:static!important;width:100%;max-width:900px;text-align:center;opacity:1;display:contents!important}
+#experience #scene.scene-ending h1{order:1;font-size:clamp(32px,3.5vw,48px);max-width:28ch!important;margin:0 auto!important;text-align:center}
+#experience #scene.scene-ending .scene-copy>p:not(.postcard-format){order:2;max-width:48ch;margin:0;text-align:center}
+#experience #scene.scene-ending .stage{display:block!important;order:3;width:min(480px,60vw);height:auto!important;min-height:0!important;margin:0!important}
+#experience #scene.scene-ending .actions{order:4;justify-content:center;margin:0}
+#experience #scene.scene-ending .postcard-format{order:5;text-align:center;margin:0;font-size:12px}
+#postcard{border:1px solid rgba(242,249,250,.6);box-shadow:none}
+@media(max-width:700px){
+ #experience #scene .scene-copy h1{font-size:30px;max-width:19ch;margin-bottom:12px}
+ #experience #scene .scene-copy p{font-size:17px;line-height:1.45;max-width:34ch}
+ #experience #scene.scene-start .scene-copy{top:13vh;left:22px;transform:none;width:calc(100% - 44px);text-align:left}
+ #experience #scene.scene-start .scene-copy h1{font-size:clamp(36px,9.8vw,44px);max-width:15ch;margin:0 0 16px}
+ #experience #scene.scene-start .scene-copy p{margin-left:0;margin-right:0}
+ #experience #scene.scene-start .intro-reward{font-size:13px!important;margin-top:10px}
+ #experience #scene.scene-start .journey-hint{font-size:11px!important;margin-bottom:12px}
+ #experience #scene.scene-start .actions{justify-content:start;margin-top:14px}
+ #experience #scene.scene-start .primary{width:auto;min-width:220px;min-height:58px;font-size:18px}
+ #experience #scene.scene-animal .scene-copy,#experience #scene.scene-edge .scene-copy,#experience #scene.scene-bivalve .scene-copy{top:104px;left:22px;width:calc(100% - 44px)}
+ #experience #scene.scene-edge .scene-copy h1{font-size:28px}
+ #experience #scene.scene-edge .scene-copy p{font-size:17px;max-width:31ch}
+ #experience #scene.scene-growth .scene-copy{top:108px;left:22px;width:calc(100% - 44px)}
+ #experience #scene.scene-growth .scene-copy p{font-size:20px;max-width:29ch}
+ #experience #scene.scene-growth .model-note{position:fixed;top:auto;left:0;bottom:calc(-64vh);max-width:30ch!important;font-size:11px!important}
+ #experience #scene.scene-bivalve .model-note{font-size:11px!important;max-width:31ch!important}
+ .mussel-inspection span{font-size:11px;bottom:-24px;padding:7px 9px}
+ #experience #scene.scene-ending{padding:20px 22px 30px!important;gap:16px}
+ #experience #scene.scene-ending h1{font-size:31px}
+ #experience #scene.scene-ending .scene-copy>p:not(.postcard-format){font-size:17px}
+ #experience #scene.scene-ending .stage{width:100%;max-width:420px}
+ #experience #scene.scene-ending .primary{width:100%;min-height:60px}
+ #experience #scene.scene-ending .secondary{width:auto}
+ #experience #scene.scene-ending .actions{gap:12px 18px}
+}
+@media(max-width:700px) and (max-height:740px){
+ #experience #scene.scene-start .scene-copy{top:90px}
+ #experience #scene.scene-start .scene-copy h1{font-size:34px;max-width:16ch}
+ #experience #scene.scene-start .scene-copy p{font-size:16px}
+ #experience #scene.scene-start .intro-reward{font-size:12px!important}
+ #experience #scene.scene-animal .scene-copy,#experience #scene.scene-edge .scene-copy,#experience #scene.scene-bivalve .scene-copy,#experience #scene.scene-growth .scene-copy{top:94px}
+ #experience #scene .scene-copy h1{font-size:27px}
+ #experience #scene.scene-growth .scene-copy p{font-size:18px}
+ #experience #scene.scene-bivalve .scene-copy p{font-size:16px}
+}
+@media(prefers-reduced-motion:reduce){.foreground-painting{display:none}.ocean-painting,#painted-water{transform:none!important;transition:none}}
+#experience #scene.scene-growth .model-note{position:fixed;top:auto;left:7vw;bottom:130px}
+@media(max-width:700px){#experience #scene.scene-growth .model-note{left:22px;bottom:126px;max-width:30ch!important}}
+
+#experience #scene.scene-edge .scene-copy{left:70vw;width:27vw;top:15vh}
+#experience #scene.scene-growth .scene-copy{left:71vw;width:26vw;top:16vh}
+#experience #scene.scene-growth .scene-copy p{font-size:21px;max-width:28ch}
+.header .wordmark{background:rgba(3,29,50,.82);padding:8px 11px;margin-left:-11px;border-radius:2px}
+body[data-scene=bivalve] #ocean::after{background:linear-gradient(270deg,rgba(2,29,53,.82),rgba(2,29,53,.58) 30%,transparent 65%),linear-gradient(180deg,rgba(3,27,58,.4),transparent 65%,rgba(3,28,46,.3))!important}
+@media(max-width:700px){
+ #experience #scene.scene-edge .scene-copy,#experience #scene.scene-growth .scene-copy{left:22px;width:calc(100% - 44px);top:108px}
+ #experience #scene.scene-edge h1{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+ #experience #scene.scene-growth .scene-copy p{font-size:19px;max-width:30ch}
+ body[data-scene=bivalve] #ocean::after{background:linear-gradient(180deg,rgba(2,29,53,.82),rgba(2,29,53,.55) 32%,transparent 65%,rgba(3,28,46,.3))!important}
+}
+@media(max-width:700px) and (max-height:740px){#experience #scene.scene-edge .scene-copy,#experience #scene.scene-growth .scene-copy{top:94px}}

@@ -39,3 +39,6 @@ Elio-Referenzbilder aus dem Gespräch, vorhandene gezeichnete PNG-Illustrationen
 - Jede aktive Handlung verändert das Bild nachvollziehbar.
 - Schönheit kommt aus den gezeichneten Gegenständen und ihrer Umgebung.
 - Vereinfachungen bleiben erkennbar.
+
+
+Die verbindliche räumliche Bildfolge und Kameraführung sind in [RAUMREISE.md](docs/RAUMREISE.md) dokumentiert. Die Muschel-Nahansicht ist Teil des Vergleichs, keine zusätzliche Station.

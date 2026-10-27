@@ -124,7 +124,6 @@ export const CONTENT = {
         "Die Öffnung",
         "Das Haus wächst",
         "Die Muschel",
-        "Aus der Nähe",
         "Die Postkarte"
       ],
       "audioUnavailable": "Der Ton lässt sich nicht einschalten. Du kannst ohne Ton weitermachen.",
@@ -156,6 +155,10 @@ export const CONTENT = {
       "line": "Die Schnecke baut ihr Haus selbst.",
       "format": "Animiertes GIF · ohne Ton",
       "label": "Gezeichnetes Meer mit fließendem Wasser, vorbeiziehenden Fischen und einem weißen Schneckenhaus."
+    },
+    "camera": {
+      "near": "Näher ansehen",
+      "far": "Wieder zurück"
     }
   },
   "fr": {
@@ -283,7 +286,6 @@ export const CONTENT = {
         "Le bord",
         "La croissance",
         "La moule",
-        "Voir de plus près",
         "À garder"
       ],
       "audioUnavailable": "Le son n’est pas disponible ici. Tu peux continuer sans le son.",
@@ -315,6 +317,10 @@ export const CONTENT = {
       "line": "L’escargot fabrique sa coquille.",
       "format": "GIF animé · sans son",
       "label": "Une mer dessinée, de l’eau en mouvement, des poissons et une coquille blanche."
+    },
+    "camera": {
+      "near": "Voir de plus près",
+      "far": "Reculer"
     }
   },
   "en": {
@@ -442,7 +448,6 @@ export const CONTENT = {
         "The edge",
         "Growth",
         "The mussel",
-        "Look closer",
         "To keep"
       ],
       "audioUnavailable": "Sound is not available here. You can continue without it.",
@@ -474,6 +479,10 @@ export const CONTENT = {
       "line": "The snail builds its own shell.",
       "format": "Animated GIF · no sound",
       "label": "A hand-drawn sea with flowing water, passing fish and a white snail shell."
+    },
+    "camera": {
+      "near": "Look closer",
+      "far": "Move back"
     }
   }
 };

@@ -1,5 +1,5 @@
-export const SCENES=['start','animal','edge','growth','bivalve','transfer','ending'];
-export function validScene(id){return id==='why'?'animal':SCENES.includes(id)?id:'start';}
+export const SCENES=['start','animal','edge','growth','bivalve','ending'];
+export function validScene(id){return id==='transfer'?'bivalve':id==='why'?'animal':SCENES.includes(id)?id:'start';}
 export function validLanguage(lang){return ['de','fr','en'].includes(lang)?lang:'de';}
 export function nextScene(id){return SCENES[Math.min(SCENES.indexOf(validScene(id))+1,SCENES.length-1)];}
 export function previousScene(id){return SCENES[Math.max(SCENES.indexOf(validScene(id))-1,0)];}

@@ -10,7 +10,8 @@
   <link rel="preload" href="assets/josefin-sans.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/ocean-entry.jpg" as="image">
   <link rel="stylesheet" href="style.css">
-  <script type="module" src="app.js?v=einfaches-deutsch-9"></script>
+  <link rel="stylesheet" href="spatial.css">
+  <script type="module" src="app.js?v=raumreise-10"></script>
 </head>
 <body>
   <div id="ocean" aria-hidden="true"><div class="ocean-painting"></div><div class="water-light"></div><canvas id="water"></canvas></div>
@@ -24,6 +25,9 @@
     </nav>
   </header>
   <div id="scroll-track" aria-hidden="true"></div>
+  <div class="foreground-painting" aria-hidden="true"></div>
+  <canvas id="journey-stage" role="img" aria-label=""></canvas>
+  <button id="inspect-mussel" class="mussel-inspection" hidden type="button" aria-expanded="false"><span></span></button>
   <main id="experience">
     <section id="scene" aria-labelledby="scene-title"></section>
     <section id="about" class="about" hidden aria-labelledby="about-title"></section>

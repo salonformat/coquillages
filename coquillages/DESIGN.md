@@ -263,3 +263,6 @@ Bedienhinweise stehen nur dort, wo sie nötig sind. Auf dem Handy wird die
 Muschel durch Tippen geöffnet, am Rechner durch Klicken; der Text passt dazu.
 Die Fachbegriffe und die Unterschiede zwischen Randwachstum und Verdickung
 bleiben erhalten.
+
+
+Die verbindliche räumliche Bildfolge und Kameraführung sind in [RAUMREISE.md](docs/RAUMREISE.md) dokumentiert. Die Muschel-Nahansicht ist Teil des Vergleichs, keine zusätzliche Station.

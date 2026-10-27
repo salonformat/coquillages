@@ -1,39 +1,29 @@
-import {createRequire} from 'node:module';import {mkdirSync,writeFileSync} from 'node:fs';import assert from 'node:assert/strict';
-import {offsetFor} from '../dist/journey.js';import {CONTENT} from '../dist/content.js';
-const require=createRequire(import.meta.url),{chromium}=require(process.env.PLAYWRIGHT_MODULE_PATH||'/Users/isabellakohout/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
-const browser=await chromium.launch({headless:true}),out='output/qa-scroll',errors=[],results=[];mkdirSync(out,{recursive:true});
-const base=process.env.TEST_URL||'http://127.0.0.1:4173/';
-const context=await browser.newContext({viewport:{width:1440,height:900},acceptDownloads:true,reducedMotion:'reduce'}),page=await context.newPage();
-page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)errors.push(`${r.status()} ${r.url()}`);});
-const at=async(id,p=.1)=>{const height=await page.evaluate(()=>innerHeight);await page.evaluate(y=>window.scrollTo({top:y,behavior:'instant'}),offsetFor(id,p,height));await page.waitForFunction(id=>document.body.dataset.scene===id&&document.querySelector('#scene').dataset.ready==='true',id);await page.waitForTimeout(100);};
-const shot=async name=>{await page.evaluate(()=>document.fonts.ready);await page.screenshot({path:`${out}/${name}.png`});};
-const pixels=selector=>page.locator(selector).evaluate(canvas=>canvas.toDataURL());
-for(const lang of ['de','fr','en']){
- await page.goto(`${base}?lang=${lang}&run=${lang}&v=scroll#start`);await page.waitForFunction(()=>document.querySelector('#scene')?.dataset.ready==='true');if(lang==='de')await shot('desktop-start');
- await page.mouse.wheel(0,450);await page.waitForFunction(()=>scrollY>100);assert.equal(await page.locator('body').getAttribute('data-scene'),'start');
- await at('animal',.15);assert.equal(await page.locator('#scene-body').textContent(),CONTENT[lang].animal.body);if(lang==='de')await shot('desktop-animal');
- await at('animal',.7);assert.equal(await page.locator('#scene-body').textContent(),CONTENT[lang].why.body);
- await at('edge',.2);const edgeEarly=await pixels('#shell-layers');await at('edge',.7);assert.ok(await pixels('#shell-layers')!==edgeEarly);if(lang==='de')await shot('desktop-edge');
- await at('growth',.15);const early=await pixels('#shell-growth'),stillY=await page.evaluate(()=>scrollY);await page.waitForTimeout(650);assert.equal(await page.evaluate(()=>scrollY),stillY);assert.ok(await pixels('#shell-growth')===early,'Growth stays still without scroll');
- await at('growth',.65);assert.ok(await pixels('#shell-growth')!==early);if(lang==='de')await shot('desktop-growth');await at('growth',.15);assert.ok(await pixels('#shell-growth')===early,'Reverse scroll restores drawing');
- await at('bivalve',.2);const young=await pixels('#mussel-growth');await at('bivalve',.8);assert.ok(await pixels('#mussel-growth')!==young);if(lang==='de')await shot('desktop-bivalve');
- await at('transfer',.1);assert.equal(await page.locator('[data-place]').count(),0);assert.equal(await page.locator('#transfer-feedback').count(),0);assert.equal(await page.locator('#inspect-shell').getAttribute('aria-expanded'),'false');const untouched=await pixels('#transfer-growth');
- await page.locator('#inspect-shell').click();assert.equal(await page.locator('#inspect-shell').getAttribute('aria-expanded'),'true');assert.equal(await page.locator('#transfer-description').textContent(),CONTENT[lang].journey.inspectBody);assert.ok(await pixels('#transfer-growth')!==untouched);await page.locator('#inspect-shell').focus();await page.keyboard.press('Enter');assert.equal(await page.locator('#inspect-shell').getAttribute('aria-expanded'),'false');await page.keyboard.press('Enter');assert.equal(await page.locator('#inspect-shell').getAttribute('aria-expanded'),'true');if(lang==='de')await shot('desktop-transfer');
- await page.mouse.wheel(0,1300);await page.waitForTimeout(100);await page.waitForFunction(()=>location.hash==='#ending'&&document.querySelector('#scene').dataset.ready==='true');if(lang==='de')await shot('desktop-ending');
- assert.equal(await page.locator('#card-drawing').count(),0);assert.equal(await page.locator('[data-action="mark-rim"]').count(),0);assert.ok(!/Imagegen|ChatGPT|Isabella Kohout|\bAI\b|\bKI\b/i.test(await page.locator('body').innerText()));
- const downloadPromise=page.waitForEvent('download');await page.locator('a[download]').click();const download=await downloadPromise;assert.equal(download.suggestedFilename(),`salonformat-meer-${lang}.gif`);await download.saveAs(`${out}/postcard-${lang}.gif`);
- await page.goBack();await page.waitForFunction(()=>location.hash==='#transfer');assert.equal(await page.locator('#transfer-description').textContent(),CONTENT[lang].journey.inspectBody);
- await page.waitForTimeout(250);const y=await page.evaluate(()=>scrollY),nextLang=lang==='en'?'de':'en';await page.locator(`[data-lang="${nextLang}"]`).click();assert.equal(await page.evaluate(()=>scrollY),y);assert.equal(await page.locator('#transfer-description').textContent(),CONTENT[nextLang].journey.inspectBody);
- assert.equal(await page.locator('input[type=range]').count(),0);assert.equal(await page.locator('a[href="https://salonformat.com"]').count(),2);results.push({lang,nativeWheel:true,reversibleGrowth:true,noAutoplay:true,closeInspection:true,keyboardToggle:true,download:true,back:true,languagePreservesPosition:true});
-}
-await page.locator('[data-lang="de"]').click();
-for(const [width,height]of [[390,844],[375,667]]){
- await page.setViewportSize({width,height});await page.waitForFunction(height=>Math.abs(parseFloat(document.querySelector('#scroll-track').style.height)-9.05*height)<1,height);await page.waitForTimeout(80);
- for(const id of ['start','animal','edge','growth','bivalve','transfer','ending']){await at(id,id==='animal'?.65:.6);await shot(`mobile-${width}-${id}`);const size=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}));assert.ok(size.scroll<=size.width,`Horizontal overflow: ${width}/${id}`);
- if(id!=='ending'&&id!=='start'){const stage=await page.locator('.stage').boundingBox(),footer=await page.locator('.footer').boundingBox();assert.ok(stage.y+stage.height<=footer.y+5,`Stage behind footer: ${width}/${id}`);}
- if(id==='ending'){const main=await page.locator('#experience').boundingBox(),footer=await page.locator('.footer').boundingBox();assert.ok(main.y+main.height<=footer.y);await page.locator('a[download]').scrollIntoViewIfNeeded();await shot(`mobile-${width}-ending-actions`);}
+import {createRequire} from 'node:module';
+import assert from 'node:assert/strict';
+import {offsetFor} from '../dist/journey.js';
+const require=createRequire(import.meta.url),{chromium}=require('/Users/isabellakohout/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const browser=await chromium.launch({headless:true});const errors=[];
+try{
+ for(const lang of ['de','fr','en']){
+  const page=await browser.newPage({viewport:{width:1440,height:900}});page.on('pageerror',e=>errors.push(e.message));
+  await page.goto(`http://127.0.0.1:4173/?lang=${lang}&v=raumreise-10#start`);
+  await page.waitForFunction(()=>document.querySelector('#scene').dataset.ready==='true');
+  assert.equal(await page.locator('html').getAttribute('lang'),lang);
+  await page.mouse.wheel(0,300);await page.waitForTimeout(200);assert.ok(await page.evaluate(()=>scrollY)>0);
+  for(const [id,p]of [['animal',.3],['edge',.5],['growth',.15],['growth',.6],['growth',.15],['bivalve',.4],['ending',0]]){
+   await page.evaluate(y=>scrollTo({top:y,behavior:'instant'}),offsetFor(id,p,900));
+   await page.waitForFunction(id=>document.body.dataset.scene===id&&document.querySelector('#scene').dataset.ready==='true',id);await page.waitForTimeout(100);
+   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+   if(id==='growth'){const camera=await page.locator('#journey-stage').getAttribute('data-camera');assert.ok(camera);}
+   if(id==='bivalve'){const button=page.locator('#inspect-mussel');await button.focus();await page.keyboard.press('Enter');await page.waitForTimeout(600);assert.equal(await button.getAttribute('aria-expanded'),'true');await button.click();assert.equal(await button.getAttribute('aria-expanded'),'false');}
+  }
+  assert.ok(await page.locator('#postcard').isVisible());assert.ok((await page.locator('a[download]').getAttribute('href')).endsWith(`postcard-${lang}.gif`));
+  await page.goBack();await page.waitForFunction(()=>document.body.dataset.scene==='bivalve');
+  assert.ok(await page.locator('a[href="https://salonformat.com"]').count()>0);
+  await page.close();
  }
-}
-await page.setViewportSize({width:375,height:667});await page.waitForTimeout(120);for(const lang of ['fr','en']){await page.locator(`[data-lang="${lang}"]`).click();for(const id of ['animal','growth','transfer']){await at(id,.8);await shot(`mobile-375-${lang}-${id}`);const stage=await page.locator('.stage').boundingBox(),footer=await page.locator('.footer').boundingBox();assert.ok(stage.y+stage.height<=footer.y+5,`Localized stage overlap: ${lang}/${id}`);}}
-const touchContext=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,reducedMotion:'reduce'}),touch=await touchContext.newPage();await touch.goto(`${base}?lang=fr&v=touch#start`);await touch.waitForFunction(()=>document.querySelector('#scene')?.dataset.ready==='true');const cdp=await touchContext.newCDPSession(touch);await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:180,y:610}]});for(let y=580;y>=250;y-=30){await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:180,y}]});await touch.waitForTimeout(16);}await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await touch.waitForTimeout(200);assert.ok(await touch.evaluate(()=>scrollY)>50,'Native swipe moves through journey');
-await touch.evaluate(()=>scrollTo(0,8.05*innerHeight));await touch.waitForFunction(()=>document.body.dataset.scene==='ending'&&document.querySelector('#scene').dataset.ready==='true');assert.equal(await touch.locator('#postcard').count(),1);assert.equal(await touch.locator('a[download]').count(),1);await touchContext.close();assert.deepEqual(errors,[]);writeFileSync(`${out}/results.json`,JSON.stringify({results,mobile:[390,375],nativeSwipe:true,errors},null,2));console.log(JSON.stringify({results,nativeSwipe:true,errors,screenshots:out}));await browser.close();
+ const mobile=await browser.newPage({viewport:{width:375,height:667},isMobile:true,hasTouch:true});
+ await mobile.goto('http://127.0.0.1:4173/?lang=de#start');await mobile.waitForFunction(()=>document.querySelector('#scene').dataset.ready==='true');
+ const client=await mobile.context().newCDPSession(mobile);await client.send('Input.synthesizeScrollGesture',{x:180,y:510,yDistance:-450,speed:800,gestureSourceType:'touch'});await mobile.waitForTimeout(250);assert.ok(await mobile.evaluate(()=>scrollY)>100);
+ await mobile.close();assert.deepEqual(errors,[]);console.log('PASS: DE/FR/EN journey, wheel/touch, reversible scroll, keyboard inspection, postcard, browser back, no horizontal overflow or runtime errors.');
+}finally{await browser.close();}

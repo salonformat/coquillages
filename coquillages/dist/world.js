@@ -22,13 +22,13 @@ export class Ocean{
     const ctx=this.ctx;ctx.clearRect(0,0,this.w,this.h);
     for(const [i,p]of this.particles.entries()){const y=(p.y-this.time*p.speed+10)%1,x=(p.x+this.time*.006+Math.sin(this.time*.3+i)*.008)%1;ctx.fillStyle=`rgba(219,236,224,${.1+random(i+600)*.3})`;ctx.beginPath();ctx.ellipse(x*this.w,y*this.h,p.size,p.size*.55,-.7,0,Math.PI*2);ctx.fill();}
     if(!this.fish.complete||!this.fish.naturalWidth)return;
-    const close=this.scene==='edge'||this.scene==='growth',count=close?2:6;
+    const close=this.scene==='edge'||this.scene==='growth'||this.focus>.5,count=close?2:6;
     for(let i=0;i<count;i++){
       const direction=i%3===0?-1:1,size=(innerWidth<701?65:90)+random(i+710)*70,speed=12+random(i+720)*20;
       const travel=this.w+size*2,position=(random(i+740)*travel+this.time*speed)%travel;
       const x=direction===1?position-size:this.w-position+size;
       const lane=[.20,.76,.87,.31,.69,.16][i],y=this.h*lane+Math.sin(this.time*.5+i)*9;
-      ctx.save();ctx.translate(x,y);ctx.scale(direction,1);ctx.globalAlpha=close?.22:.28+random(i+780)*.34;
+      ctx.save();ctx.translate(x,y);ctx.scale(direction,1);ctx.globalAlpha=close?.10:.28+random(i+780)*.34;
       const scale=size/this.fish.naturalWidth,height=this.fish.naturalHeight;
       // Bend only the tail of the pencil drawing; its body remains intact.
       for(let sx=0;sx<this.fish.naturalWidth;sx+=24){const sw=Math.min(24,this.fish.naturalWidth-sx),tail=Math.max(0,1-sx/(this.fish.naturalWidth*.34)),bend=Math.sin(this.time*4.5+i+sx*.02)*tail*5;ctx.drawImage(this.fish,sx,0,sw,height,sx*scale,bend*scale,sw*scale,height*scale);}
