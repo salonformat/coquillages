@@ -251,3 +251,15 @@ Ansicht her. Eine kurze sachliche Erklärung ersetzt Lob und Fehlerhinweise.
 Der Zustand bleibt beim Sprachwechsel und Browser-Rückweg erhalten.
 Bei reduzierter Bewegung entfällt die Kamerabewegung; die Markierung ist sofort
 sichtbar. Weiteres Scrollen ist jederzeit möglich.
+
+
+## Deutsche Sprache · 27. Oktober 2026
+
+Die deutschen Besuchertexte sind kurz, konkret und ohne Werbeaufforderungen.
+Keine Einleitungen wie „Begleite“, „Entdecke“ oder „wartet auf dich“. Überschriften
+benennen eine Erkenntnis statt nur das sichtbare Tier. Der Anfang erklärt mit
+zwei Sätzen, dass die Schnecke ihr Haus selbst bildet und es mitwächst.
+Bedienhinweise stehen nur dort, wo sie nötig sind. Auf dem Handy wird die
+Muschel durch Tippen geöffnet, am Rechner durch Klicken; der Text passt dazu.
+Die Fachbegriffe und die Unterschiede zwischen Randwachstum und Verdickung
+bleiben erhalten.

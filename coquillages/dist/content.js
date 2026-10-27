@@ -2,61 +2,61 @@ export const CONTENT = {
   "de": {
     "start": {
       "title": "Wie wächst ein Schneckenhaus?",
-      "body": "Begleite eine Meeresschnecke. Entdecke, wie sie ihr Haus baut und wie auch Muschelschalen wachsen.",
+      "body": "Die Schnecke baut ihr Haus selbst. Und es wächst mit ihr.",
       "action": "Eintauchen",
-      "hint": "Scrolle nach unten oder wische nach oben. Du bestimmst das Tempo.",
-      "reward": "Zum Schluss wartet eine bewegte Meerespostkarte auf dich. Wenn du möchtest, kannst du sie speichern."
+      "hint": "Scroll oder wisch weiter.",
+      "reward": "Am Ende kannst du eine animierte Postkarte speichern."
     },
     "animal": {
-      "title": "Da ist eine Meeresschnecke.",
-      "body": "Ihr Körper ist weich. Das harte Schneckenhaus schützt ihn.",
+      "title": "Ihr Körper ist weich.",
+      "body": "Das harte Haus schützt die Schnecke.",
       "action": "Näher zur Schnecke",
-      "after": "Das Haus gehört zu ihrem Körper. Die Schnecke baut es selbst.",
+      "after": "Das Haus gehört zur Schnecke. Sie baut es selbst.",
       "next": "Warum wächst das Haus?"
     },
     "why": {
-      "title": "Die Schnecke wächst.",
-      "body": "Sie wird größer und braucht mehr Platz. Deshalb wächst ihr Haus mit.",
-      "question": "Aber wie wird so ein hartes Haus größer?",
+      "title": "Die Schnecke wird größer.",
+      "body": "Ihr Körper braucht mehr Platz. Deshalb wächst das Haus mit.",
+      "question": "Wie wird so ein hartes Haus größer?",
       "next": "Zur Öffnung des Hauses"
     },
     "edge": {
-      "title": "Das Haus wächst an der Öffnung.",
+      "title": "Wie baut sie ihr Haus?",
       "instruction": "Wo, glaubst du, wächst das Haus? Tippe auf die Stelle.",
       "old-area": "Die Innenseite",
       "growth-area": "Der Rand",
       "old-feedback": "Innen kann das Haus dicker werden. Größer wird es am Rand der Öffnung.",
       "correct-feedback": "Genau. Hier am Rand baut die Schnecke ihr Haus weiter.",
       "detail-action": "Wie baut sie ihr Haus?",
-      "detail": "Eine dünne Haut im Körper der Schnecke bildet das Material für ihr Haus. Diese Haut heißt Mantel. Das Haus besteht hauptsächlich aus Kalk.",
+      "detail": "Der Mantel ist eine dünne Haut der Schnecke. Er bildet das Material für ihr Haus. Das besteht zum größten Teil aus Kalk.",
       "thickness": "Von innen kann das Haus auch dicker werden.",
       "next": "Schau beim Wachsen zu",
-      "body": "Am Rand der Öffnung kommt neues Material dazu. Es entsteht in einer dünnen Haut der Schnecke. Diese Haut heißt Mantel.",
-      "extra": "Von innen kann das Haus auch dicker werden."
+      "body": "Das Material dafür bildet der Mantel. Das ist eine dünne Haut der Schnecke.",
+      "extra": "Größer wird das Haus am Rand. Von innen kann es auch dicker werden."
     },
     "growth": {
-      "title": "Hier wächst das Haus weiter.",
-      "instruction": "Schau auf diesen Abschnitt am Rand der Öffnung. Hier kommt neues Material dazu.",
+      "title": "Am Rand wächst das Haus weiter.",
+      "instruction": "Hier am Rand der Öffnung kommt neues Material dazu.",
       "earlier": "Früher",
       "later": "Später",
       "play": "Wachstum ansehen",
       "pause": "Anhalten",
       "old-label": "Dieser Teil war schon da.",
       "new-label": "Dieser Teil ist neu.",
-      "after": "Am Rand ist ein Stück dazugekommen. Der ältere Teil hat sich nicht verändert.",
-      "model-note": "Wir zeigen einen kurzen Wachstumsschritt. In der Natur dauert das viel länger.",
+      "after": "Am Rand ist ein Stück dazugekommen. Der Rest des Hauses ist gleich geblieben.",
+      "model-note": "In der Natur dauert das viel länger.",
       "next": "Zur Muschel"
     },
     "bivalve": {
-      "title": "Und wie wächst eine Muschel?",
-      "body": "Ihr weicher Körper liegt zwischen zwei Muschelschalen. Beide wachsen am Rand.",
+      "title": "Und bei einer Muschel?",
+      "body": "Auch die Muschel hat einen weichen Körper. Ihre beiden Schalen wachsen am Rand.",
       "open": "Die Muschel öffnen",
       "instruction": "Scrolle weiter und achte auf die Ränder der beiden Muschelschalen.",
-      "after": "An beiden Rändern kommt neues Material dazu. Was schon da war, bleibt erhalten.",
+      "after": "Auch hier kommt am Rand neues Material dazu.",
       "next": "Zu einer anderen Muschel"
     },
     "transfer": {
-      "title": "Schau dir diese Muschel an.",
+      "title": "Aus der Nähe",
       "instruction": "Wo wächst ihre Muschelschale weiter? Tippe auf die Stelle.",
       "old-area": "Oben, wo die Hälften verbunden sind",
       "growth-area": "Am äußeren Rand",
@@ -64,20 +64,20 @@ export const CONTENT = {
       "old-feedback": "Dieser Teil war schon da. Schau weiter außen am Rand.",
       "retry": "Noch einmal versuchen",
       "next": "Ein Bild mitnehmen",
-      "body": "Die Muschelschale wächst am Rand. Die helle Linie zeigt dir, wo neues Material dazukommt."
+      "body": "Hier am Rand kommt neues Material dazu."
     },
     "ending": {
       "title": "Ein kleines Stück Meer für dich.",
-      "body": "Die Schnecke baut ihr Haus selbst. Die Muschel ihre beiden Schalen. Beide wachsen am Rand weiter.",
+      "body": "Am Rand kommt neues Material dazu. Das Tier bildet es selbst.",
       "transfer": "Wenn du am Strand ein Schneckenhaus oder eine Muschelschale findest, schau dir den Rand einmal genauer an.",
       "keepsake-title": "Deine Entdeckerkarte",
       "keepsake-body": "Was möchtest du mitnehmen?",
       "snail": "Das Schneckenhaus",
       "bivalve": "Die Muschelschale",
-      "download": "Meerespostkarte speichern",
+      "download": "Postkarte speichern",
       "card-note": "Vereinfachte Darstellung",
-      "replay": "Noch einmal ansehen",
-      "sources": "Mehr erfahren",
+      "replay": "Noch einmal von vorne",
+      "sources": "Quellen",
       "card-line-1": "Das Tier bildet neues Material.",
       "card-line-2": "Die Muschelschale wächst am Rand."
     },
@@ -94,9 +94,9 @@ export const CONTENT = {
       "language": "Sprache",
       "progress": "Dein Weg",
       "source-title": "Über diese Reise",
-      "model-description": "Die Zeichnungen zeigen die Tiere und ihr Wachstum vereinfacht.",
+      "model-description": "Die Tiere sind vereinfacht gezeichnet. Beim Wachstum zeigen wir nur einen kleinen Ausschnitt.",
       "museum-description": "Das Thema passt zu den naturkundlichen Sammlungen in La Rochelle, Nantes und Bordeaux. Die Auswahl konkreter Museumsobjekte steht noch aus.",
-      "download-error": "Das Bild konnte nicht gespeichert werden. Versuche es noch einmal.",
+      "download-error": "Die Postkarte konnte nicht gespeichert werden. Versuch es bitte noch einmal.",
       "pause": "Anhalten",
       "resume": "Fortsetzen",
       "next": "Weiter",
@@ -112,10 +112,10 @@ export const CONTENT = {
       "museumLabel": "Sammlungsbezug",
       "museumChoice": "Ein Museum auswählen",
       "collection": "Schalen im Museum",
-      "research": "Über das Wachstum",
+      "research": "Mehr zum Wachstum",
       "credits": "Gestaltung: SALONFORMAT.",
       "cardSaved": "Dein Bild wird gespeichert.",
-      "ready": "Scrolle weiter oder schau noch einmal zurück.",
+      "ready": "Du kannst weitergehen oder zurückschauen.",
       "whyCard": "Schneckenhaus und Muschelschale wachsen mit.",
       "resource": "Quellen",
       "progressNames": [
@@ -124,31 +124,32 @@ export const CONTENT = {
         "Die Öffnung",
         "Das Haus wächst",
         "Die Muschel",
-        "Genauer hinschauen",
-        "Ein Bild mitnehmen"
+        "Aus der Nähe",
+        "Die Postkarte"
       ],
-      "audioUnavailable": "Der Ton ist hier nicht verfügbar. Du kannst ohne Ton weitermachen.",
-      "fullscreenUnavailable": "Vollbild ist in diesem Browser nicht verfügbar."
+      "audioUnavailable": "Der Ton lässt sich nicht einschalten. Du kannst ohne Ton weitermachen.",
+      "fullscreenUnavailable": "Das Vollbild konnte nicht geöffnet werden."
     },
     "journey": {
-      "startHint": "Scrolle nach unten oder wische nach oben.",
-      "animalHint": "Scrolle weiter, um näher zur Schnecke zu kommen.",
-      "edgeHint": "Schau auf den Rand der Öffnung.",
-      "growthHint": "Scrolle langsam weiter und schau auf den Rand.",
-      "bivalveHint": "Scrolle zurück, wenn du es noch einmal sehen möchtest.",
-      "transferHint": "Berühre die Muschel, um näher hinzuschauen.",
-      "transferTitle": "Schau dir diese Muschel an.",
-      "transferBody": "Berühre die Muschel, um sie näher anzusehen.",
+      "startHint": "Scroll oder wisch weiter.",
+      "animalHint": "Scroll weiter, dann kommst du näher.",
+      "edgeHint": "Achte auf die Öffnung.",
+      "growthHint": "Schau, was am Rand passiert.",
+      "bivalveHint": "Du kannst auch zurückscrollen.",
+      "transferHint": "",
+      "transferTitle": "Aus der Nähe",
+      "transferBody": "Klick auf die Muschel, dann siehst du sie aus der Nähe.",
       "hingeLabel": "Oben, wo die Hälften verbunden sind",
       "edgeLabel": "Am äußeren Rand",
       "outsideHint": "Tippe direkt auf die Muschelschale.",
       "wrong": "Dieser Teil war schon da. Schau weiter außen am Rand.",
       "correct": "Genau, hier am Rand kommt neues Material dazu.",
-      "loadError": "Die Zeichnung konnte nicht geladen werden. Lade die Seite bitte neu.",
-      "doneHint": "Scrolle weiter und nimm dir noch einen Moment am Meer.",
-      "inspectNear": "Die Muschel näher ansehen",
-      "inspectFar": "Die Muschel wieder von weiter weg ansehen",
-      "inspectBody": "Die Muschelschale wächst am Rand. Die helle Linie zeigt dir, wo neues Material dazukommt."
+      "loadError": "Die Zeichnung wird nicht angezeigt. Lade die Seite bitte neu.",
+      "doneHint": "Scroll weiter zur Postkarte.",
+      "inspectNear": "Die Muschel aus der Nähe ansehen",
+      "inspectFar": "Wieder zurück zur ganzen Ansicht",
+      "inspectBody": "Hier am Rand kommt neues Material dazu.",
+      "transferBodyTouch": "Tippe auf die Muschel, dann siehst du sie aus der Nähe."
     },
     "postcard": {
       "title": "Ein kleines Stück Meer",
@@ -306,7 +307,8 @@ export const CONTENT = {
       "doneHint": "Continue et profite encore un peu de la mer.",
       "inspectNear": "Voir la coquille de plus près",
       "inspectFar": "Reculer pour voir la coquille entière",
-      "inspectBody": "La coquille grandit par le bord. Le trait clair montre où la matière s’ajoute."
+      "inspectBody": "La coquille grandit par le bord. Le trait clair montre où la matière s’ajoute.",
+      "transferBodyTouch": "Touche la coquille pour la voir de plus près."
     },
     "postcard": {
       "title": "Un petit bout de mer",
@@ -464,7 +466,8 @@ export const CONTENT = {
       "doneHint": "Scroll on and enjoy another moment by the sea.",
       "inspectNear": "Look closer at the shell",
       "inspectFar": "Move back from the shell",
-      "inspectBody": "The shell grows at the edge. The pale line shows where new material is added."
+      "inspectBody": "The shell grows at the edge. The pale line shows where new material is added.",
+      "transferBodyTouch": "Touch the shell to take a closer look."
     },
     "postcard": {
       "title": "A little piece of the sea",

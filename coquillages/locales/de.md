@@ -2,44 +2,46 @@
 
 ## Wie wächst ein Schneckenhaus?
 
-Begleite eine Meeresschnecke. Entdecke, wie sie ihr Haus baut und wie auch Muschelschalen wachsen.
+Die Schnecke baut ihr Haus selbst. Und es wächst mit ihr.
 
-Zum Schluss wartet eine bewegte Meerespostkarte auf dich. Wenn du möchtest, kannst du sie speichern.
+Am Ende kannst du eine animierte Postkarte speichern.
 
-## Da ist eine Meeresschnecke.
+Scroll oder wisch weiter.
 
-Ihr Körper ist weich. Das harte Schneckenhaus schützt ihn.
+## Ihr Körper ist weich.
 
-## Die Schnecke wächst.
+Das harte Haus schützt die Schnecke.
 
-Sie wird größer und braucht mehr Platz. Deshalb wächst ihr Haus mit.
+## Die Schnecke wird größer.
 
-## Das Haus wächst an der Öffnung.
+Ihr Körper braucht mehr Platz. Deshalb wächst das Haus mit.
 
-Am Rand der Öffnung kommt neues Material dazu. Es entsteht in einer dünnen Haut der Schnecke. Diese Haut heißt Mantel.
+## Wie baut sie ihr Haus?
 
-## Hier wächst das Haus weiter.
+Das Material dafür bildet der Mantel. Das ist eine dünne Haut der Schnecke.
 
-Schau auf diesen Abschnitt am Rand der Öffnung. Hier kommt neues Material dazu.
+Größer wird das Haus am Rand. Von innen kann es auch dicker werden.
 
-Am Rand ist ein Stück dazugekommen. Der ältere Teil hat sich nicht verändert.
+## Am Rand wächst das Haus weiter.
 
-Wir zeigen einen kurzen Wachstumsschritt. In der Natur dauert das viel länger.
+Hier am Rand der Öffnung kommt neues Material dazu.
 
-## Und wie wächst eine Muschel?
+Am Rand ist ein Stück dazugekommen. Der Rest des Hauses ist gleich geblieben.
 
-Ihr weicher Körper liegt zwischen zwei Muschelschalen. Beide wachsen am Rand.
+In der Natur dauert das viel länger.
 
-## Schau dir diese Muschel an.
+## Und bei einer Muschel?
 
-Berühre die Muschel, um sie näher anzusehen.
+Auch die Muschel hat einen weichen Körper. Ihre beiden Schalen wachsen am Rand.
 
-Die Muschelschale wächst am Rand. Die helle Linie zeigt dir, wo neues Material dazukommt.
+Auch hier kommt am Rand neues Material dazu.
+
+## Aus der Nähe
+
+Klick auf die Muschel, dann siehst du sie aus der Nähe.
+
+Hier am Rand kommt neues Material dazu.
 
 ## Ein kleines Stück Meer für dich.
 
-Die Schnecke baut ihr Haus selbst. Die Muschel ihre beiden Schalen. Beide wachsen am Rand weiter.
-
-Meerespostkarte speichern
-
-Animiertes GIF · ohne Ton
+Am Rand kommt neues Material dazu. Das Tier bildet es selbst.
