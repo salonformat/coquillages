@@ -1,9 +1,9 @@
 export const CONTENT = {
   "de": {
     "start": {
-      "title": "Wie wächst ein Schneckenhaus?",
-      "body": "Die Schnecke baut ihr Haus selbst. Und es wächst mit ihr.",
-      "action": "Eintauchen",
+      "title": "Wie wachsen Muscheln und Meeresschnecken?",
+      "body": "Ihr weicher Körper braucht Schutz. Hier siehst du, wie sie ihre Schalen bilden — und wo neues Material dazukommt.",
+      "action": "Ins Meer eintauchen",
       "hint": "Scroll oder wisch weiter.",
       "reward": "Am Ende kannst du eine animierte Postkarte speichern."
     },
@@ -163,9 +163,9 @@ export const CONTENT = {
   },
   "fr": {
     "start": {
-      "title": "Sous la coquille",
-      "body": "Suis un escargot de mer. Découvre comment il construit sa coquille et comment grandissent celles des moules.",
-      "action": "Entrer dans l’eau",
+      "title": "Comment grandissent les coquillages ?",
+      "body": "Moules et escargots de mer ont un corps mou. Découvre comment ils fabriquent leur coquille pour se protéger, et où elle grandit.",
+      "action": "Entrer dans la mer",
       "hint": "Avance en faisant défiler la page. C’est toi qui choisis le rythme.",
       "reward": "À la fin, une carte postale animée t’attend. Tu peux l’enregistrer si tu le souhaites."
     },
@@ -325,9 +325,9 @@ export const CONTENT = {
   },
   "en": {
     "start": {
-      "title": "Beneath the shell",
-      "body": "Follow a sea snail. Discover how it builds its shell and how mussel shells grow too.",
-      "action": "Go underwater",
+      "title": "How do mussels and sea snails grow?",
+      "body": "Their soft bodies need protection. See how they build their shells, and where new material is added.",
+      "action": "Into the sea",
       "hint": "Scroll or swipe to explore. You choose the pace.",
       "reward": "A moving sea postcard is waiting at the end. Save it if you’d like to keep it."
     },

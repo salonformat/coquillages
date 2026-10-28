@@ -8,13 +8,13 @@ export function cameraAt(scene,progress,width,height,{reduced=false,inspection=0
  const pose=(anchor,x,y,s)=>({s,tx:x-anchor[0]*s,ty:y-anchor[1]*s});
  const center=[870,565],mouth=[1250,778];
  const whole=pose(center,width*(mobile?.5:.58),height*(mobile?.61:.60),full);
- const small=pose(center,width*(mobile?.69:.68),height*(mobile?.79:.83),full*.24);
+ const hero=pose(center,width*(mobile?.55:.75),height*(mobile?.76:.56),Math.min(width*(mobile?.98:.57)/1250,height*(mobile?.34:.77)/900));
  const approach=pose(center,width*(mobile?.5:.57),height*(mobile?.61:.60),full*1.1);
  const detail=pose(mouth,width*(mobile?.48:.70),height*(mobile?.66:.60),close);
  const arriving=pose(mouth,width*(mobile?.48:.70),height*(mobile?.66:.60),close*.86);
  const interpolate=(a,b,t)=>({s:mix(a.s,b.s,t),tx:mix(a.tx,b.tx,t),ty:mix(a.ty,b.ty,t)});
  let snail={...whole,alpha:1,body:0,material:0},mussel={s:full,tx:0,ty:0,alpha:0,material:0},focus=0,depth=1,pan=0,lift=0;
- if(scene==='start'){snail={...interpolate(small,whole,smooth((p-.12)/.88)),alpha:1,body:1,material:0};depth=smooth(p);}
+ if(scene==='start'){snail={...interpolate(hero,whole,smooth(p)),alpha:1,body:smooth((p-.25)/.55),material:0};depth=smooth(p);}
  if(scene==='animal'){
   const a=smooth(p/.28),b=smooth((p-.65)/.35);
   snail={...interpolate(interpolate(whole,approach,a),arriving,b),alpha:1,body:1-smooth((p-.65)/.3),material:0};focus=b*.75;
@@ -35,7 +35,7 @@ export function cameraAt(scene,progress,width,height,{reduced=false,inspection=0
  }
  if(scene==='ending'||scene==='about'){snail.alpha=0;mussel.alpha=0;depth=0;pan=1;lift=1;}
  if(reduced){
-  if(['start','animal'].includes(scene))snail={...whole,alpha:1,body:1,material:0};
+  if(scene==='start')snail={...hero,alpha:1,body:0,material:0};if(scene==='animal')snail={...whole,alpha:1,body:1,material:0};
   if(['edge','growth'].includes(scene))snail={...detail,alpha:1,body:0,material:scene==='growth'?clamp(p/.72):0};
   if(scene==='bivalve'){snail.alpha=0;mussel={...pose([870,565],width*(mobile?.46:.36),height*(mobile?.61:.57),full),alpha:1,material:clamp((p-.24)/.46)};}
  }

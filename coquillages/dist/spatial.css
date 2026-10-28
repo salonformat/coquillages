@@ -105,3 +105,25 @@ body[data-scene=bivalve] #ocean::after{background:linear-gradient(270deg,rgba(2,
 #ocean::before{content:'';position:absolute;inset:0;z-index:1;background:#145dc4;mix-blend-mode:color;opacity:.36;pointer-events:none}
 #ocean::after{z-index:2}
 .water-light{background:linear-gradient(114deg,transparent 43%,rgba(222,238,255,.20) 54%,transparent 67%)}
+
+/* A large ivory house introduces the subject before the camera approaches the animal. */
+#experience #scene.scene-start .scene-copy{left:7vw;top:19vh;transform:none;width:41vw;text-align:left}
+#experience #scene.scene-start .scene-copy h1{font-size:clamp(42px,4.35vw,67px);max-width:15ch;margin:0 0 24px}
+#experience #scene.scene-start .scene-copy p{margin-left:0;margin-right:0;max-width:34ch!important}
+#experience #scene.scene-start .actions{justify-content:flex-start}
+@media(max-width:700px){
+ #experience #scene.scene-start .scene-copy{left:22px;top:105px;width:calc(100% - 44px)}
+ #experience #scene.scene-start .scene-copy h1{font-size:clamp(30px,8vw,39px);line-height:1.12;max-width:19ch;margin-bottom:14px}
+ #experience #scene.scene-start .scene-copy p{font-size:16px;max-width:35ch!important}
+ #experience #scene.scene-start .intro-reward{font-size:12px!important;margin-top:8px}
+ #experience #scene.scene-start .journey-hint{margin-bottom:8px}
+ #experience #scene.scene-start .actions{margin-top:10px}
+ #experience #scene.scene-start .primary{min-height:50px;font-size:16px}
+}
+@media(max-width:700px) and (max-height:740px){
+ #experience #scene.scene-start .scene-copy{top:89px}
+ #experience #scene.scene-start .scene-copy h1{font-size:29px;margin-bottom:10px}
+ #experience #scene.scene-start .scene-copy p{font-size:14px;line-height:1.35;margin-bottom:9px}
+ #experience #scene.scene-start .intro-reward{font-size:11px!important}
+ #experience #scene.scene-start .journey-hint{font-size:10px!important;margin-bottom:5px}
+}

@@ -3,7 +3,7 @@ import {artImage,drawShell,drawMussel} from './art.js';
 export class SpatialJourney{
  constructor(canvas,button){
   this.canvas=canvas;this.ctx=canvas.getContext('2d');this.button=button;this.scene='start';this.progress=0;this.time=0;this.inspection=0;this.targetInspection=0;this.reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;this.buffers=new Map();this.ready=false;
-  this.loaded=artImage('assets/snail-entry.webp').decode().then(()=>{this.ready=true;this.draw();});
+  this.loaded=Promise.all(['snail-entry.webp','snail-shell.webp'].map(name=>artImage('assets/'+name).decode())).then(()=>{this.ready=true;this.draw();});
  }
  async ensure(scene){await this.loaded;if(['animal','edge','growth','bivalve'].includes(scene))await artImage('assets/snail.webp').decode();if(['animal','edge','growth','bivalve'].includes(scene))await artImage('assets/snail-shell.webp').decode();if(scene==='bivalve')await artImage('assets/mussel.webp').decode();}
  set(scene,progress,time=0){this.scene=scene;this.progress=progress;this.time=time;if(scene==='start'&&progress>.1)artImage('assets/snail.webp');this.draw();}
