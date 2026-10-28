@@ -30,13 +30,13 @@
 .mussel-inspection:focus-visible{outline:2px solid #f2f8f8;outline-offset:6px}
 .header,.footer{z-index:8}
 #journey-hint{z-index:7}
-body:is([data-scene=start],[data-scene=animal],[data-scene=edge],[data-scene=growth]) .ocean-painting{background-image:url('assets/world-snail.jpg')!important}
+body:is([data-scene=start],[data-scene=animal],[data-scene=edge],[data-scene=growth]) .ocean-painting{background-image:url('assets/world-snail.webp')!important}
 body[data-scene=bivalve] .ocean-painting{background-image:url('assets/world-mussel.jpg')!important}
 body[data-scene=ending] .ocean-painting{background-image:url('assets/world-ending.jpg')!important}
 .ocean-painting,#painted-water{animation:none!important;transform:translate3d(var(--world-x,0px),var(--world-y,0px),0) scale(var(--world-zoom,1.02))!important;transition:filter .35s;filter:brightness(calc(1 - var(--observation-focus,0)*.3)) blur(calc(var(--observation-focus,0)*1px))}
 #ocean::after,body[data-scene=start] #ocean::after,body:is([data-scene=animal],[data-scene=edge],[data-scene=growth],[data-scene=bivalve],[data-scene=ending]) #ocean::after{background:linear-gradient(180deg,rgba(3,27,58,.60),rgba(3,32,57,.08) 52%,rgba(3,28,46,.35))!important}
 .water-light{transform:translateY(calc(var(--foreground-y,0px)*.25));opacity:.3}
-.foreground-painting{position:fixed;inset:-5%;z-index:3;pointer-events:none;background:url('assets/world-snail.jpg') center bottom/cover;mask-image:linear-gradient(transparent 63%,rgba(0,0,0,.7) 88%,#000);transform:translate3d(calc(var(--world-x,0px)*1.45),var(--foreground-y,0px),0) scale(1.1);opacity:var(--foreground-opacity,.5)}
+.foreground-painting{position:fixed;inset:-5%;z-index:3;pointer-events:none;background:url('assets/world-snail.webp') center bottom/cover;mask-image:linear-gradient(transparent 63%,rgba(0,0,0,.7) 88%,#000);transform:translate3d(calc(var(--world-x,0px)*1.45),var(--foreground-y,0px),0) scale(1.1);opacity:var(--foreground-opacity,.5)}
 body[data-scene=ending] #experience,body[data-scene=about] #experience{pointer-events:auto;z-index:4}
 #experience #scene.scene-ending{height:auto!important;min-height:0!important;padding:28px 5vw 35px!important;display:flex!important;flex-direction:column;align-items:center;gap:20px}
 #experience #scene.scene-ending .scene-copy{position:static!important;width:100%;max-width:900px;text-align:center;opacity:1;display:contents!important}
