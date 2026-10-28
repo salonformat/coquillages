@@ -175,3 +175,13 @@ body[data-scene=bivalve] #ocean::after{background:linear-gradient(270deg,rgba(2,
 @media(max-width:700px){
  #experience #scene:is(.scene-start,.scene-animal,.scene-edge,.scene-growth,.scene-bivalve) .scene-copy::before{inset:-45px -55px}
 }
+
+/* The mussel enters from the left, outside the reading area. */
+#experience #scene.scene-bivalve .scene-copy{left:68vw;top:30vh;width:27vw}
+#experience #scene.scene-bivalve .scene-copy::before{inset:-45px -48px}
+@media(max-width:700px){
+ #experience #scene.scene-bivalve .scene-copy{left:22px;top:95px;width:calc(100% - 44px)}
+ #experience #scene.scene-bivalve .scene-copy h1{font-size:26px;margin-bottom:10px}
+ #experience #scene.scene-bivalve .scene-copy p{font-size:16px;line-height:1.4}
+ #experience #scene.scene-bivalve .model-note{font-size:10px!important;margin-top:8px!important}
+}

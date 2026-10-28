@@ -1,4 +1,4 @@
-import {clamp} from './learning.js?v=release-17';
+import {clamp} from './learning.js?v=release-18';
 export const smooth=value=>{const p=clamp(value);return p*p*(3-2*p);};
 const mix=(a,b,p)=>a+(b-a)*p;
 export function cameraAt(scene,progress,width,height,{reduced=false,inspection=0}={}){
@@ -9,6 +9,7 @@ export function cameraAt(scene,progress,width,height,{reduced=false,inspection=0
  const center=[870,565],mouth=[1250,778];
  const whole=pose(center,width*(mobile?.5:.48),height*(mobile?.57:.54),full);
  const hero=pose(center,width*(mobile?.55:.75),height*(mobile?.76:.56),Math.min(width*(mobile?.98:.57)/1250,height*(mobile?.34:.77)/900));
+ const musselRest=pose(center,width*(mobile?.48:.32),height*(mobile?.64:.60),full*(mobile?.94:.86));
  const approach=pose(center,width*(mobile?.5:.48),height*(mobile?.57:.54),full*1.1);
  const detail=pose(mouth,width*(mobile?.48:.70),height*(mobile?.70:.60),close);
  const arriving=pose(mouth,width*(mobile?.48:.70),height*(mobile?.70:.60),close*.86);
@@ -23,21 +24,23 @@ export function cameraAt(scene,progress,width,height,{reduced=false,inspection=0
  if(scene==='growth'){
   snail={...interpolate(detail,whole,smooth((p-.76)/.24)),alpha:1,body:0,material:clamp(p/.72)};
   focus=1-smooth((p-.76)/.24);
+  const lead=.5*smooth((p-.92)/.08);snail.alpha=1-lead;
+  mussel={...musselRest,tx:musselRest.tx-width*.16*(1-lead),alpha:lead,material:0};
  }
  if(scene==='bivalve'){
-  const travel=smooth(p/.22),ascend=smooth((p-.82)/.18),peek=inspection*(1-smooth((p-.74)/.08));
-  snail={...whole,tx:whole.tx-width*1.3*travel,alpha:1-travel,body:0,material:1};
-  const rest=pose([870,565],width*(mobile?.46:.36),height*(mobile?.61:.57),full*(mobile?1:.96));
-  const near=pose([870,565],width*(mobile?.46:.36),height*(mobile?.61:.57),rest.s*1.15);
-  mussel={...interpolate(rest,near,peek),alpha:1-ascend,material:clamp((p-.24)/.46)};
-  mussel.tx+=width*1.15*(1-travel);mussel.ty+=height*.65*ascend;mussel.s*=1-.28*ascend;
+  const travel=smooth(p/.08),lead=.5+.5*travel,ascend=smooth((p-.82)/.18),peek=inspection*(1-smooth((p-.74)/.08));
+  snail={...whole,tx:whole.tx-width*.60*travel,alpha:1-lead,body:0,material:1};
+  const rest=musselRest;
+  const near=pose(center,width*(mobile?.48:.32),height*(mobile?.64:.60),rest.s*1.12);
+  mussel={...interpolate(rest,near,peek),alpha:lead*(1-ascend),material:clamp((p-.12)/.50)};
+  mussel.tx-=width*.16*(1-lead);mussel.ty+=height*.65*ascend;mussel.s*=1-.28*ascend;
   focus=travel*(1-ascend);pan=travel;lift=ascend;depth=1-ascend;
  }
  if(scene==='ending'||scene==='about'){snail.alpha=0;mussel.alpha=0;depth=0;pan=1;lift=1;}
  if(reduced){
   if(scene==='start')snail={...hero,alpha:1,body:0,material:0};if(scene==='animal')snail={...whole,alpha:1,body:1,material:0};
   if(['edge','growth'].includes(scene))snail={...detail,alpha:1,body:0,material:scene==='growth'?clamp(p/.72):0};
-  if(scene==='bivalve'){snail.alpha=0;mussel={...pose([870,565],width*(mobile?.46:.36),height*(mobile?.61:.57),full),alpha:1,material:clamp((p-.24)/.46)};}
+  if(scene==='bivalve'){snail.alpha=0;mussel={...musselRest,alpha:1,material:clamp((p-.12)/.50)};}
  }
- return {snail,mussel,focus,depth,pan,lift,inspectionVisible:scene==='bivalve'&&p>=.22&&p<.8};
+ return {snail,mussel,focus,depth,pan,lift,inspectionVisible:scene==='bivalve'&&p>=.08&&p<.8};
 }

@@ -1,11 +1,11 @@
-import {SpatialJourney} from './spatial.js?v=release-17';
-import {paintPostcard} from './postcard.js?v=release-17';
-import {CONTENT} from './content.js?v=release-17';
-import {SCENES,readRoute,routeUrl,nextScene,previousScene,clamp} from './learning.js?v=release-17';
-import {journeyHeight,positionAt,offsetFor} from './journey.js?v=release-17';
-import {Ocean,SeaSound} from './world.js?v=release-17';
-import {artImage} from './art.js?v=release-17';
-import {PaintedWater} from './immersion.js?v=release-17';
+import {SpatialJourney} from './spatial.js?v=release-18';
+import {paintPostcard} from './postcard.js?v=release-18';
+import {CONTENT} from './content.js?v=release-18';
+import {SCENES,readRoute,routeUrl,nextScene,previousScene,clamp} from './learning.js?v=release-18';
+import {journeyHeight,positionAt,offsetFor} from './journey.js?v=release-18';
+import {Ocean,SeaSound} from './world.js?v=release-18';
+import {artImage} from './art.js?v=release-18';
+import {PaintedWater} from './immersion.js?v=release-18';
 const $=s=>document.querySelector(s),sceneElement=$('#scene'),aboutElement=$('#about'),track=$('#scroll-track');
 const initial=readRoute(location.href);let lang=initial.lang,scene=initial.scene,progress=0,lastScene='start',routeDepth=0,ready=false,sound=false,ambientPaused=matchMedia('(prefers-reduced-motion: reduce)').matches,restoring=false,lastY=0,saveTimer,scrollFrame=0,viewportHeight=innerHeight,renderedScene=null,inspectionOpen=false,inspectionAmount=0,ambientTime=0;
 
@@ -64,7 +64,7 @@ function updateProgress(){
  const heading=$('#scene-title');if(scene==='edge')setCopy(heading,t.mechanism[Math.min(3,Math.floor(progress*4))].title);if(scene==='animal')setCopy(heading,progress<.32?t.animal.title:t.why.title);
  const hint=$('#journey-hint');hint.hidden=scene==='start'||scene==='ending'||scene==='about';hint.textContent=t.journey[scene+'Hint']||'';
  $('#scene-time').style.setProperty('--progress',String((SCENES.indexOf(scene)+progress)/SCENES.length));
- const fade=scene==='start'?1-Math.min(1,Math.max(0,(progress-.1)/.6)):scene==='animal'?1-Math.min(1,Math.max(0,(progress-.62)/.18)):scene==='bivalve'?Math.min(1,progress/.18)*(1-Math.min(1,Math.max(0,(progress-.8)/.2))):1;
+ const fade=scene==='start'?1-Math.min(1,Math.max(0,(progress-.1)/.6)):scene==='animal'?1-Math.min(1,Math.max(0,(progress-.62)/.18)):scene==='bivalve'?(1-Math.min(1,Math.max(0,(progress-.8)/.2))):1;
  document.documentElement.style.setProperty('--copy-opacity',String(motion?fade:1));
  $('#inspect-mussel').setAttribute('aria-expanded',String(inspectionOpen));$('#inspect-mussel').setAttribute('aria-label',t.journey[inspectionOpen?'inspectFar':'inspectNear']);$('#inspect-mussel span').textContent=t.camera[inspectionOpen?'far':'near'];
  $('#journey-stage').setAttribute('aria-label',t[scene]?.title||t.controls['source-title']);
