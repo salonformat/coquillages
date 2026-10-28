@@ -98,3 +98,10 @@ body[data-scene=bivalve] #ocean::after{background:linear-gradient(270deg,rgba(2,
  body[data-scene=bivalve] #ocean::after{background:linear-gradient(180deg,rgba(2,29,53,.82),rgba(2,29,53,.55) 32%,transparent 65%,rgba(3,28,46,.3))!important}
 }
 @media(max-width:700px) and (max-height:740px){#experience #scene.scene-edge .scene-copy,#experience #scene.scene-growth .scene-copy{top:94px}}
+
+/* Cool Atlantic water; keep the ivory specimens outside the water grading. */
+.ocean-painting,#painted-water{filter:hue-rotate(19deg) saturate(1.22) brightness(calc(1.04 - var(--observation-focus,0)*.20)) blur(calc(var(--observation-focus,0)*1px))}
+.foreground-painting{filter:hue-rotate(19deg) saturate(1.10)}
+#ocean::before{content:'';position:absolute;inset:0;z-index:1;background:#145dc4;mix-blend-mode:color;opacity:.36;pointer-events:none}
+#ocean::after{z-index:2}
+.water-light{background:linear-gradient(114deg,transparent 43%,rgba(222,238,255,.20) 54%,transparent 67%)}
