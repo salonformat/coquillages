@@ -14,7 +14,7 @@ export function drawTransfer(canvas,image,progress=1){
 }
 
 export class Ocean{
-  constructor(canvas){this.canvas=canvas;this.ctx=canvas.getContext('2d');this.active=true;this.scene='start';this.fish=new Image();this.fish.src='assets/fish.png';this.fish.onload=()=>this.draw();this.particles=Array.from({length:46},(_,i)=>({x:random(i),y:random(i+100),size:random(i+200)*1.6+.5,speed:random(i+300)*.005+.002}));this.time=0;this.last=0;this.resize=()=>{const dpr=Math.min(devicePixelRatio||1,1.5);this.w=innerWidth;this.h=innerHeight;canvas.width=this.w*dpr;canvas.height=this.h*dpr;this.ctx.setTransform(dpr,0,0,dpr,0,0);this.draw();};window.addEventListener('resize',this.resize);this.resize();this.frame=this.frame.bind(this);requestAnimationFrame(this.frame);}
+  constructor(canvas){this.canvas=canvas;this.ctx=canvas.getContext('2d');this.active=true;this.scene='start';this.fish=new Image();this.fish.src='assets/fish.webp';this.fish.onload=()=>this.draw();this.particles=Array.from({length:46},(_,i)=>({x:random(i),y:random(i+100),size:random(i+200)*1.6+.5,speed:random(i+300)*.005+.002}));this.time=0;this.last=0;this.resize=()=>{const dpr=Math.min(devicePixelRatio||1,1.5);this.w=innerWidth;this.h=innerHeight;canvas.width=this.w*dpr;canvas.height=this.h*dpr;this.ctx.setTransform(dpr,0,0,dpr,0,0);this.draw();};window.addEventListener('resize',this.resize);this.resize();this.frame=this.frame.bind(this);requestAnimationFrame(this.frame);}
   setActive(active){this.active=active;this.draw();}
   setScene(scene){this.scene=scene;this.draw();}
   frame(now){const dt=Math.min(now-this.last,50);this.last=now;if(this.active&&!document.hidden){this.time+=dt/1000;this.draw();}requestAnimationFrame(this.frame);}

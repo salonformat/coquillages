@@ -7,7 +7,7 @@ export function artImage(src){
   return cache.get(src);
 }
 function drawingContext(canvas){const box=canvas.getBoundingClientRect(),w=box.width||canvas.width,h=box.height||canvas.height,dpr=box.width?Math.min(devicePixelRatio||1,2):1;const width=Math.round(w*dpr),height=Math.round(h*dpr);if(canvas.width!==width||canvas.height!==height){canvas.width=width;canvas.height=height;}const ctx=canvas.getContext('2d');ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);return{ctx,w,h};}
-const growthSources={snail:'assets/snail-shell.png',mussel:'assets/mussel.png'};
+const growthSources={snail:'assets/snail-shell.webp',mussel:'assets/mussel.webp'};
 const growthDetails=new Map();
 function prepareAccretion(image,kind){
  if(growthDetails.has(kind))return growthDetails.get(kind);
@@ -67,7 +67,7 @@ export function drawMussel(canvas,progress){return drawPaintedGrowth(canvas,prog
 export async function readyGrowth(kind){await artImage(growthSources[kind]).decode();}
 
 export function drawLivingSnail(canvas,time,active){
-  const {ctx,w,h}=drawingContext(canvas),image=artImage('assets/snail.png');if(!image.complete||!image.naturalWidth)return;
+  const {ctx,w,h}=drawingContext(canvas),image=artImage('assets/snail.webp');if(!image.complete||!image.naturalWidth)return;
   const scale=Math.min(w/1640,h/1120),ox=(w-1536*scale)/2,oy=(h-1024*scale)/2;
   // Keep the complete painted contour intact, including the shell/body junction.
   // A gentle whole-body drift avoids cutting the raster into independently moving strips.
@@ -84,7 +84,7 @@ export function drawClosedMussel(canvas){
 
 const shellPaper=new Map();
 export function drawShellLayers(canvas,progress){
-  const {ctx,w,h}=drawingContext(canvas),image=artImage('assets/snail-shell.png');if(!image.complete||!image.naturalWidth)return;
+  const {ctx,w,h}=drawingContext(canvas),image=artImage('assets/snail-shell.webp');if(!image.complete||!image.naturalWidth)return;
   const scale=Math.min(w/1640,h/1120),ox=(w-1536*scale)/2,oy=(h-1024*scale)/2;
   if(!shellPaper.has(image.src)){
     const paper=document.createElement('canvas'),ink=document.createElement('canvas');paper.width=ink.width=1536;paper.height=ink.height=1024;const base=paper.getContext('2d');base.drawImage(image,0,0,1536,1024);base.globalCompositeOperation='source-in';base.fillStyle='#f3eddf';base.fillRect(0,0,1536,1024);base.globalCompositeOperation='source-over';base.globalAlpha=.16;base.drawImage(image,0,0,1536,1024);shellPaper.set(image.src,{paper,ink});
