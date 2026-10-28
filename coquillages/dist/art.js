@@ -1,5 +1,5 @@
-import {rimAt,accretionStrip} from './accretion.js';
-import {clamp} from './learning.js';
+import {rimAt,accretionStrip} from './accretion.js?v=release-14';
+import {clamp} from './learning.js?v=release-14';
 
 const cache=new Map();
 export function artImage(src){
