@@ -1,13 +1,13 @@
-import {clamp} from './learning.js?v=release-15';
+import {clamp} from './learning.js?v=release-16';
 
 // Distances are viewport heights, so touch and wheel share the same path.
 export const CHAPTERS=[
   {id:'start',start:0,length:1.25},
   {id:'animal',start:1.25,length:1.45},
-  {id:'edge',start:2.7,length:1.15},
-  {id:'growth',start:3.85,length:1.8},
-  {id:'bivalve',start:5.65,length:2.1},
-  {id:'ending',start:7.75,length:1}
+  {id:'edge',start:2.7,length:1.75},
+  {id:'growth',start:4.45,length:1.8},
+  {id:'bivalve',start:6.25,length:2.1},
+  {id:'ending',start:8.35,length:1}
 ];
 export const journeyHeight=height=>(CHAPTERS.at(-1).start+1)*height;
 export function positionAt(y,height){

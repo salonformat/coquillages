@@ -9,14 +9,14 @@ export const CONTENT = {
     },
     "animal": {
       "title": "Die Schnecke hat einen weichen Körper.",
-      "body": "Ihr hartes Haus schützt sie.",
+      "body": "Ihr hartes Haus schützt sie, zum Beispiel vor Fressfeinden.",
       "action": "Näher zur Schnecke",
       "after": "Das Haus gehört zur Schnecke. Sie baut es selbst.",
       "next": "Warum wächst das Haus?"
     },
     "why": {
-      "title": "Die Schnecke wird größer.",
-      "body": "Wenn die Schnecke größer wird, braucht sie mehr Platz im Haus.",
+      "title": "Das Haus wächst mit.",
+      "body": "Die Schnecke wird größer und braucht mehr Platz. Neues Schalenmaterial vergrößert ihr Haus.",
       "question": "Wie wird so ein hartes Haus größer?",
       "next": "Zur Öffnung des Hauses"
     },
@@ -36,23 +36,23 @@ export const CONTENT = {
     },
     "growth": {
       "title": "Am Rand wächst das Haus weiter.",
-      "instruction": "Hier am Rand der Öffnung kommt neues Material dazu.",
+      "instruction": "Der Mantel bildet hier am Rand neues Schalenmaterial. So wird die Öffnung größer.",
       "earlier": "Früher",
       "later": "Später",
       "play": "Wachstum ansehen",
       "pause": "Anhalten",
       "old-label": "Dieser Teil war schon da.",
       "new-label": "Dieser Teil ist neu.",
-      "after": "Am Rand ist ein neues Stück entstanden. Das vorhandene Haus hat sich nicht gedehnt.",
+      "after": "Am Rand ist ein Stück hinzugekommen. Der vorhandene Teil bleibt unverändert. Von innen kann das Haus auch dicker werden.",
       "model-note": "In der Natur dauert das viel länger.",
       "next": "Zur Muschel"
     },
     "bivalve": {
       "title": "Und bei einer Muschel?",
-      "body": "Zwei Schalenhälften schützen den weichen Körper der Muschel. Auch sie werden am Rand größer.",
+      "body": "Die beiden Schalenhälften schützen den weichen Körper der Muschel. Auch hier bildet der Mantel das Material: ein feines Gerüst und Kalk.",
       "open": "Die Muschel öffnen",
       "instruction": "Scrolle weiter und achte auf die Ränder der beiden Muschelschalen.",
-      "after": "Auch hier kommt am Rand neues Material dazu.",
+      "after": "Neue Schale entsteht an den Rändern beider Hälften. Von innen können sie auch dicker werden.",
       "next": "Zu einer anderen Muschel"
     },
     "transfer": {
@@ -68,7 +68,7 @@ export const CONTENT = {
     },
     "ending": {
       "title": "Ein kleines Stück Meer für dich.",
-      "body": "Schneckenhaus oder Muschelschale: Das Tier bildet das Material selbst. Neues kommt am Rand dazu.",
+      "body": "Das Tier bildet seine Schale selbst: Der Mantel liefert das Material, daraus entsteht eine feste Schale. Größer wird sie am Rand.",
       "transfer": "Wenn du am Strand ein Schneckenhaus oder eine Muschelschale findest, schau dir den Rand einmal genauer an.",
       "keepsake-title": "Deine Entdeckerkarte",
       "keepsake-body": "Was möchtest du mitnehmen?",
@@ -159,7 +159,25 @@ export const CONTENT = {
     "camera": {
       "near": "Näher ansehen",
       "far": "Wieder zurück"
-    }
+    },
+    "mechanism": [
+      {
+        "title": "Die Schnecke bildet ihr Haus selbst.",
+        "body": "Direkt unter dem Haus liegt eine dünne Haut. Sie heißt Mantel und bildet das Schalenmaterial."
+      },
+      {
+        "title": "Zuerst ein feines Gerüst.",
+        "body": "Zellen im Mantel geben Eiweiße ab. Daraus entsteht ein feines Gerüst für die Schale."
+      },
+      {
+        "title": "Dazu kommt Kalk.",
+        "body": "Das Tier nimmt Calcium aus dem Meerwasser auf. Unter der Schale verbindet es sich mit Carbonat zu Kalkkristallen. Dieser Kalk heißt Calciumcarbonat."
+      },
+      {
+        "title": "So entsteht die feste Schale.",
+        "body": "Die Kalkkristalle wachsen in dem Gerüst. Zusammen bilden sie die harte Schale. Am Rand der Öffnung kommt neues Material dazu."
+      }
+    ]
   },
   "fr": {
     "start": {
@@ -171,14 +189,14 @@ export const CONTENT = {
     },
     "animal": {
       "title": "L’escargot de mer a un corps mou.",
-      "body": "Sa coquille le protège.",
+      "body": "Sa coquille le protège, par exemple contre des prédateurs.",
       "action": "Voir l’escargot de plus près",
       "after": "La coquille fait partie de l’escargot. C’est lui qui la fabrique.",
       "next": "Pourquoi grandit-elle ?"
     },
     "why": {
-      "title": "L’escargot grandit.",
-      "body": "Quand l’escargot grandit, il lui faut plus de place dans sa coquille.",
+      "title": "La coquille grandit avec lui.",
+      "body": "En grandissant, l’escargot a besoin de plus de place. Il ajoute de la matière pour agrandir sa coquille.",
       "question": "Mais comment une coquille dure peut-elle devenir plus grande ?",
       "next": "Voir l’ouverture"
     },
@@ -198,23 +216,23 @@ export const CONTENT = {
     },
     "growth": {
       "title": "La coquille continue de grandir ici.",
-      "instruction": "Regarde cette partie du bord de l’ouverture. De la matière s’ajoute ici.",
+      "instruction": "Le manteau ajoute de la matière au bord de la coquille. L’ouverture s’agrandit.",
       "earlier": "Avant",
       "later": "Après",
       "play": "Voir la croissance",
       "pause": "Arrêter",
       "old-label": "Cette partie était déjà là.",
       "new-label": "Cette partie est nouvelle.",
-      "after": "Une nouvelle partie s’est ajoutée au bord. La partie déjà formée n’a pas changé.",
+      "after": "Une nouvelle partie s’est ajoutée au bord. La partie déjà formée ne s’est pas étirée. La coquille peut aussi s’épaissir par l’intérieur.",
       "model-note": "Nous montrons une courte étape de croissance. Dans la nature, cela prend bien plus de temps.",
       "next": "Voir la moule"
     },
     "bivalve": {
       "title": "Et chez une moule ?",
-      "body": "Deux parties de coquille protègent son corps mou. Elles grandissent aussi par le bord.",
+      "body": "Les deux valves protègent le corps mou de la moule. Son manteau produit lui aussi des protéines et du carbonate de calcium.",
       "open": "Ouvrir la coquille",
       "instruction": "Fais défiler la page et regarde les bords des deux valves.",
-      "after": "Ici aussi, la coquille grandit par les bords. Les parties déjà formées restent en place.",
+      "after": "Les deux valves grandissent par les bords. Elles peuvent aussi s’épaissir par l’intérieur.",
       "next": "Regarder une autre coquille"
     },
     "transfer": {
@@ -230,7 +248,7 @@ export const CONTENT = {
     },
     "ending": {
       "title": "Un petit bout de mer pour toi.",
-      "body": "L’escargot fabrique sa coquille. La moule aussi. Elles grandissent par le bord.",
+      "body": "L’animal fabrique sa propre coquille. Le manteau en produit les matériaux. La coquille grandit par le bord.",
       "transfer": "La prochaine fois que tu vois une coquille, regarde son ouverture ou son bord.",
       "keepsake-title": "Ta carte de découverte",
       "keepsake-body": "Quelle coquille veux-tu sur ton image ?",
@@ -321,7 +339,25 @@ export const CONTENT = {
     "camera": {
       "near": "Voir de plus près",
       "far": "Reculer"
-    }
+    },
+    "mechanism": [
+      {
+        "title": "L’escargot fabrique sa coquille.",
+        "body": "Juste sous la coquille se trouve une fine couche de tissu. C’est le manteau. Il produit les matériaux de la coquille."
+      },
+      {
+        "title": "D’abord, une fine structure.",
+        "body": "Les cellules du manteau libèrent des protéines. Elles forment une fine structure qui sert de support à la coquille."
+      },
+      {
+        "title": "Puis, des cristaux.",
+        "body": "L’animal absorbe du calcium dans l’eau de mer. Le manteau aide à former des cristaux de carbonate de calcium : le principal composant du calcaire."
+      },
+      {
+        "title": "La coquille devient solide.",
+        "body": "Les cristaux grandissent dans la structure de protéines. Ensemble, ils forment la coquille dure. De la matière s’ajoute au bord de l’ouverture."
+      }
+    ]
   },
   "en": {
     "start": {
@@ -333,14 +369,14 @@ export const CONTENT = {
     },
     "animal": {
       "title": "The sea snail has a soft body.",
-      "body": "Its hard shell protects it.",
+      "body": "Its hard shell helps protect it from predators.",
       "action": "Look closer at the snail",
       "after": "The shell is part of the snail. The snail makes it itself.",
       "next": "Why does it grow?"
     },
     "why": {
-      "title": "The snail gets bigger.",
-      "body": "As the snail grows, it needs more room inside its shell.",
+      "title": "The shell grows with the snail.",
+      "body": "As the snail grows, it needs more room. It adds new shell material to make its shell bigger.",
       "question": "But how can a hard shell get bigger?",
       "next": "Look at the opening"
     },
@@ -360,23 +396,23 @@ export const CONTENT = {
     },
     "growth": {
       "title": "The shell grows here.",
-      "instruction": "Look at this part of the opening’s edge. New material is added here.",
+      "instruction": "The mantle adds new shell material at this edge. The opening gets bigger.",
       "earlier": "Earlier",
       "later": "Later",
       "play": "Play the growth",
       "pause": "Pause",
       "old-label": "This part was already here.",
       "new-label": "This part is new.",
-      "after": "A new section has formed at the edge. The older part has not changed.",
+      "after": "A new section has formed at the edge. The older part has not stretched. The shell can also thicken on the inside.",
       "model-note": "This shows a short stage of growth. In nature, it takes much longer.",
       "next": "See the mussel"
     },
     "bivalve": {
       "title": "What about a mussel?",
-      "body": "Two shell halves protect its soft body. They grow at the edges too.",
+      "body": "Two shell halves protect the mussel’s soft body. Its mantle also produces proteins and calcium carbonate to form the shell.",
       "open": "Open the shell",
       "instruction": "Keep scrolling and watch the edges of both shell halves.",
-      "after": "Here too, new shell is added at the edges. The old parts stay in place.",
+      "after": "New shell is added at the edges of both halves. The shell can also thicken on the inside.",
       "next": "Look at another shell"
     },
     "transfer": {
@@ -392,7 +428,7 @@ export const CONTENT = {
     },
     "ending": {
       "title": "A little piece of the sea for you.",
-      "body": "The snail builds its shell. So does the mussel. Their shells grow at the edges.",
+      "body": "The animal makes its own shell. The mantle produces the materials that form the hard shell. The shell gets bigger at its edge.",
       "transfer": "Next time you see a shell, look at its opening or its edge.",
       "keepsake-title": "Your discovery card",
       "keepsake-body": "Which shell would you like on your picture?",
@@ -483,6 +519,24 @@ export const CONTENT = {
     "camera": {
       "near": "Look closer",
       "far": "Move back"
-    }
+    },
+    "mechanism": [
+      {
+        "title": "The snail makes its own shell.",
+        "body": "A thin layer of tissue lies just beneath the shell. It is called the mantle. It produces the shell material."
+      },
+      {
+        "title": "First, a fine framework.",
+        "body": "Cells in the mantle release proteins. These form a fine framework that supports the growing shell."
+      },
+      {
+        "title": "Then, mineral crystals.",
+        "body": "The animal takes up calcium from seawater. The mantle helps form calcium carbonate crystals, the main mineral in the shell."
+      },
+      {
+        "title": "Together, they form a hard shell.",
+        "body": "The crystals grow within the framework. Together, they form the hard shell. New material is added around the opening."
+      }
+    ]
   }
 };

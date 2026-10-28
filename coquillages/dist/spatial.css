@@ -154,3 +154,13 @@ body[data-scene=bivalve] #ocean::after{background:linear-gradient(270deg,rgba(2,
 }
 
 @media(max-width:700px){body[data-scene=animal] #journey-hint{display:none}}
+
+#experience #scene.scene-edge .scene-copy{top:19vh;left:69vw;width:27vw}
+#experience #scene.scene-edge .scene-copy h1{font-size:clamp(27px,2.3vw,33px)}
+@media(max-width:700px){
+ #experience #scene.scene-edge .scene-copy{top:95px;left:22px;width:calc(100% - 44px)}
+ #experience #scene.scene-edge h1{position:static;width:auto;height:auto;margin:0 0 10px;overflow:visible;clip:auto;white-space:normal;font-size:23px!important;max-width:28ch}
+ #experience #scene.scene-edge .scene-copy p{font-size:16px;line-height:1.4;max-width:36ch}
+ #experience #scene.scene-animal .scene-copy h1{font-size:22px}
+ #experience #scene.scene-animal .scene-copy p{font-size:15px;max-width:34ch}
+}

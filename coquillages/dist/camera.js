@@ -1,4 +1,4 @@
-import {clamp} from './learning.js?v=release-15';
+import {clamp} from './learning.js?v=release-16';
 export const smooth=value=>{const p=clamp(value);return p*p*(3-2*p);};
 const mix=(a,b,p)=>a+(b-a)*p;
 export function cameraAt(scene,progress,width,height,{reduced=false,inspection=0}={}){
@@ -10,8 +10,8 @@ export function cameraAt(scene,progress,width,height,{reduced=false,inspection=0
  const whole=pose(center,width*(mobile?.5:.48),height*(mobile?.57:.54),full);
  const hero=pose(center,width*(mobile?.55:.75),height*(mobile?.76:.56),Math.min(width*(mobile?.98:.57)/1250,height*(mobile?.34:.77)/900));
  const approach=pose(center,width*(mobile?.5:.48),height*(mobile?.57:.54),full*1.1);
- const detail=pose(mouth,width*(mobile?.48:.70),height*(mobile?.66:.60),close);
- const arriving=pose(mouth,width*(mobile?.48:.70),height*(mobile?.66:.60),close*.86);
+ const detail=pose(mouth,width*(mobile?.48:.70),height*(mobile?.70:.60),close);
+ const arriving=pose(mouth,width*(mobile?.48:.70),height*(mobile?.70:.60),close*.86);
  const interpolate=(a,b,t)=>({s:mix(a.s,b.s,t),tx:mix(a.tx,b.tx,t),ty:mix(a.ty,b.ty,t)});
  let snail={...whole,alpha:1,body:0,material:0},mussel={s:full,tx:0,ty:0,alpha:0,material:0},focus=0,depth=1,pan=0,lift=0;
  if(scene==='start'){snail={...interpolate(hero,whole,smooth(p)),alpha:1,body:smooth((p-.25)/.55),material:0};depth=smooth(p);}
