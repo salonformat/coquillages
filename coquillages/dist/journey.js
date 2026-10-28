@@ -1,4 +1,4 @@
-import {clamp} from './learning.js?v=release-16';
+import {clamp} from './learning.js?v=release-17';
 
 // Distances are viewport heights, so touch and wheel share the same path.
 export const CHAPTERS=[

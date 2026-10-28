@@ -9,7 +9,7 @@ try{
   await page.goto(`http://127.0.0.1:4173/?lang=${lang}&v=raumreise-10#start`);
   await page.waitForFunction(()=>document.querySelector('#scene').dataset.ready==='true');
   assert.equal(await page.locator('html').getAttribute('lang'),lang);
-  await page.mouse.wheel(0,300);await page.waitForTimeout(200);assert.ok(await page.evaluate(()=>scrollY)>0);
+  await page.evaluate(()=>document.fonts.ready);await page.waitForTimeout(250);await page.mouse.move(600,450);await page.mouse.wheel(0,300);await page.waitForFunction(()=>scrollY>0);
   for(const [id,p]of [['animal',.3],['edge',.5],['growth',.15],['growth',.6],['growth',.15],['bivalve',.4],['ending',0]]){
    await page.evaluate(y=>scrollTo({top:y,behavior:'instant'}),offsetFor(id,p,900));
    await page.waitForFunction(id=>document.body.dataset.scene===id&&document.querySelector('#scene').dataset.ready==='true',id);await page.waitForTimeout(100);

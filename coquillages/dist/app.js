@@ -1,11 +1,11 @@
-import {SpatialJourney} from './spatial.js?v=release-16';
-import {paintPostcard} from './postcard.js?v=release-16';
-import {CONTENT} from './content.js?v=release-16';
-import {SCENES,readRoute,routeUrl,nextScene,previousScene,clamp} from './learning.js?v=release-16';
-import {journeyHeight,positionAt,offsetFor} from './journey.js?v=release-16';
-import {Ocean,SeaSound} from './world.js?v=release-16';
-import {artImage} from './art.js?v=release-16';
-import {PaintedWater} from './immersion.js?v=release-16';
+import {SpatialJourney} from './spatial.js?v=release-17';
+import {paintPostcard} from './postcard.js?v=release-17';
+import {CONTENT} from './content.js?v=release-17';
+import {SCENES,readRoute,routeUrl,nextScene,previousScene,clamp} from './learning.js?v=release-17';
+import {journeyHeight,positionAt,offsetFor} from './journey.js?v=release-17';
+import {Ocean,SeaSound} from './world.js?v=release-17';
+import {artImage} from './art.js?v=release-17';
+import {PaintedWater} from './immersion.js?v=release-17';
 const $=s=>document.querySelector(s),sceneElement=$('#scene'),aboutElement=$('#about'),track=$('#scroll-track');
 const initial=readRoute(location.href);let lang=initial.lang,scene=initial.scene,progress=0,lastScene='start',routeDepth=0,ready=false,sound=false,ambientPaused=matchMedia('(prefers-reduced-motion: reduce)').matches,restoring=false,lastY=0,saveTimer,scrollFrame=0,viewportHeight=innerHeight,renderedScene=null,inspectionOpen=false,inspectionAmount=0,ambientTime=0;
 
@@ -49,14 +49,19 @@ if(scene==='bivalve'){copy=`${title}<p id="scene-body"></p><p class="model-note"
 if(scene==='ending'){copy=`${title}<p>${escape(s.body)}</p><div class="actions"><a class="primary" href="assets/postcard-${lang}.gif" download="salonformat-meer-${lang}.gif">${escape(s.download)}${arrow}</a>${button(s.replay,'restart','secondary')}${button(s.sources,'about','text-button')}</div><p class="postcard-format">${escape(t.postcard.format)}</p>`;stage=`<canvas id="postcard" role="img" aria-label="${escape(t.postcard.label)}"></canvas>`;}
 
 sceneElement.className='scene-'+scene;sceneElement.innerHTML=`<div class="scene-copy">${copy}</div><div class="stage" ${''}>${stage}<span class="art-loading">${escape(t.controls.loading)}</span></div>`;updateProgress();prepare(scene);if(focus){$('#scene-title').focus({preventScroll:true});$('#experience').scrollTop=0;}}
+function setCopy(element,value){
+ if(!element||element.textContent===value)return;
+ const hadText=Boolean(element.textContent);element.textContent=value;
+ if(hadText&&motion&&!ambientPaused){element.getAnimations().forEach(animation=>animation.cancel());element.animate([{opacity:.22,transform:'translateY(5px)'},{opacity:1,transform:'translateY(0)'}],{duration:260,easing:'cubic-bezier(.16,1,.3,1)'});}
+}
 function updateProgress(){
  const t=c(),text=$('#scene-body');sceneElement.dataset.progress=progress.toFixed(4);let body='';
  if(scene==='animal')body=progress<.32?t.animal.body:t.why.body;
  if(scene==='edge')body=t.mechanism[Math.min(3,Math.floor(progress*4))].body;
  if(scene==='growth')body=progress<.72?t.growth.instruction:t.growth.after;
  if(scene==='bivalve')body=progress<.60?t.bivalve.body:t.bivalve.after;
- if(text&&text.textContent!==body)text.textContent=body;
- const heading=$('#scene-title');if(scene==='edge'&&heading)heading.textContent=t.mechanism[Math.min(3,Math.floor(progress*4))].title;if(scene==='animal'&&heading)heading.textContent=progress<.32?t.animal.title:t.why.title;
+ setCopy(text,body);
+ const heading=$('#scene-title');if(scene==='edge')setCopy(heading,t.mechanism[Math.min(3,Math.floor(progress*4))].title);if(scene==='animal')setCopy(heading,progress<.32?t.animal.title:t.why.title);
  const hint=$('#journey-hint');hint.hidden=scene==='start'||scene==='ending'||scene==='about';hint.textContent=t.journey[scene+'Hint']||'';
  $('#scene-time').style.setProperty('--progress',String((SCENES.indexOf(scene)+progress)/SCENES.length));
  const fade=scene==='start'?1-Math.min(1,Math.max(0,(progress-.1)/.6)):scene==='animal'?1-Math.min(1,Math.max(0,(progress-.62)/.18)):scene==='bivalve'?Math.min(1,progress/.18)*(1-Math.min(1,Math.max(0,(progress-.8)/.2))):1;

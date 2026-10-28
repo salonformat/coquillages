@@ -164,3 +164,14 @@ body[data-scene=bivalve] #ocean::after{background:linear-gradient(270deg,rgba(2,
  #experience #scene.scene-animal .scene-copy h1{font-size:22px}
  #experience #scene.scene-animal .scene-copy p{font-size:15px;max-width:34ch}
 }
+
+/* A feathered patch of deep water keeps lettering readable over every painting. */
+#experience #scene:is(.scene-start,.scene-animal,.scene-edge,.scene-growth,.scene-bivalve) .scene-copy{isolation:isolate}
+#experience #scene:is(.scene-start,.scene-animal,.scene-edge,.scene-growth,.scene-bivalve) .scene-copy::before{content:'';position:absolute;inset:-65px -85px;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at center,rgba(3,32,76,.96) 0%,rgba(3,32,76,.90) 46%,rgba(3,32,76,.40) 72%,transparent 100%);filter:blur(12px)}
+#experience #scene .scene-copy h1,#experience #scene .scene-copy p{color:#fffaf0;text-shadow:0 2px 5px rgba(1,23,57,.65)}
+#experience #scene.scene-growth .model-note{padding:7px 10px;background:rgba(3,32,76,.88);text-shadow:none}
+#journey-hint{padding:7px 12px;background:rgba(3,32,76,.84);width:max-content;max-width:calc(100vw - 44px);border-radius:2px}
+#journey-stage{filter:drop-shadow(0 14px 19px rgba(0,25,68,.22))}
+@media(max-width:700px){
+ #experience #scene:is(.scene-start,.scene-animal,.scene-edge,.scene-growth,.scene-bivalve) .scene-copy::before{inset:-45px -55px}
+}
