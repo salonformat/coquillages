@@ -2,26 +2,26 @@ export const CONTENT = {
   "de": {
     "start": {
       "title": "Wie wachsen Muscheln und Meeresschnecken?",
-      "body": "Ihr weicher Körper braucht Schutz. Hier siehst du, wie sie ihre Schalen bilden — und wo neues Material dazukommt.",
+      "body": "Muscheln und Meeresschnecken bilden ihre Schalen selbst. Schau dir an, wie das geht und wo sie weiterwachsen.",
       "action": "Ins Meer eintauchen",
       "hint": "Scroll oder wisch weiter.",
       "reward": "Am Ende kannst du eine animierte Postkarte speichern."
     },
     "animal": {
-      "title": "Ihr Körper ist weich.",
-      "body": "Das harte Haus schützt die Schnecke.",
+      "title": "Die Schnecke hat einen weichen Körper.",
+      "body": "Ihr hartes Haus schützt sie.",
       "action": "Näher zur Schnecke",
       "after": "Das Haus gehört zur Schnecke. Sie baut es selbst.",
       "next": "Warum wächst das Haus?"
     },
     "why": {
       "title": "Die Schnecke wird größer.",
-      "body": "Ihr Körper braucht mehr Platz. Deshalb wächst das Haus mit.",
+      "body": "Wenn die Schnecke größer wird, braucht sie mehr Platz im Haus.",
       "question": "Wie wird so ein hartes Haus größer?",
       "next": "Zur Öffnung des Hauses"
     },
     "edge": {
-      "title": "Wie baut sie ihr Haus?",
+      "title": "Wie entsteht das Schneckenhaus?",
       "instruction": "Wo, glaubst du, wächst das Haus? Tippe auf die Stelle.",
       "old-area": "Die Innenseite",
       "growth-area": "Der Rand",
@@ -31,8 +31,8 @@ export const CONTENT = {
       "detail": "Der Mantel ist eine dünne Haut der Schnecke. Er bildet das Material für ihr Haus. Das besteht zum größten Teil aus Kalk.",
       "thickness": "Von innen kann das Haus auch dicker werden.",
       "next": "Schau beim Wachsen zu",
-      "body": "Das Material dafür bildet der Mantel. Das ist eine dünne Haut der Schnecke.",
-      "extra": "Größer wird das Haus am Rand. Von innen kann es auch dicker werden."
+      "body": "Eine dünne Haut der Schnecke bildet das Material für das Haus. Diese Haut heißt Mantel.",
+      "extra": "Am Rand der Öffnung wird das Haus größer. Von innen kann es dicker werden."
     },
     "growth": {
       "title": "Am Rand wächst das Haus weiter.",
@@ -43,13 +43,13 @@ export const CONTENT = {
       "pause": "Anhalten",
       "old-label": "Dieser Teil war schon da.",
       "new-label": "Dieser Teil ist neu.",
-      "after": "Am Rand ist ein Stück dazugekommen. Der Rest des Hauses ist gleich geblieben.",
+      "after": "Am Rand ist ein neues Stück entstanden. Das vorhandene Haus hat sich nicht gedehnt.",
       "model-note": "In der Natur dauert das viel länger.",
       "next": "Zur Muschel"
     },
     "bivalve": {
       "title": "Und bei einer Muschel?",
-      "body": "Auch die Muschel hat einen weichen Körper. Ihre beiden Schalen wachsen am Rand.",
+      "body": "Zwei Schalenhälften schützen den weichen Körper der Muschel. Auch sie werden am Rand größer.",
       "open": "Die Muschel öffnen",
       "instruction": "Scrolle weiter und achte auf die Ränder der beiden Muschelschalen.",
       "after": "Auch hier kommt am Rand neues Material dazu.",
@@ -68,7 +68,7 @@ export const CONTENT = {
     },
     "ending": {
       "title": "Ein kleines Stück Meer für dich.",
-      "body": "Am Rand kommt neues Material dazu. Das Tier bildet es selbst.",
+      "body": "Schneckenhaus oder Muschelschale: Das Tier bildet das Material selbst. Neues kommt am Rand dazu.",
       "transfer": "Wenn du am Strand ein Schneckenhaus oder eine Muschelschale findest, schau dir den Rand einmal genauer an.",
       "keepsake-title": "Deine Entdeckerkarte",
       "keepsake-body": "Was möchtest du mitnehmen?",
@@ -170,15 +170,15 @@ export const CONTENT = {
       "reward": "À la fin, une carte postale animée t’attend. Tu peux l’enregistrer si tu le souhaites."
     },
     "animal": {
-      "title": "Au fond de la mer.",
-      "body": "Cet escargot de mer a un corps mou. Sa coquille le protège.",
+      "title": "L’escargot de mer a un corps mou.",
+      "body": "Sa coquille le protège.",
       "action": "Voir l’escargot de plus près",
       "after": "La coquille fait partie de l’escargot. C’est lui qui la fabrique.",
       "next": "Pourquoi grandit-elle ?"
     },
     "why": {
       "title": "L’escargot grandit.",
-      "body": "Son corps mou grandit. Sa coquille doit grandir aussi pour lui laisser de la place et le protéger.",
+      "body": "Quand l’escargot grandit, il lui faut plus de place dans sa coquille.",
       "question": "Mais comment une coquille dure peut-elle devenir plus grande ?",
       "next": "Voir l’ouverture"
     },
@@ -193,7 +193,7 @@ export const CONTENT = {
       "detail": "Un tissu du corps de l’escargot fabrique la coquille. Il s’appelle le manteau. La coquille est surtout faite de calcaire, avec un peu de matière organique.",
       "thickness": "La coquille peut aussi s’épaissir par l’intérieur.",
       "next": "Regarder la coquille grandir",
-      "body": "L’animal ajoute de la matière ici. Un tissu de son corps la fabrique. Il s’appelle le manteau.",
+      "body": "Une fine couche de tissu fabrique la coquille de l’escargot. Elle s’appelle le manteau.",
       "extra": "La coquille peut aussi s’épaissir par l’intérieur."
     },
     "growth": {
@@ -213,7 +213,7 @@ export const CONTENT = {
       "title": "Et chez une moule ?",
       "body": "Deux parties de coquille protègent son corps mou. Elles grandissent aussi par le bord.",
       "open": "Ouvrir la coquille",
-      "instruction": "Déplace le curseur. Regarde les bords des deux parties.",
+      "instruction": "Fais défiler la page et regarde les bords des deux valves.",
       "after": "Ici aussi, la coquille grandit par les bords. Les parties déjà formées restent en place.",
       "next": "Regarder une autre coquille"
     },
@@ -332,15 +332,15 @@ export const CONTENT = {
       "reward": "A moving sea postcard is waiting at the end. Save it if you’d like to keep it."
     },
     "animal": {
-      "title": "On the seabed.",
-      "body": "This sea snail has a soft body. Its shell protects it.",
+      "title": "The sea snail has a soft body.",
+      "body": "Its hard shell protects it.",
       "action": "Look closer at the snail",
       "after": "The shell is part of the snail. The snail makes it itself.",
       "next": "Why does it grow?"
     },
     "why": {
       "title": "The snail gets bigger.",
-      "body": "Its soft body grows. Its shell grows too, making room for the animal and keeping it protected.",
+      "body": "As the snail grows, it needs more room inside its shell.",
       "question": "But how can a hard shell get bigger?",
       "next": "Look at the opening"
     },
@@ -355,7 +355,7 @@ export const CONTENT = {
       "detail": "A tissue in the snail’s body makes the shell. It is called the mantle. The shell is mostly calcium carbonate, with a little organic material.",
       "thickness": "The shell can also get thicker on the inside.",
       "next": "Watch the shell grow",
-      "body": "The animal makes new material here. A tissue in its body does this. It is called the mantle.",
+      "body": "A thin layer of tissue makes the snail’s shell. This tissue is called the mantle.",
       "extra": "The shell can also get thicker on the inside."
     },
     "growth": {
@@ -375,7 +375,7 @@ export const CONTENT = {
       "title": "What about a mussel?",
       "body": "Two shell halves protect its soft body. They grow at the edges too.",
       "open": "Open the shell",
-      "instruction": "Move the slider. Look at the edges of both halves.",
+      "instruction": "Keep scrolling and watch the edges of both shell halves.",
       "after": "Here too, new shell is added at the edges. The old parts stay in place.",
       "next": "Look at another shell"
     },

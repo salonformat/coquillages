@@ -1,11 +1,11 @@
-import {SpatialJourney} from './spatial.js?v=release-14';
-import {paintPostcard} from './postcard.js?v=release-14';
-import {CONTENT} from './content.js?v=release-14';
-import {SCENES,readRoute,routeUrl,nextScene,previousScene,clamp} from './learning.js?v=release-14';
-import {journeyHeight,positionAt,offsetFor} from './journey.js?v=release-14';
-import {Ocean,SeaSound} from './world.js?v=release-14';
-import {artImage} from './art.js?v=release-14';
-import {PaintedWater} from './immersion.js?v=release-14';
+import {SpatialJourney} from './spatial.js?v=release-15';
+import {paintPostcard} from './postcard.js?v=release-15';
+import {CONTENT} from './content.js?v=release-15';
+import {SCENES,readRoute,routeUrl,nextScene,previousScene,clamp} from './learning.js?v=release-15';
+import {journeyHeight,positionAt,offsetFor} from './journey.js?v=release-15';
+import {Ocean,SeaSound} from './world.js?v=release-15';
+import {artImage} from './art.js?v=release-15';
+import {PaintedWater} from './immersion.js?v=release-15';
 const $=s=>document.querySelector(s),sceneElement=$('#scene'),aboutElement=$('#about'),track=$('#scroll-track');
 const initial=readRoute(location.href);let lang=initial.lang,scene=initial.scene,progress=0,lastScene='start',routeDepth=0,ready=false,sound=false,ambientPaused=matchMedia('(prefers-reduced-motion: reduce)').matches,restoring=false,lastY=0,saveTimer,scrollFrame=0,viewportHeight=innerHeight,renderedScene=null,inspectionOpen=false,inspectionAmount=0,ambientTime=0;
 

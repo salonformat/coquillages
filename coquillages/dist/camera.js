@@ -1,4 +1,4 @@
-import {clamp} from './learning.js?v=release-14';
+import {clamp} from './learning.js?v=release-15';
 export const smooth=value=>{const p=clamp(value);return p*p*(3-2*p);};
 const mix=(a,b,p)=>a+(b-a)*p;
 export function cameraAt(scene,progress,width,height,{reduced=false,inspection=0}={}){
@@ -7,9 +7,9 @@ export function cameraAt(scene,progress,width,height,{reduced=false,inspection=0
  const close=mobile?width/620:Math.min(width/880,height/620);
  const pose=(anchor,x,y,s)=>({s,tx:x-anchor[0]*s,ty:y-anchor[1]*s});
  const center=[870,565],mouth=[1250,778];
- const whole=pose(center,width*(mobile?.5:.58),height*(mobile?.61:.60),full);
+ const whole=pose(center,width*(mobile?.5:.48),height*(mobile?.57:.54),full);
  const hero=pose(center,width*(mobile?.55:.75),height*(mobile?.76:.56),Math.min(width*(mobile?.98:.57)/1250,height*(mobile?.34:.77)/900));
- const approach=pose(center,width*(mobile?.5:.57),height*(mobile?.61:.60),full*1.1);
+ const approach=pose(center,width*(mobile?.5:.48),height*(mobile?.57:.54),full*1.1);
  const detail=pose(mouth,width*(mobile?.48:.70),height*(mobile?.66:.60),close);
  const arriving=pose(mouth,width*(mobile?.48:.70),height*(mobile?.66:.60),close*.86);
  const interpolate=(a,b,t)=>({s:mix(a.s,b.s,t),tx:mix(a.tx,b.tx,t),ty:mix(a.ty,b.ty,t)});
