@@ -1,11 +1,9 @@
-import {SpatialJourney} from './spatial.js?v=release-18';
-import {paintPostcard} from './postcard.js?v=release-18';
-import {CONTENT} from './content.js?v=release-18';
-import {SCENES,readRoute,routeUrl,nextScene,previousScene,clamp} from './learning.js?v=release-18';
-import {journeyHeight,positionAt,offsetFor} from './journey.js?v=release-18';
-import {Ocean,SeaSound} from './world.js?v=release-18';
-import {artImage} from './art.js?v=release-18';
-import {PaintedWater} from './immersion.js?v=release-18';
+import {SpatialJourney} from './spatial.js?v=release-19';
+import {CONTENT} from './content.js?v=release-19';
+import {SCENES,readRoute,routeUrl,nextScene,previousScene,clamp} from './learning.js?v=release-19';
+import {journeyHeight,positionAt,offsetFor} from './journey.js?v=release-19';
+import {Ocean,SeaSound} from './world.js?v=release-19';
+import {PaintedWater} from './immersion.js?v=release-19';
 const $=s=>document.querySelector(s),sceneElement=$('#scene'),aboutElement=$('#about'),track=$('#scroll-track');
 const initial=readRoute(location.href);let lang=initial.lang,scene=initial.scene,progress=0,lastScene='start',routeDepth=0,ready=false,sound=false,ambientPaused=matchMedia('(prefers-reduced-motion: reduce)').matches,restoring=false,lastY=0,saveTimer,scrollFrame=0,viewportHeight=innerHeight,renderedScene=null,inspectionOpen=false,inspectionAmount=0,ambientTime=0;
 
@@ -39,14 +37,14 @@ document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',(
 $('#sound').addEventListener('click',async()=>{try{await seaSound.set(!sound);sound=!sound;applyPreferences();}catch{announce(c().ui.audioUnavailable);}});
 $('#fullscreen').addEventListener('click',async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen();}catch{announce(c().ui.fullscreenUnavailable);}});
 window.addEventListener('pointermove',e=>{if(!motion||ambientPaused)return;document.documentElement.style.setProperty('--px',(e.clientX/innerWidth-.5).toFixed(3));document.documentElement.style.setProperty('--py',(e.clientY/innerHeight-.5).toFixed(3));},{passive:true});
-async function prepare(id){try{await spatial.ensure(id);if(id==='ending')await Promise.all(['ocean-minimal.jpg','snail-shell.webp','fish.webp'].map(name=>artImage('assets/'+name).decode()));if(scene===id){ready=true;sceneElement.dataset.ready='true';updateDrawing();}}catch{if(scene===id){sceneElement.dataset.ready='error';announce(c().journey.loadError);}}}
+async function prepare(id){try{await spatial.ensure(id);if(scene===id){ready=true;sceneElement.dataset.ready='true';updateDrawing();}}catch{if(scene===id){sceneElement.dataset.ready='error';announce(c().journey.loadError);}}}
 
 function render(focus=false){if(renderedScene!==scene){$('#experience').scrollTop=0;renderedScene=scene;}ready=false;sceneElement.dataset.ready='loading';const t=c(),s=t[scene],index=SCENES.indexOf(scene);document.body.dataset.scene=scene;paintedWater.setScene(scene);ocean.setScene(scene);applyPreferences();document.title=(s?.title||t.controls['source-title'])+' — SALONFORMAT';$('#progress').innerHTML=SCENES.map((id,i)=>`<a href="${routeUrl(location.href,id,lang)}" data-scene="${id}" ${id===scene?'aria-current="step"':''} class="${i<index?'done':''}" aria-label="${escape(t.ui.progressNames[i])}"></a>`).join('');if(scene==='about'){spatial.set('about',0);sceneElement.hidden=true;aboutElement.hidden=false;$('#journey-hint').hidden=true;renderAbout();return;}sceneElement.hidden=false;aboutElement.hidden=true;let copy='',stage='';const title=`<h1 id="scene-title" tabindex="-1">${escape(s.title)}</h1>`;
-if(scene==='start'){copy=`${title}<p class="intro-learning">${escape(s.body)}</p><p class="intro-reward">${escape(s.reward)}</p><p class="journey-hint">${escape(t.journey.startHint)}</p><div class="actions">${button(s.action,'begin')}</div>`;}
+if(scene==='start'){copy=`${title}<p class="intro-learning">${escape(s.body)}</p><p class="journey-hint">${escape(t.journey.startHint)}</p><div class="actions">${button(s.action,'begin')}</div>`;}
 if(scene==='animal'||scene==='edge'){copy=`${title}<p id="scene-body"></p>`;}
 if(scene==='growth'){copy=`<h1 id="scene-title" class="sr-only" tabindex="-1">${escape(s.title)}</h1><p id="scene-body"></p><p class="model-note">${escape(s['model-note'])}</p>`;}
 if(scene==='bivalve'){copy=`${title}<p id="scene-body"></p><p class="model-note">${escape(t.growth['model-note'])}</p>`;}
-if(scene==='ending'){copy=`${title}<p>${escape(s.body)}</p><div class="actions"><a class="primary" href="assets/postcard-${lang}.gif" download="salonformat-meer-${lang}.gif">${escape(s.download)}${arrow}</a>${button(s.replay,'restart','secondary')}${button(s.sources,'about','text-button')}</div><p class="postcard-format">${escape(t.postcard.format)}</p>`;stage=`<canvas id="postcard" role="img" aria-label="${escape(t.postcard.label)}"></canvas>`;}
+if(scene==='ending'){copy=`<h1 id="scene-title" class="sr-only" tabindex="-1">${escape(s.title)}</h1><a class="ending-signature" href="https://salonformat.com">SALONFORMAT</a><div class="actions">${button(s.replay,'restart','text-button')}${button(s.sources,'about','text-button')}</div>`;}
 
 sceneElement.className='scene-'+scene;sceneElement.innerHTML=`<div class="scene-copy">${copy}</div><div class="stage" ${''}>${stage}<span class="art-loading">${escape(t.controls.loading)}</span></div>`;updateProgress();prepare(scene);if(focus){$('#scene-title').focus({preventScroll:true});$('#experience').scrollTop=0;}}
 function setCopy(element,value){
@@ -71,17 +69,17 @@ function updateProgress(){
 }
 function updateDrawing(){
  if(!ready)return;spatial.inspection=inspectionAmount;spatial.set(scene,progress,ambientTime);
- const card=$('#postcard');if(card){const box=card.getBoundingClientRect(),dpr=Math.min(devicePixelRatio||1,2),width=Math.round(box.width*dpr),height=Math.round(box.height*dpr);if(card.width!==width||card.height!==height){card.width=width;card.height=height;}paintPostcard(card.getContext('2d'),{water:artImage('assets/ocean-minimal.jpg'),shell:artImage('assets/snail-shell.webp'),fish:artImage('assets/fish.webp')},ambientTime,c().postcard);}
+
 }
 $('#journey-stage').addEventListener('camera-frame',event=>{
- const state=event.detail;const x=-state.pan*innerWidth*.07,y=state.depth*30-state.lift*90;
- document.documentElement.style.setProperty('--world-x',x+'px');document.documentElement.style.setProperty('--world-y',y+'px');document.documentElement.style.setProperty('--world-zoom',String(1.14+state.depth*.07));
+ const state=event.detail;const x=-state.pan*(1-state.lift)*innerWidth*.07,y=state.depth*30+state.lift*18;
+ document.documentElement.style.setProperty('--world-x',x+'px');document.documentElement.style.setProperty('--world-y',y+'px');document.documentElement.style.setProperty('--world-zoom',String(1.14+state.depth*.07-state.lift*.06));
  document.documentElement.style.setProperty('--foreground-y',(state.depth*80-state.lift*160)+'px');document.documentElement.style.setProperty('--observation-focus',String(state.focus));document.documentElement.style.setProperty('--foreground-opacity',String(.5*(1-state.focus)*(1-state.lift)));
  if(paintedWater.setFocus)paintedWater.setFocus(state.focus);ocean.focus=state.focus;
  if(scene==='bivalve')paintedWater.setScene(progress>.82?'ending':'bivalve');
 });
 $('#inspect-mussel').addEventListener('click',()=>{inspectionOpen=!inspectionOpen;if(!motion)inspectionAmount=inspectionOpen?1:0;updateProgress();updateDrawing();});
-let last=performance.now(),lastDraw=0;function tick(now){const dt=Math.max(0,Math.min((now-last)/1000,.1));last=now;if(!document.hidden){if(motion&&!ambientPaused)ambientTime+=dt;const target=inspectionOpen&&scene==='bivalve'?1:0,difference=target-inspectionAmount;if(Math.abs(difference)>.001)inspectionAmount+=difference*Math.min(1,dt*9);else inspectionAmount=target;if(ready&&now-lastDraw>30&&((scene==='ending'&&motion&&!ambientPaused)||Math.abs(difference)>.001)){updateDrawing();lastDraw=now;}}requestAnimationFrame(tick);}requestAnimationFrame(tick);
+let last=performance.now(),lastDraw=0;function tick(now){const dt=Math.max(0,Math.min((now-last)/1000,.1));last=now;if(!document.hidden){if(motion&&!ambientPaused)ambientTime+=dt;const target=inspectionOpen&&scene==='bivalve'?1:0,difference=target-inspectionAmount;if(Math.abs(difference)>.001)inspectionAmount+=difference*Math.min(1,dt*9);else inspectionAmount=target;if(ready&&now-lastDraw>30&&(Math.abs(difference)>.001)){updateDrawing();lastDraw=now;}}requestAnimationFrame(tick);}requestAnimationFrame(tick);
 window.addEventListener('resize',()=>{const state=positionAt(window.scrollY,viewportHeight);restoring=true;updateTrack();if(scene!=='about'){const changed=scene!==state.scene;scene=state.scene;progress=state.progress;const y=offsetFor(scene,progress,viewportHeight);window.scrollTo({top:y,behavior:'instant'});lastY=y;if(changed)render(false);else updateProgress();storePosition(y);}updateDrawing();requestAnimationFrame(()=>{restoring=false;});});window.addEventListener('artready',updateDrawing);
 document.addEventListener('click',event=>{const anchor=event.target.closest('a[data-scene]');if(anchor){event.preventDefault();go(anchor.dataset.scene);return;}const action=event.target.closest('[data-action]')?.dataset.action;if(action==='begin')go('animal');if(action==='restart'){inspectionOpen=false;inspectionAmount=0;go('start');}if(action==='about')go('about');if(action==='close-about')back();});
 function renderAbout(){const t=c();aboutElement.innerHTML=`<h1 id="about-title" tabindex="-1">${escape(t.controls['source-title'])}</h1><p>${escape(t.controls['model-description'])}</p><h2>${escape(t.ui.research)}</h2><div class="source-links"><a href="https://www.whoi.edu/ocean-learning-hub/ocean-facts/how-are-seashells-made/" target="_blank" rel="noopener noreferrer">Woods Hole Oceanographic Institution · How are seashells made?</a><a href="https://oumnh.web.ox.ac.uk/node/4303936" target="_blank" rel="noopener noreferrer">Oxford University Museum of Natural History · Shell variation in molluscs</a><a href="https://doi.org/10.1111/brv.12640" target="_blank" rel="noopener noreferrer">Clark et al. (2020) · Deciphering mollusc shell production</a></div><p class="sources-footer">${escape(t.ui.credits)}</p><div class="actions">${button(t.controls.back,'close-about')}</div>`;}

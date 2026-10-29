@@ -1,5 +1,5 @@
-import {cameraAt} from './camera.js?v=release-18';
-import {artImage,drawShell,drawMussel} from './art.js?v=release-18';
+import {cameraAt} from './camera.js?v=release-19';
+import {artImage,drawShell,drawMussel} from './art.js?v=release-19';
 export class SpatialJourney{
  constructor(canvas,button){
   this.canvas=canvas;this.ctx=canvas.getContext('2d');this.button=button;this.scene='start';this.progress=0;this.time=0;this.inspection=0;this.targetInspection=0;this.reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;this.buffers=new Map();this.ready=false;

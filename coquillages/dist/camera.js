@@ -1,4 +1,4 @@
-import {clamp} from './learning.js?v=release-18';
+import {clamp} from './learning.js?v=release-19';
 export const smooth=value=>{const p=clamp(value);return p*p*(3-2*p);};
 const mix=(a,b,p)=>a+(b-a)*p;
 export function cameraAt(scene,progress,width,height,{reduced=false,inspection=0}={}){

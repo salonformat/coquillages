@@ -8,7 +8,7 @@ test('All learning steps and controls exist in DE FR EN with matching keys',()=>
   for(const lang of ['de','fr','en']){
     assert.deepEqual(flatten(CONTENT[lang]),flatten(CONTENT.de));
     for(const scene of SCENES){assert.ok(CONTENT[lang][scene].title);}
-    assert.ok(CONTENT[lang].why.body);assert.ok(CONTENT[lang].ending.download);assert.ok(CONTENT[lang].ending['card-line-1']);assert.ok(CONTENT[lang].ending['card-line-2']);assert.equal(CONTENT[lang].ui.progressNames.length,SCENES.length);
+    assert.ok(CONTENT[lang].why.body);assert.equal(CONTENT[lang].ending.download,undefined);assert.equal(CONTENT[lang].ui.progressNames.length,SCENES.length);
   }
 });
 test('All shell illustrations, fonts and ocean background are shipped',()=>{

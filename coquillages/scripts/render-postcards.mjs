@@ -1,8 +1,0 @@
-import {createRequire} from 'node:module';import {writeFileSync} from 'node:fs';
-import {CONTENT} from '../dist/content.js';import {paintPostcard} from '../dist/postcard.js';
-const require=createRequire(import.meta.url),root=process.env.CANVAS_MODULE_ROOT||'/Users/isabellakohout/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules';
-const {createCanvas,loadImage,GlobalFonts}=require(root+'/@napi-rs/canvas'),sharp=require(root+'/sharp');
-GlobalFonts.registerFromPath('dist/assets/della-respira.woff2','Della Respira');GlobalFonts.registerFromPath('dist/assets/josefin-sans.woff2','Josefin Sans');
-const assets={water:await loadImage('dist/assets/ocean-minimal.jpg'),shell:await loadImage('dist/assets/snail-shell.png'),fish:await loadImage('dist/assets/fish.png')};
-const width=540,height=360,frames=120,delay=50,canvas=createCanvas(width,height),ctx=canvas.getContext('2d');
-for(const lang of ['de','fr','en']){const raw=Buffer.alloc(width*height*4*frames);for(let i=0;i<frames;i++){paintPostcard(ctx,assets,i*delay/1000,CONTENT[lang].postcard);Buffer.from(ctx.getImageData(0,0,width,height).data).copy(raw,i*width*height*4);}const result=await sharp(raw,{raw:{width,height:height*frames,channels:4,pageHeight:height}}).gif({loop:0,delay,colours:256,effort:7,dither:.35}).toFile(`dist/assets/postcard-${lang}.gif`);const metadata=await sharp(`dist/assets/postcard-${lang}.gif`,{animated:true}).metadata();console.log(JSON.stringify({lang,bytes:result.size,frames:metadata.pages,width:metadata.width,height:metadata.pageHeight,loop:metadata.loop,delay:metadata.delay?.[0]}));}

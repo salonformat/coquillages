@@ -4,8 +4,7 @@ export const CONTENT = {
       "title": "Wie wachsen Muscheln und Meeresschnecken?",
       "body": "Muscheln und Meeresschnecken bilden ihre Schalen selbst. Schau dir an, wie das geht und wo sie weiterwachsen.",
       "action": "Ins Meer eintauchen",
-      "hint": "Scroll oder wisch weiter.",
-      "reward": "Am Ende kannst du eine animierte Postkarte speichern."
+      "hint": "Scroll oder wisch weiter."
     },
     "animal": {
       "title": "Die Schnecke hat einen weichen Körper.",
@@ -67,19 +66,9 @@ export const CONTENT = {
       "body": "Hier am Rand kommt neues Material dazu."
     },
     "ending": {
-      "title": "Ein kleines Stück Meer für dich.",
-      "body": "Das Tier bildet seine Schale selbst: Der Mantel liefert das Material, daraus entsteht eine feste Schale. Größer wird sie am Rand.",
-      "transfer": "Wenn du am Strand ein Schneckenhaus oder eine Muschelschale findest, schau dir den Rand einmal genauer an.",
-      "keepsake-title": "Deine Entdeckerkarte",
-      "keepsake-body": "Was möchtest du mitnehmen?",
-      "snail": "Das Schneckenhaus",
-      "bivalve": "Die Muschelschale",
-      "download": "Postkarte speichern",
-      "card-note": "Vereinfachte Darstellung",
-      "replay": "Noch einmal von vorne",
-      "sources": "Quellen",
-      "card-line-1": "Das Tier bildet neues Material.",
-      "card-line-2": "Die Muschelschale wächst am Rand."
+      "title": "Im weiten Meer",
+      "replay": "Noch einmal",
+      "sources": "Quellen"
     },
     "controls": {
       "back": "Zurück",
@@ -96,7 +85,6 @@ export const CONTENT = {
       "source-title": "Über diese Reise",
       "model-description": "Die Tiere sind vereinfacht gezeichnet. Beim Wachstum zeigen wir nur einen kleinen Ausschnitt.",
       "museum-description": "Das Thema passt zu den naturkundlichen Sammlungen in La Rochelle, Nantes und Bordeaux. Die Auswahl konkreter Museumsobjekte steht noch aus.",
-      "download-error": "Die Postkarte konnte nicht gespeichert werden. Versuch es bitte noch einmal.",
       "pause": "Anhalten",
       "resume": "Fortsetzen",
       "next": "Weiter",
@@ -124,7 +112,7 @@ export const CONTENT = {
         "Die Öffnung",
         "Das Haus wächst",
         "Die Muschel",
-        "Die Postkarte"
+        "Weites Meer"
       ],
       "audioUnavailable": "Der Ton lässt sich nicht einschalten. Du kannst ohne Ton weitermachen.",
       "fullscreenUnavailable": "Das Vollbild konnte nicht geöffnet werden."
@@ -144,17 +132,11 @@ export const CONTENT = {
       "wrong": "Dieser Teil war schon da. Schau weiter außen am Rand.",
       "correct": "Genau, hier am Rand kommt neues Material dazu.",
       "loadError": "Die Zeichnung wird nicht angezeigt. Lade die Seite bitte neu.",
-      "doneHint": "Scroll weiter zur Postkarte.",
+      "doneHint": "Scroll weiter ins weite Meer.",
       "inspectNear": "Die Muschel aus der Nähe ansehen",
       "inspectFar": "Wieder zurück zur ganzen Ansicht",
       "inspectBody": "Hier am Rand kommt neues Material dazu.",
       "transferBodyTouch": "Tippe auf die Muschel, dann siehst du sie aus der Nähe."
-    },
-    "postcard": {
-      "title": "Ein kleines Stück Meer",
-      "line": "Die Schnecke baut ihr Haus selbst.",
-      "format": "Animiertes GIF · ohne Ton",
-      "label": "Gezeichnetes Meer mit fließendem Wasser, vorbeiziehenden Fischen und einem weißen Schneckenhaus."
     },
     "camera": {
       "near": "Näher ansehen",
@@ -184,8 +166,7 @@ export const CONTENT = {
       "title": "Comment grandissent les coquillages ?",
       "body": "Moules et escargots de mer ont un corps mou. Découvre comment ils fabriquent leur coquille pour se protéger, et où elle grandit.",
       "action": "Entrer dans la mer",
-      "hint": "Avance en faisant défiler la page. C’est toi qui choisis le rythme.",
-      "reward": "À la fin, une carte postale animée t’attend. Tu peux l’enregistrer si tu le souhaites."
+      "hint": "Avance en faisant défiler la page. C’est toi qui choisis le rythme."
     },
     "animal": {
       "title": "L’escargot de mer a un corps mou.",
@@ -247,19 +228,9 @@ export const CONTENT = {
       "body": "La coquille grandit par le bord. Le trait clair montre où la matière s’ajoute."
     },
     "ending": {
-      "title": "Un petit bout de mer pour toi.",
-      "body": "L’animal fabrique sa propre coquille. Le manteau en produit les matériaux. La coquille grandit par le bord.",
-      "transfer": "La prochaine fois que tu vois une coquille, regarde son ouverture ou son bord.",
-      "keepsake-title": "Ta carte de découverte",
-      "keepsake-body": "Quelle coquille veux-tu sur ton image ?",
-      "snail": "La coquille de l’escargot",
-      "bivalve": "La coquille de la moule",
-      "download": "Enregistrer la carte",
-      "card-note": "Dessin simplifié",
+      "title": "Au large",
       "replay": "Recommencer",
-      "sources": "En savoir plus",
-      "card-line-1": "L’animal fabrique sa coquille.",
-      "card-line-2": "La coquille grandit par le bord."
+      "sources": "En savoir plus"
     },
     "controls": {
       "back": "Retour",
@@ -276,7 +247,6 @@ export const CONTENT = {
       "source-title": "À propos de cette expérience",
       "model-description": "Les animaux et leur croissance sont dessinés de façon simplifiée.",
       "museum-description": "Ce thème s’appuie sur les collections d’histoire naturelle de La Rochelle, Nantes et Bordeaux. Les objets à présenter restent à choisir avec les musées.",
-      "download-error": "L’image n’a pas pu être enregistrée. Réessaie.",
       "pause": "Arrêter",
       "resume": "Reprendre",
       "next": "Continuer",
@@ -304,7 +274,7 @@ export const CONTENT = {
         "Le bord",
         "La croissance",
         "La moule",
-        "À garder"
+        "Au large"
       ],
       "audioUnavailable": "Le son n’est pas disponible ici. Tu peux continuer sans le son.",
       "fullscreenUnavailable": "Le plein écran n’est pas disponible dans ce navigateur."
@@ -324,17 +294,11 @@ export const CONTENT = {
       "wrong": "Cette partie était déjà là. Regarde le bord libre.",
       "correct": "Oui, ici. L’animal ajoute de la matière sur le bord libre.",
       "loadError": "Le dessin n’a pas pu être chargé. Recharge la page.",
-      "doneHint": "Continue et profite encore un peu de la mer.",
+      "doneHint": "Continue vers le large.",
       "inspectNear": "Voir la coquille de plus près",
       "inspectFar": "Reculer pour voir la coquille entière",
       "inspectBody": "La coquille grandit par le bord. Le trait clair montre où la matière s’ajoute.",
       "transferBodyTouch": "Touche la coquille pour la voir de plus près."
-    },
-    "postcard": {
-      "title": "Un petit bout de mer",
-      "line": "L’escargot fabrique sa coquille.",
-      "format": "GIF animé · sans son",
-      "label": "Une mer dessinée, de l’eau en mouvement, des poissons et une coquille blanche."
     },
     "camera": {
       "near": "Voir de plus près",
@@ -364,8 +328,7 @@ export const CONTENT = {
       "title": "How do mussels and sea snails grow?",
       "body": "Their soft bodies need protection. See how they build their shells, and where new material is added.",
       "action": "Into the sea",
-      "hint": "Scroll or swipe to explore. You choose the pace.",
-      "reward": "A moving sea postcard is waiting at the end. Save it if you’d like to keep it."
+      "hint": "Scroll or swipe to explore. You choose the pace."
     },
     "animal": {
       "title": "The sea snail has a soft body.",
@@ -427,19 +390,9 @@ export const CONTENT = {
       "body": "The shell grows at the edge. The pale line shows where new material is added."
     },
     "ending": {
-      "title": "A little piece of the sea for you.",
-      "body": "The animal makes its own shell. The mantle produces the materials that form the hard shell. The shell gets bigger at its edge.",
-      "transfer": "Next time you see a shell, look at its opening or its edge.",
-      "keepsake-title": "Your discovery card",
-      "keepsake-body": "Which shell would you like on your picture?",
-      "snail": "The snail shell",
-      "bivalve": "The mussel shell",
-      "download": "Save the sea postcard",
-      "card-note": "Simplified illustration",
+      "title": "Out at sea",
       "replay": "Start again",
-      "sources": "Find out more",
-      "card-line-1": "The animal makes its own shell.",
-      "card-line-2": "The shell grows at its edge."
+      "sources": "Find out more"
     },
     "controls": {
       "back": "Back",
@@ -456,7 +409,6 @@ export const CONTENT = {
       "source-title": "About this experience",
       "model-description": "The animals and their growth are simplified drawings.",
       "museum-description": "The subject fits the natural history collections in La Rochelle, Nantes and Bordeaux. Specific objects still need to be chosen with the museums.",
-      "download-error": "The picture could not be saved. Please try again.",
       "pause": "Pause",
       "resume": "Resume",
       "next": "Continue",
@@ -484,7 +436,7 @@ export const CONTENT = {
         "The edge",
         "Growth",
         "The mussel",
-        "To keep"
+        "Open water"
       ],
       "audioUnavailable": "Sound is not available here. You can continue without it.",
       "fullscreenUnavailable": "Full screen is not available in this browser."
@@ -504,17 +456,11 @@ export const CONTENT = {
       "wrong": "This part was already here. Look at the free edge.",
       "correct": "Yes, here. The animal adds new material at the free edge.",
       "loadError": "The drawing could not load. Please reload the page.",
-      "doneHint": "Scroll on and enjoy another moment by the sea.",
+      "doneHint": "Keep scrolling into open water.",
       "inspectNear": "Look closer at the shell",
       "inspectFar": "Move back from the shell",
       "inspectBody": "The shell grows at the edge. The pale line shows where new material is added.",
       "transferBodyTouch": "Touch the shell to take a closer look."
-    },
-    "postcard": {
-      "title": "A little piece of the sea",
-      "line": "The snail builds its own shell.",
-      "format": "Animated GIF · no sound",
-      "label": "A hand-drawn sea with flowing water, passing fish and a white snail shell."
     },
     "camera": {
       "near": "Look closer",

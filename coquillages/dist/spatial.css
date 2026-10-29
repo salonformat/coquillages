@@ -32,7 +32,7 @@
 #journey-hint{z-index:7}
 body:is([data-scene=start],[data-scene=animal],[data-scene=edge],[data-scene=growth]) .ocean-painting{background-image:url('assets/world-snail.webp')!important}
 body[data-scene=bivalve] .ocean-painting{background-image:url('assets/world-mussel.jpg')!important}
-body[data-scene=ending] .ocean-painting{background-image:url('assets/world-ending.jpg')!important}
+body[data-scene=ending] .ocean-painting{background-image:url('assets/ocean-minimal.jpg')!important}
 .ocean-painting,#painted-water{animation:none!important;transform:translate3d(var(--world-x,0px),var(--world-y,0px),0) scale(var(--world-zoom,1.02))!important;transition:filter .35s;filter:brightness(calc(1 - var(--observation-focus,0)*.3)) blur(calc(var(--observation-focus,0)*1px))}
 #ocean::after,body[data-scene=start] #ocean::after,body:is([data-scene=animal],[data-scene=edge],[data-scene=growth],[data-scene=bivalve],[data-scene=ending]) #ocean::after{background:linear-gradient(180deg,rgba(3,27,58,.60),rgba(3,32,57,.08) 52%,rgba(3,28,46,.35))!important}
 .water-light{transform:translateY(calc(var(--foreground-y,0px)*.25));opacity:.3}
@@ -185,3 +185,19 @@ body[data-scene=bivalve] #ocean::after{background:linear-gradient(270deg,rgba(2,
  #experience #scene.scene-bivalve .scene-copy p{font-size:16px;line-height:1.4}
  #experience #scene.scene-bivalve .model-note{font-size:10px!important;margin-top:8px!important}
 }
+
+/* The journey ends in open water, without a souvenir panel. */
+body[data-scene=ending] #experience{inset:0;overflow:hidden}
+#experience #scene.scene-ending{height:100svh!important;min-height:100svh!important;padding:0!important;display:flex!important;justify-content:flex-end;align-items:center}
+#experience #scene.scene-ending .scene-copy{display:contents!important}
+#experience #scene.scene-ending .actions{margin:0 0 23vh!important;gap:28px;justify-content:center;pointer-events:auto}
+#experience #scene.scene-ending .text-button{font-size:16px;padding:10px 15px;background:rgba(3,32,76,.65)}
+body[data-scene=ending] #scene-time{opacity:0}
+@media(max-width:700px){#experience #scene.scene-ending .actions{margin-bottom:25vh!important;gap:18px}}
+
+#experience #scene.scene-ending{justify-content:center;padding-bottom:5vh!important;gap:0}
+#experience #scene.scene-ending .ending-signature{display:block;order:3;text-decoration:none;font-family:'Josefin Sans',sans-serif;font-size:clamp(25px,3.2vw,44px);font-weight:400;letter-spacing:.18em;color:#fffaf0;text-shadow:0 2px 12px rgba(2,25,63,.8);pointer-events:auto;animation:sea-signature 1.8s .2s both cubic-bezier(.16,1,.3,1)}
+#experience #scene.scene-ending .actions{margin:28px 0 0!important;animation:sea-signature 1.2s .85s both ease-out}
+@keyframes sea-signature{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){#experience #scene.scene-ending .ending-signature,#experience #scene.scene-ending .actions{animation:none}}
+body[data-scene=ending] .header .wordmark,body[data-scene=ending] .footer .portfolio-link{visibility:hidden}

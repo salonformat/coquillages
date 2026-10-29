@@ -11,3 +11,6 @@ Scrollen ist jederzeit umkehrbar. Die Muschel lässt sich freiwillig näher anse
 Die Darstellung zeigt einen kurzen, vereinfachten Abschnitt der Materialzugabe, keine maßstäbliche Entwicklung einer bestimmten Art. Der Mantel bildet das Material; außen kommt es am Rand hinzu. Eine mögliche Verdickung von innen wird im Text erklärt.
 
 Prüfung: reine Kameratests für nahtlose Anschlüsse und unveränderte Position während des Wachstums; Pixelvergleich der alten Schalenzeichnung; Browserbedienung und Bildausschnitte in Deutsch, Französisch und Englisch sowie auf schmalen Bildschirmen. Diese technische Prüfung ersetzt keine Erprobung mit Museumsbesuchern oder eine wissenschaftliche Freigabe durch ein Museum.
+
+
+Aktueller Abschluss (29. Oktober 2026): Die Postkarte wurde entfernt, ebenso Download und Einstiegsankündigung. Der Blick löst sich vom Meeresboden, fährt zurück und lässt das helle Wasser weit werden. Ohne zusätzlichen Erklärungstext; nur „Noch einmal“, Quellen und SALONFORMAT bleiben erreichbar.

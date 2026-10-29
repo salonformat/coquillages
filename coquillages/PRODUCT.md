@@ -42,3 +42,6 @@ Elio-Referenzbilder aus dem Gespräch, vorhandene gezeichnete PNG-Illustrationen
 
 
 Die verbindliche räumliche Bildfolge und Kameraführung sind in [RAUMREISE.md](docs/RAUMREISE.md) dokumentiert. Die Muschel-Nahansicht ist Teil des Vergleichs, keine zusätzliche Station.
+
+
+Aktueller Abschluss (29. Oktober 2026): Die Postkarte wurde entfernt, ebenso Download und Einstiegsankündigung. Der Blick löst sich vom Meeresboden, fährt zurück und lässt das helle Wasser weit werden. Ohne zusätzlichen Erklärungstext; nur „Noch einmal“, Quellen und SALONFORMAT bleiben erreichbar.

@@ -17,7 +17,7 @@ try{
    if(id==='growth'){const camera=await page.locator('#journey-stage').getAttribute('data-camera');assert.ok(camera);}
    if(id==='bivalve'){const button=page.locator('#inspect-mussel');await button.focus();await page.keyboard.press('Enter');await page.waitForTimeout(600);assert.equal(await button.getAttribute('aria-expanded'),'true');await button.click();assert.equal(await button.getAttribute('aria-expanded'),'false');}
   }
-  assert.ok(await page.locator('#postcard').isVisible());assert.ok((await page.locator('a[download]').getAttribute('href')).endsWith(`postcard-${lang}.gif`));
+  assert.equal(await page.locator('#postcard,a[download]').count(),0);assert.ok(await page.locator('[data-action=restart]').isVisible());
   await page.goBack();await page.waitForFunction(()=>document.body.dataset.scene==='bivalve');
   assert.ok(await page.locator('a[href="https://salonformat.com"]').count()>0);
   await page.close();
@@ -25,5 +25,5 @@ try{
  const mobile=await browser.newPage({viewport:{width:375,height:667},isMobile:true,hasTouch:true});
  await mobile.goto('http://127.0.0.1:4173/?lang=de#start');await mobile.waitForFunction(()=>document.querySelector('#scene').dataset.ready==='true');
  const client=await mobile.context().newCDPSession(mobile);await client.send('Input.synthesizeScrollGesture',{x:180,y:510,yDistance:-450,speed:800,gestureSourceType:'touch'});await mobile.waitForTimeout(250);assert.ok(await mobile.evaluate(()=>scrollY)>100);
- await mobile.close();assert.deepEqual(errors,[]);console.log('PASS: DE/FR/EN journey, wheel/touch, reversible scroll, keyboard inspection, postcard, browser back, no horizontal overflow or runtime errors.');
+ await mobile.close();assert.deepEqual(errors,[]);console.log('PASS: DE/FR/EN journey, wheel/touch, reversible scroll, keyboard inspection, open-water ending, browser back, no horizontal overflow or runtime errors.');
 }finally{await browser.close();}
