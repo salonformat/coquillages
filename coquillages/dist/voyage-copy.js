@@ -81,7 +81,7 @@ export const COPY = {
   },
   "fr": {
     "start": {
-      "title": "Comment grandissent les coquillages ?",
+      "title": "Comment se forment leurs coquilles ?",
       "body": "Les moules et les escargots de mer fabriquent eux-mêmes leur coquille. Approchons-nous pour voir comment.",
       "action": "Plonger",
       "hint": "Fais défiler la page ou glisse vers le haut. À ton rythme."
@@ -161,7 +161,7 @@ export const COPY = {
   },
   "en": {
     "start": {
-      "title": "How do mussels and sea snails grow?",
+      "title": "How do mussels and sea snails grow their shells?",
       "body": "The animals make their own shells. Let’s look closely at where new shell material forms.",
       "action": "Into the sea",
       "hint": "Scroll or swipe to explore. You choose the pace."

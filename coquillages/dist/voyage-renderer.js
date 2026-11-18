@@ -1,4 +1,4 @@
-import {clamp,ease,lerp,viewAt} from './voyage.js?v=atelier-20';
+import {clamp,ease,lerp,viewAt} from './voyage.js?v=living-22';
 const W=1536,H=1024;
 const images=new Map();
 export function imageAsset(name){
@@ -38,7 +38,18 @@ export class VoyageRenderer{
  const s=Math.max(this.w/W,this.h/H)*2.6,end={s,x:this.w*.5-.81*W*s,y:this.h*.57-.65*H*s};
  const p={s:lerp(a.s,end.s,q),x:lerp(a.x,end.x,q),y:lerp(a.y,end.y,q)};
  const plate=this.mobileImage(image,image.src);ctx.drawImage(plate,p.x,p.y,W*p.s,H*p.s);this.oceanPose=p;}
+ if(!this.reduced&&this.oceanPose&&v.section<.85)this.animateSnail(image,this.oceanPose);
  this.atmosphere(this.scene==='animal'?1-ease(v.progress/.18):1-v.section);
+ }
+ animateSnail(image,pose){
+ // A continuous deformation field gently moves the head and feelers.
+ // It falls to zero at every patch edge, keeping the painted place connected.
+ const ctx=this.ctx,left=1100,top=590,width=410,height=230,cols=10,rows=6;
+ const point=(x,y)=>{const u=(x-left)/width,v=(y-top)/height,edge=Math.sin(Math.PI*u)*Math.sin(Math.PI*v),head=Math.exp(-Math.pow((x-1380)/145,2)-Math.pow((y-705)/100,2));return[x+Math.sin(this.time*.72)*4.2*edge*head,y+Math.sin(this.time*.88+.4)*5.2*edge*head];};
+ const triangle=(src,dst)=>{const [a,b,c]=src,[d,e,f]=dst,den=a[0]*(b[1]-c[1])+b[0]*(c[1]-a[1])+c[0]*(a[1]-b[1]);const coef=k=>[(d[k]*(b[1]-c[1])+e[k]*(c[1]-a[1])+f[k]*(a[1]-b[1]))/den,(d[k]*(c[0]-b[0])+e[k]*(a[0]-c[0])+f[k]*(b[0]-a[0]))/den,(d[k]*(b[0]*c[1]-c[0]*b[1])+e[k]*(c[0]*a[1]-a[0]*c[1])+f[k]*(a[0]*b[1]-b[0]*a[1]))/den];const x=coef(0),y=coef(1);ctx.save();ctx.beginPath();ctx.moveTo(...d);ctx.lineTo(...e);ctx.lineTo(...f);ctx.closePath();ctx.clip();ctx.transform(x[0],y[0],x[1],y[1],x[2],y[2]);ctx.drawImage(image,0,0,image.naturalWidth,image.naturalHeight,0,0,W,H);ctx.restore();};
+ ctx.save();ctx.translate(pose.x,pose.y);ctx.scale(pose.s,pose.s);
+ for(let y=0;y<rows;y++)for(let x=0;x<cols;x++){const a=[left+x*width/cols,top+y*height/rows],b=[a[0]+width/cols,a[1]],c=[b[0],a[1]+height/rows],d=[a[0],c[1]];triangle([a,b,c],[point(...a),point(...b),point(...c)]);triangle([a,c,d],[point(...a),point(...c),point(...d)]);}
+ ctx.restore();
  }
  sectionPose(){const s=Math.max(this.w/W,this.h/H);return{s,x:(this.w-W*s)/2,y:(this.h-H*s)/2};}
  paintSection(v){const image=available('mantle-section-v2.webp');if(!image){this.paintOcean({...v,zoom:3.6,focusX:.81,focusY:.65});return;}
@@ -63,8 +74,8 @@ export class VoyageRenderer{
  }
  paintSea(v){const image=available('open-water-v2.webp');if(!image)return;this.cover(image,1.04,.5,.43);this.atmosphere(1);}
  atmosphere(amount){if(amount<.01)return;const ctx=this.ctx,w=this.w,h=this.h;ctx.save();ctx.globalAlpha=amount;
- const beam=ctx.createLinearGradient(w*.52,0,w*.85,h);beam.addColorStop(0,'rgba(228,241,255,.04)');beam.addColorStop(.5,'rgba(225,238,255,.015)');beam.addColorStop(1,'rgba(225,238,255,0)');ctx.fillStyle=beam;ctx.beginPath();const shift=Math.sin(this.time*.16)*w*.012;ctx.moveTo(w*.68+shift,0);ctx.lineTo(w*.84+shift,0);ctx.lineTo(w*.46+shift,h);ctx.lineTo(w*.31+shift,h);ctx.closePath();ctx.fill();
- const fish=available('fish.webp'),count=this.scene==='animal'||this.scene==='formation'?0:this.scene==='bivalve'?2:4;if(fish)for(let i=0;i<count;i++){const size=(w<700?48:82)*(1+random(i+5)*.4),direction=i%2?-1:1;let x=((random(i+14)*(w+size*2)+this.time*(13+i*3))%(w+size*2))-size;if(direction<0)x=w-x;const y=h*(this.scene==='bivalve'?[.13,.20][i]:[.15,.23,.70,.83][i])+Math.sin(this.time*.4+i)*4;ctx.save();ctx.translate(x,y);ctx.scale(direction,1);ctx.globalAlpha=amount*(.18+i*.045);ctx.drawImage(fish,-size/2,-size/4,size,size/2);ctx.restore();}
+ const beam=ctx.createLinearGradient(w*.52,0,w*.85,h);beam.addColorStop(0,'rgba(228,241,255,.075)');beam.addColorStop(.5,'rgba(225,238,255,.03)');beam.addColorStop(1,'rgba(225,238,255,0)');ctx.fillStyle=beam;ctx.beginPath();const shift=Math.sin(this.time*.16)*w*.012;ctx.moveTo(w*.68+shift,0);ctx.lineTo(w*.84+shift,0);ctx.lineTo(w*.46+shift,h);ctx.lineTo(w*.31+shift,h);ctx.closePath();ctx.fill();
+ const fish=available('fish.webp'),count=this.scene==='animal'||this.scene==='formation'?0:this.scene==='bivalve'?2:4;if(fish)for(let i=0;i<count;i++){const size=(w<700?48:82)*(1+random(i+5)*.4),direction=i%2?-1:1;let x=((random(i+14)*(w+size*2)+this.time*(16+i*3))%(w+size*2))-size;if(direction<0)x=w-x;const y=h*(this.scene==='bivalve'?[.13,.20][i]:[.15,.23,.70,.83][i])+Math.sin(this.time*.4+i)*7;ctx.save();ctx.translate(x,y);ctx.scale(direction,1+Math.sin(this.time*1.4+i)*.035);ctx.globalAlpha=amount*(.18+i*.045);ctx.drawImage(fish,-size/2,-size/4,size,size/2);ctx.restore();}
  ctx.restore();}
  draw(){this.size();const ctx=this.ctx,v=viewAt(this.scene,this.progress);ctx.fillStyle='#103f89';ctx.fillRect(0,0,this.w,this.h);
  if(this.scene==='start'||this.scene==='animal'){this.paintOcean(v);if(v.section>0){ctx.save();ctx.globalAlpha=v.section;this.paintSection(v);ctx.restore();}}

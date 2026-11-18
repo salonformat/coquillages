@@ -1,7 +1,7 @@
-import {COPY} from './voyage-copy.js?v=atelier-20';
-import {VoyageRenderer} from './voyage-renderer.js?v=atelier-20';
-import {SCENES,readRoute,routeUrl,positionAt,offsetFor,journeyHeight,formationAt,clamp,ease} from './voyage.js?v=atelier-20';
-import {SeaSound} from './world.js?v=atelier-20';
+import {COPY} from './voyage-copy.js?v=living-22';
+import {VoyageRenderer} from './voyage-renderer.js?v=living-22';
+import {SCENES,readRoute,routeUrl,positionAt,offsetFor,journeyHeight,formationAt,clamp,ease} from './voyage.js?v=living-22';
+import {SeaSound} from './world.js?v=living-22';
 const $=s=>document.querySelector(s),root=document.documentElement,host=$('#scene'),track=$('#scroll-track'),dialog=$('#sources');
 const original=readRoute(location.href),reduced=matchMedia('(prefers-reduced-motion:reduce)');
 let lang=original.lang,scene=original.scene,progress=original.at,depth=0,lastY=0,restoring=true,rendered='',phase=-1,ready=false,loadSerial=0,saveTimer,scrollFrame=0,paused=reduced.matches,sound=false,viewportHeight=innerHeight,previousScene='start';
@@ -19,7 +19,7 @@ function render(){const t=text(),actual=scene==='about'?previousScene:scene;docu
  if(dialog.open)dialog.close();
  if(rendered!==scene||host.dataset.lang!==lang){host.className='scene-'+scene;host.dataset.lang=lang;phase=-1;rendered=scene;const item=scene==='formation'?t.formation[0]:t[scene];
  if(scene==='ending'){host.innerHTML=`<div class="scene-copy"><h1 id="scene-title" tabindex="-1">${esc(item.title)}</h1><a class="ending-signature" href="https://salonformat.com">SALONFORMAT</a><div class="end-actions"><button class="text-button" data-action="restart">${esc(item.replay)}</button><button class="text-button" data-action="sources">${esc(item.sources)}</button></div></div>`;}
- else{host.innerHTML=`<div class="scene-copy"><h1 id="scene-title" tabindex="-1">${esc(item.title)}</h1><p id="scene-body">${esc(item.body)}</p>${scene==='start'?`<button class="primary" data-action="begin">${esc(t.start.action)}${arrow}</button><p class="intro-hint">${esc(t.start.hint)}</p>`:''}</div>`;}
+ else{host.innerHTML=`<div class="scene-copy"><h1 id="scene-title" tabindex="-1">${scene==='start'?'<span class="project-name">Coquillages</span>':''}${esc(item.title)}</h1><p id="scene-body">${esc(item.body)}</p>${scene==='start'?`<button class="primary" data-action="begin">${esc(t.start.action)}${arrow}</button><p class="intro-hint">${esc(t.start.hint)}</p>`:''}</div>`;}
  $('#progress').innerHTML=SCENES.map((id,i)=>`<a href="${routeUrl(location.href,id,lang)}" data-scene="${id}" aria-label="${esc(t.progressNames[i])}" ${id===scene?'aria-current="step"':''}></a>`).join('');
  $('#advance').hidden=scene==='start'||scene==='ending';prepare(scene);}
  update();}
@@ -27,7 +27,7 @@ async function prepare(id){const serial=++loadSerial;ready=false;host.dataset.re
  try{await renderer.ensure(id);if(serial!==loadSerial)return;ready=true;host.dataset.ready='true';$('#load-notice').hidden=true;$('#retry').hidden=true;renderer.set(scene,progress);}
  catch{if(serial!==loadSerial)return;host.dataset.ready='error';$('#load-notice span').textContent=text().controls.loadError;$('#load-notice').hidden=false;$('#retry').hidden=false;}
  finally{clearTimeout(timeout);}}
-function update(){const t=text();host.dataset.progress=progress.toFixed(4);const item=scene==='formation'?t.formation[formationAt(progress).phase]:t[scene];document.title=(item?.title||t.sources.title)+' — SALONFORMAT';
+function update(){const t=text();host.dataset.progress=progress.toFixed(4);const item=scene==='formation'?t.formation[formationAt(progress).phase]:t[scene];document.title='Coquillages — '+(item?.title||t.sources.title)+' — SALONFORMAT';
  if(scene==='formation'){const n=formationAt(progress).phase;if(n!==phase){copyInto($('#scene-title'),item.title);copyInto($('#scene-body'),item.body);phase=n;}}
  let opacity=1;if(scene==='start')opacity=1-ease((progress-.12)/.65);if(scene==='animal')opacity=1-ease((progress-.30)/.35);if(scene==='formation')opacity=1-ease((progress-.91)/.09);if(scene==='bivalve')opacity=1-ease((progress-.73)/.15);
  root.style.setProperty('--copy-opacity',String(opacity));$('#model-note').hidden=scene!=='formation';$('#model-note').textContent=t.labels.model;

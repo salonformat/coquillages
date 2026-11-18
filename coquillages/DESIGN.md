@@ -109,3 +109,9 @@ All interactive controls use a 2px warm-ivory focus outline with 7px offset. Int
 - Don't replace painted worlds with detached specimens or generic interface cards.
 - Don't present the schematic as microscopy or a species-specific biological simulation.
 - Don't add timed chapter changes or intercept native wheel and swipe gestures.
+
+## Project name and ambient motion
+
+The opening keeps the localised question as its main headline and places “Coquillages” within the same heading in smaller Josefin Sans. The portfolio uses the project name with that question beneath it. DE/FR/EN questions explain the subject without changing the painted world.
+
+A small continuous deformation field adds gentle movement to the snail’s head and feelers in the wide and animal views. The field returns to zero along its boundary. Painted texture is reused; no detached body asset is added. Light and fish movement are slightly more visible. The formation view remains fixed; its material addition is controlled by scroll. Ambient time stops on pause and when hidden; reduced-motion omits the snail deformation.

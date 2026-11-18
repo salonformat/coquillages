@@ -1,4 +1,4 @@
-export const VERSION='atelier-20';
+export const VERSION='living-22';
 export const LANGUAGES=['de','fr','en'];
 export const SCENES=['start','animal','formation','bivalve','ending'];
 export const CHAPTERS=[
