@@ -1,4 +1,4 @@
-import {clamp,ease,lerp,viewAt} from './voyage.js?v=living-22';
+import {clamp,ease,lerp,viewAt} from './voyage.js?v=mobile-sea-23';
 const W=1536,H=1024;
 const images=new Map();
 export function imageAsset(name){
@@ -31,13 +31,25 @@ export class VoyageRenderer{
  cover(image,zoom=1,fx=.5,fy=.5){const s=Math.max(this.w/W,this.h/H)*zoom;const x=clamp(this.w*.5-fx*W*s,this.w-W*s,0),y=clamp(this.h*.5-fy*H*s,this.h-H*s,0);this.ctx.drawImage(image,x,y,W*s,H*s);return{s,x,y};}
  mobileImage(image,key){if(this.mobilePlate.has(key))return this.mobilePlate.get(key);const c=document.createElement('canvas');c.width=W;c.height=H;const ctx=c.getContext('2d');ctx.drawImage(image,0,0,W,H);ctx.globalCompositeOperation='destination-in';const g=ctx.createLinearGradient(0,0,0,220);g.addColorStop(0,'transparent');g.addColorStop(.85,'#000');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);this.mobilePlate.set(key,c);return c;}
  mobilePose(focus=.69,zoom=1){const s=this.w*1.65/W*zoom;return{s,x:this.w*.5-focus*W*s,y:this.h+20-H*s};}
- paintOcean(v){const image=available('atlantic-v2.webp')||available('atlantic-v2-small.webp');if(!image)return;const ctx=this.ctx;
+ mobileWorld(image,kind){
+ const key=kind+'|'+image.src+'|'+this.w+'x'+this.h;if(this.portraitWorld?.key===key)return this.portraitWorld;
+ const canvas=document.createElement('canvas');canvas.width=this.w*2;canvas.height=this.h*2;const c=canvas.getContext('2d'),ratio=image.naturalWidth/W;
+ const crop=kind==='mussel'?[750,100,460,260]:[180,5,400,250];c.drawImage(image,...crop.map(n=>n*ratio),0,0,canvas.width,canvas.height);
+ const base=this.mobilePose(kind==='mussel'?.33:.69,kind==='mussel'?1.08:1);if(kind==='mussel')base.y-=20;
+ c.drawImage(this.mobileImage(image,kind+'|'+image.src),base.x*2,base.y*2,W*base.s*2,H*base.s*2);
+ return this.portraitWorld={key,canvas,base};
+ }
+ paintMobileWorld(image,kind,zoom,amount=0){
+ const world=this.mobileWorld(image,kind),base=world.base;
+ const opening={x:base.x+W*.81*base.s,y:base.y+H*.65*base.s};
+ const fx=lerp(this.w*.5,opening.x,amount),fy=lerp(this.h*.5,opening.y,amount);
+ const x=clamp(this.w*.5-fx*zoom,this.w-this.w*zoom,0),y=clamp(this.h*.5-fy*zoom,this.h-this.h*zoom,0);
+ this.ctx.drawImage(world.canvas,x,y,this.w*zoom,this.h*zoom);
+ return{s:base.s*zoom,x:x+base.x*zoom,y:y+base.y*zoom};
+ }
+ paintOcean(v){const image=available('atlantic-v2.webp')||available('atlantic-v2-small.webp');if(!image)return;
  if(this.w>=700){this.oceanPose=this.cover(image,v.zoom,v.focusX,v.focusY);}
- else{const ratio=image.naturalWidth/W;ctx.drawImage(image,180*ratio,5*ratio,400*ratio,250*ratio,0,0,this.w,this.h);
- const a=this.mobilePose(.69,this.scene==='start'?v.zoom:1.12),q=this.scene==='animal'?ease(v.progress):0;
- const s=Math.max(this.w/W,this.h/H)*2.6,end={s,x:this.w*.5-.81*W*s,y:this.h*.57-.65*H*s};
- const p={s:lerp(a.s,end.s,q),x:lerp(a.x,end.x,q),y:lerp(a.y,end.y,q)};
- const plate=this.mobileImage(image,image.src);ctx.drawImage(plate,p.x,p.y,W*p.s,H*p.s);this.oceanPose=p;}
+ else{const q=this.scene==='animal'?ease(v.progress):0,zoom=this.scene==='animal'?lerp(1.12,3.5,q):v.zoom;this.oceanPose=this.paintMobileWorld(image,'ocean',zoom,q);}
  if(!this.reduced&&this.oceanPose&&v.section<.85)this.animateSnail(image,this.oceanPose);
  this.atmosphere(this.scene==='animal'?1-ease(v.progress/.18):1-v.section);
  }
@@ -66,7 +78,7 @@ export class VoyageRenderer{
  interfacePath(ctx,rim){ctx.beginPath();rim.forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y));[...floorEdges].reverse().forEach(([x,y])=>ctx.lineTo(x,y));ctx.closePath();}
  paintMussel(v){const image=available('mussel-v2.webp');if(!image)return;const ctx=this.ctx;let pose;
  if(this.w>=700){pose=this.cover(image,lerp(1.08,1,ease(clamp(v.progress/.74))),.48,.54);}
- else{const ratio=image.naturalWidth/W;ctx.drawImage(image,750*ratio,100*ratio,460*ratio,260*ratio,0,0,this.w,this.h);pose=this.mobilePose(.33,1.08);pose.y-=20;ctx.drawImage(this.mobileImage(image,'mussel'),pose.x,pose.y,W*pose.s,H*pose.s);}
+ else{pose=this.paintMobileWorld(image,'mussel',lerp(1.08,1,ease(clamp(v.progress/.74))));}
  this.musselPose=pose;this.atmosphere(.55);
  const amount=ease((v.progress-.20)/.45);if(amount>0){ctx.save();ctx.translate(pose.x,pose.y);ctx.scale(pose.s,pose.s);ctx.lineWidth=2.5;ctx.lineCap='round';ctx.strokeStyle='rgba(255,246,217,.70)';
  const paths=[[[100,637],[190,460],[410,333],[660,280],[795,305],[835,366],[790,447],[650,513]],[[103,660],[270,740],[500,812],[720,811],[860,760],[890,703],[795,634]]];

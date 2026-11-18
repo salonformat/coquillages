@@ -1,7 +1,7 @@
-import {COPY} from './voyage-copy.js?v=living-22';
-import {VoyageRenderer} from './voyage-renderer.js?v=living-22';
-import {SCENES,readRoute,routeUrl,positionAt,offsetFor,journeyHeight,formationAt,clamp,ease} from './voyage.js?v=living-22';
-import {SeaSound} from './world.js?v=living-22';
+import {COPY} from './voyage-copy.js?v=mobile-sea-23';
+import {VoyageRenderer} from './voyage-renderer.js?v=mobile-sea-23';
+import {SCENES,readRoute,routeUrl,positionAt,offsetFor,journeyHeight,formationAt,clamp,ease} from './voyage.js?v=mobile-sea-23';
+import {SeaSound} from './world.js?v=mobile-sea-23';
 const $=s=>document.querySelector(s),root=document.documentElement,host=$('#scene'),track=$('#scroll-track'),dialog=$('#sources');
 const original=readRoute(location.href),reduced=matchMedia('(prefers-reduced-motion:reduce)');
 let lang=original.lang,scene=original.scene,progress=original.at,depth=0,lastY=0,restoring=true,rendered='',phase=-1,ready=false,loadSerial=0,saveTimer,scrollFrame=0,paused=reduced.matches,sound=false,viewportHeight=innerHeight,previousScene='start';
