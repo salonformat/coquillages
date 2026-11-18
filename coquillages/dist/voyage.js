@@ -1,4 +1,4 @@
-export const VERSION='mobile-sea-23';
+export const VERSION='mobile-ready-24';
 export const LANGUAGES=['de','fr','en'];
 export const SCENES=['start','animal','formation','bivalve','ending'];
 export const CHAPTERS=[

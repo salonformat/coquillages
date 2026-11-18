@@ -1,12 +1,17 @@
-import {clamp,ease,lerp,viewAt} from './voyage.js?v=mobile-sea-23';
+import {clamp,ease,lerp,viewAt} from './voyage.js?v=mobile-ready-24';
 const W=1536,H=1024;
 const images=new Map();
 export function imageAsset(name){
  if(images.has(name))return images.get(name);
- const image=new Image();image.decoding='async';const ready=new Promise((resolve,reject)=>{image.onload=()=>image.decode().then(()=>resolve(image),()=>resolve(image));image.onerror=()=>{images.delete(name);reject(new Error(name));};});image.src='assets/'+name;
- const item={image,ready};images.set(name,item);return item;
+ const image=new Image();image.decoding='async';
+ let resolveReady,rejectReady;
+ const ready=new Promise((resolve,reject)=>{resolveReady=resolve;rejectReady=reject;});
+ const item={image,ready,decoded:false};images.set(name,item);
+ image.onload=async()=>{try{await image.decode();item.decoded=true;resolveReady(image);}catch(error){images.delete(name);rejectReady(error);}};
+ image.onerror=()=>{images.delete(name);rejectReady(new Error(name));};image.src='assets/'+name;
+ return item;
 }
-const available=name=>{const item=images.get(name);return item?.image.complete&&item.image.naturalWidth?item.image:null;};
+const available=name=>{const item=images.get(name);return item?.decoded&&item.image.complete&&item.image.naturalWidth?item.image:null;};
 const random=n=>{const v=Math.sin(n*127.1+17.7)*43758.545;return v-Math.floor(v);};
 const sourceEdges=[[0,450],[250,485],[500,515],[750,552],[1000,576],[1250,581],[1536,580]];
 const floorEdges=[[0,663],[180,667],[350,694],[520,685],[700,722],[950,694],[1200,704],[1536,666]];
@@ -37,10 +42,12 @@ export class VoyageRenderer{
  const crop=kind==='mussel'?[750,100,460,260]:[180,5,400,250];c.drawImage(image,...crop.map(n=>n*ratio),0,0,canvas.width,canvas.height);
  const base=this.mobilePose(kind==='mussel'?.33:.69,kind==='mussel'?1.08:1);if(kind==='mussel')base.y-=20;
  c.drawImage(this.mobileImage(image,kind+'|'+image.src),base.x*2,base.y*2,W*base.s*2,H*base.s*2);
+ const sx=kind==='mussel'?500:1000,sy=500,px=Math.round((base.x+sx*base.s)*2),py=Math.round((base.y+sy*base.s)*2);
+ if(px>=0&&px<canvas.width&&py>=0&&py<canvas.height){const pixel=c.getImageData(px,py,1,1).data;if(pixel[3]===0||pixel[0]+pixel[1]+pixel[2]<300)return null;}
  return this.portraitWorld={key,canvas,base};
  }
  paintMobileWorld(image,kind,zoom,amount=0){
- const world=this.mobileWorld(image,kind),base=world.base;
+ const world=this.mobileWorld(image,kind);if(!world)return this.cover(image,zoom,kind==='mussel'?.35:.78,.6);const base=world.base;
  const opening={x:base.x+W*.81*base.s,y:base.y+H*.65*base.s};
  const fx=lerp(this.w*.5,opening.x,amount),fy=lerp(this.h*.5,opening.y,amount);
  const x=clamp(this.w*.5-fx*zoom,this.w-this.w*zoom,0),y=clamp(this.h*.5-fy*zoom,this.h-this.h*zoom,0);
@@ -50,7 +57,7 @@ export class VoyageRenderer{
  paintOcean(v){const image=available('atlantic-v2.webp')||available('atlantic-v2-small.webp');if(!image)return;
  if(this.w>=700){this.oceanPose=this.cover(image,v.zoom,v.focusX,v.focusY);}
  else{const q=this.scene==='animal'?ease(v.progress):0,zoom=this.scene==='animal'?lerp(1.12,3.5,q):v.zoom;this.oceanPose=this.paintMobileWorld(image,'ocean',zoom,q);}
- if(!this.reduced&&this.oceanPose&&v.section<.85)this.animateSnail(image,this.oceanPose);
+ if(this.w>=700&&!this.reduced&&this.oceanPose&&v.section<.85)this.animateSnail(image,this.oceanPose);
  this.atmosphere(this.scene==='animal'?1-ease(v.progress/.18):1-v.section);
  }
  animateSnail(image,pose){
