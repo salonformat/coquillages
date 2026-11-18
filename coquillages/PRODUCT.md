@@ -1,47 +1,21 @@
-# Product
+# Coquillages — Produktkontext
 
-<!-- impeccable:product-schema 1 -->
+## Purpose
 
-## Platform
+Eine eigenständige SALONFORMAT Experience über die Frage, wie Muscheln und Meeresschnecken ihre Schalen bilden. Die Besucherin soll erkennen: Der Mantel produziert ein organisches Gerüst und steuert die Bildung von Calciumcarbonat; neues Material vergrößert die Schale am Öffnungsrand und kann sie innen verstärken. Die Website behauptet keinen nachgewiesenen Lernerfolg.
 
-web
+## Experience
 
-## Product Purpose
+Fünf Kapitel: Meer → Tier und Öffnung → Schalenbildung → Muschel → offenes Meer. Native Scroll- und Wischbewegungen bestimmen Tempo und Richtung. Die Bildungsszene bleibt im Bildausschnitt stehen: vorhandene Schale und Mantel, Eiweißgerüst, Kalkkristalle, zusätzliche innere Schicht. Die vorhandene Schale bleibt fest; neues Material wird ergänzt. Die Muschel zeigt dasselbe allgemeine Prinzip an einer zweiten Schalenform. Das Ende bietet SALONFORMAT, Neustart und Quellen.
 
-Eine niedrigschwellige Lernerfahrung darüber, warum und wie Muschel- und Meeresschneckenschalen wachsen. Menschen ohne Fachwissen sollen das Prinzip danach an einer weiteren Schalenform wiedererkennen können.
+## Visual identity
 
-## Users
+Zusammenhängende blau-elfenbeinfarbene Stift-/Pastellgemälde mit stets sichtbaren Strichen. Tiere, Fels, Tang und Wasser gehören zur selben Umgebung und Beleuchtung. Della Respira und Josefin Sans bleiben verbindlich. Die Bildwelt und ihre minimale Bedienoberfläche sind in DESIGN.md dokumentiert.
 
-Menschen ohne vorausgesetzte Fachkenntnisse, darunter Museumsbesucher, Familien und Erwachsene. Die Erklärung funktioniert ohne Ton, Zeitdruck oder Anmeldung.
+## Capabilities and constraints
 
-## Operating Context
+Eigenständige, natürliche Fassungen in DE/FR/EN; Sprachwechsel erhält den Fortschritt. Die Erklärung führt Mantel/manteau/mantle in jeder Sprache zuerst als dünnes Gewebe unter der Schale ein. Größen- und Orientierungswechsel erhalten Kapitel und Fortschritt. Kapitelnavigation, Browser-Zurück, Quellen, Bewegungspause und Ladefehler mit erneutem Versuch sind umgesetzt. Ton ist optional und startet ausgeschaltet; Ton und Vollbild werden auf schmalen Bildschirmen ausgeblendet. Reduzierte Bewegung wird berücksichtigt. Keine zeitgesteuerten Kapitelwechsel, keine Scrollsperre, kein Quiz, keine Zeichenaufgabe, keine Postkarte und kein Download. Keine persönliche Autorenzeile und keine Sammlungs- oder Museumszugehörigkeitsbehauptung.
 
-Eine eigenständige SALONFORMAT-Experience im Browser. Lokales Projekt coquillages und private GitHub-Ablage salonformat/coquillages. Scrollen oder Wischen steuert die Annäherung zum Meeresboden, die Nähe zur Schnecke und die Wachstumsstadien. Die Reise läuft nicht automatisch weiter. Zurückscrollen zeigt frühere Zustände. Wasser und Fische bewegen sich unabhängig und lassen sich anhalten.
+## Scientific scope
 
-Eine weitere Muschel lädt zur Nahansicht ein: Jede Berührung öffnet oder schließt dieselbe Ansicht. Der Wachstumsrand wird sichtbar markiert und knapp erklärt. Es gibt keine Richtig-falsch-Abfrage und keine Antwortziele. Am Ende wartet eine bewegte Meerespostkarte: Wasser, gezeichnete Fische und ein weißes Schneckenhaus. Sie lässt sich freiwillig als animiertes GIF speichern. Keine zusätzliche Zeichenaufgabe. Der Einstieg kündigt Lernziel und Postkarte kurz an.
-
-## Capabilities and Constraints
-
-Gleichwertige deutsche, französische und englische Fassung in natürlicher Alltagssprache. Native Scroll- und Wischbedienung, Tastaturwege, Browser-Zurück und Sprachwechsel mit erhaltener Position. SALONFORMAT bleibt erreichbar. Keine Regler, zeitgesteuerten Szenenwechsel, sichtbaren Sammlungsbezüge oder behaupteten Museumskooperationen.
-
-## Brand Commitments
-
-SALONFORMAT und die bereitgestellten Elio-Screenshots sind die verbindliche visuelle Referenz. Handgezeichnete Bildsprache, immersive Meereswelten bis an die Bildschirmränder, blaues Wasser und weiße Schalen. Della Respira und Josefin Sans. Die vorhandene Bildwelt wird erhalten.
-
-## Evidence on Hand
-
-Elio-Referenzbilder aus dem Gespräch, vorhandene gezeichnete PNG-Illustrationen und gemalte JPEG-Welten, lokal ausgelieferte Schriften mit OFL-Lizenzen. Fachquellen und frühere Recherche stehen in docs/QUELLEN.md. Browserprüfungen dokumentieren Bedienbarkeit. Tatsächlicher Lernerfolg mit Besuchern ist noch nicht gemessen. Das Außenwachstum wird als kurzer Materialzuwachs am vorhandenen Rand gezeigt. Die bestehende Zeichnung bleibt unverformt; das Modell bildet weder die gesamte Entwicklung noch eine konkrete Art quantitativ nach.
-
-## Product Principles
-
-- Entdecken, genauer hinschauen, Wachstum verstehen, selbst wiedererkennen.
-- Die Besucherin bestimmt Tempo, Nähe und Vergleich.
-- Jede aktive Handlung verändert das Bild nachvollziehbar.
-- Schönheit kommt aus den gezeichneten Gegenständen und ihrer Umgebung.
-- Vereinfachungen bleiben erkennbar.
-
-
-Die verbindliche räumliche Bildfolge und Kameraführung sind in [RAUMREISE.md](docs/RAUMREISE.md) dokumentiert. Die Muschel-Nahansicht ist Teil des Vergleichs, keine zusätzliche Station.
-
-
-Aktueller Abschluss (29. Oktober 2026): Die Postkarte wurde entfernt, ebenso Download und Einstiegsankündigung. Der Blick löst sich vom Meeresboden, fährt zurück und lässt das helle Wasser weit werden. Ohne zusätzlichen Erklärungstext; nur „Noch einmal“, Quellen und SALONFORMAT bleiben erreichbar.
+Die stark vergrößerte Schnittansicht ist ein schematisches, zeitlich und geometrisch vereinfachtes allgemeines Prinzip. Die ergänzte Schicht zeigt Ablagerung an der Innenseite; Außenwachstum erfolgt am Öffnungsrand. Keine Mikroskopaufnahme, keine bestimmte Art, keine universelle Schichtstruktur oder Perlmuttbehauptung. Quellen werden im Dialog verlinkt; eine wissenschaftliche Freigabe wird nicht behauptet.

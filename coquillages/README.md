@@ -1,17 +1,15 @@
-# Coquillages — Unter der Schale
+# Coquillages — Wie wachsen Muscheln und Meeresschnecken?
 
-Eine gezeichnete Unterwasserreise von Isabella Kohout / SALONFORMAT. Deutsch, français, English. Della Respira und Josefin Sans.
+Eine SALONFORMAT Experience in Deutsch, français und English. Fünf Kapitel führen durch eine zusammenhängende blau-elfenbeinfarbene Stift-/Pastellwelt: Meer, Tier, Schalenbildung, Muschel, offenes Meer. Della Respira und Josefin Sans werden lokal geladen.
 
-Die Besucherin steuert die Annäherung und das Wachstum durch Scrollen oder Wischen. Stehen bleiben hält das Wachstumsbild an; Zurückscrollen zeigt den früheren Zustand. Wasser und Fische bewegen sich unabhängig davon. An einer anderen Schalenform lässt sich das Prinzip durch eine Berührung selbst anwenden. Die bewegte Meerespostkarte am Ende lässt sich freiwillig als animiertes GIF speichern.
-
-Der Bogen: entdecken → genauer hinschauen → Wachstum verstehen → selbst wiedererkennen. Das Tier bildet seine Schale selbst; neues Material kommt am Rand hinzu. Die Wachstumsbilder sind eine künstlerische Vereinfachung.
-
-Die Navigation liegt frei über dem randlosen Meer. Browser-Zurück, Wegpunkte und SALONFORMAT sind durchgehend erreichbar. Keine Regler oder zeitgesteuerten Szenenwechsel.
+Scrollen und Wischen steuern die reversible Reise. Im schematischen Schnitt erscheinen Eiweißgerüst, Kalkkristalle und eine neue innere Schicht; die vorhandene Schale bleibt fest. Die Erklärung unterscheidet diese innere Verstärkung von Vergrößerung am Öffnungsrand. Bewegungspause und optionaler Ton sind unabhängig vom Scrollfortschritt. Das Ende bietet Neustart, Quellen und SALONFORMAT.
 
 ## Lokal
 
-`npm run dev` startet http://127.0.0.1:4173.
+`npm run dev` startet den lokalen Server unter `http://127.0.0.1:4173`.
 
-`npm run check` prüft die Syntax. `npm test` prüft Inhalt, Routen und Scrollzuordnung. `npm run test:browser` prüft den vollständigen Lernweg in allen Sprachen einschließlich Wischen, Bildberührung, Browser-Zurück und PNG-Export. `node tests/immersion.smoke.mjs` prüft die unabhängig laufende Meereswelt, Pause und Kameraannäherung. Die Browsertests benötigen Playwright; PLAYWRIGHT_MODULE_PATH kann den Modulpfad setzen.
+- `npm run check`: Syntax der Laufzeitmodule und des Servers.
+- `npm test`: Modell, Inhalte, Routen und Scrollzuordnung (`tests/voyage.test.mjs`).
+- `npm run test:browser`: Browserprüfungen (`tests/voyage.browser.mjs`). Playwright wird benötigt; `PLAYWRIGHT_MODULE_PATH` kann den Modulpfad setzen.
 
-Weitere Informationen in docs/. Die technische Prüfung ersetzt keine Erprobung der Lernwirkung mit Besuchern.
+Die aktuelle Laufzeit besteht aus `dist/index.html`, `dist/voyage.css` und den `dist/voyage*.js`-Modulen; `npm run check` erfasst zusätzlich die Kunst-/Akkretionsmodule. Ältere Dateien und Berichte im Projekt können frühere Fassungen beschreiben. Maßgeblich für das aktuelle Produkt sind PRODUCT.md, DESIGN.md und docs/NEUAUFBAU-20.md. Dokumentation ist keine Qualitätszertifizierung; technische Prüfungen ersetzen keine Erprobung mit Besuchern oder wissenschaftliche Freigabe.
